@@ -1,1 +1,1 @@
-Qui info progetto:
+Project info and stuffs
