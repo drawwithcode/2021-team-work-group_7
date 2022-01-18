@@ -4,9 +4,20 @@ body {
   padding: 0;
 }
 
-canvas {
-  z-index: -1;
+.marqueeFondo {
+  position: fixed;
+  font-size: 16px;
+  color: #02f886;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transform-origin: center;
+  font-family: "Trispace", sans-serif;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
 }
+
 .changeFamiglia {
   font-family: "Trispace", sans-serif;
   color: white;

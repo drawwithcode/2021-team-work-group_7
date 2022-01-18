@@ -122,11 +122,13 @@ function setup() {
   document.oncontextmenu = () => false;
   cam = createEasyCam();
   resetMatrix();
-  cam.setState(state, 5000);
+  cam.setState(state, 2000);
   cam.state_reset = state; // state to use on reset
   // Set one of these three parameters to 'true' to
   // constrain yaw, pitch, roll rotation.
   // (This can still be over-ridden with the 'shift' key)
+  cam.setZoomScale(0);
+  cam.setRotationScale(0);
   cam.setRotationConstraint(false, false, false);
 }
 
