@@ -123,6 +123,10 @@ function setup() {
   hiders.child(hider7);
   let hider8 = createElement("p", "\xa0");
   hiders.child(hider8);
+  let hider9 = createElement("p", "\xa0");
+  hiders.child(hider9);
+
+  setTimeout(voice, 100);
 
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
@@ -276,7 +280,6 @@ function voice() {
   speech.speak(text);
 }
 function openPage() {
-  setTimeout(voice, 100);
   document.getElementById("loadingPage").style.display = "none";
 }
 
