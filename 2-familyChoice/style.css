@@ -5,8 +5,9 @@ body {
 }
 
 canvas {
-  z-index: -1;
+  z-index: -3;
 }
+
 .changeFamiglia {
   font-family: "Trispace", sans-serif;
   color: white;
