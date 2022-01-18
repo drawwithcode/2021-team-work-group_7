@@ -5,9 +5,9 @@ var self = [0, 0, 0],
     center: [0, 0, 0],
     rotation: [1, 0, 0, 0],
   };
-let cacca;
-let cacchina;
-let caccona;
+let tree;
+let flower;
+let succulent;
 
 let angle1 = 0;
 let angle2 = 0;
@@ -19,8 +19,8 @@ let scaling;
 let mScale;
 
 let size1 = 1.1;
-let size2 = 1;
-let size3 = 0.95;
+let size2 = 2.1;
+let size3 = 1.7;
 
 let x = 0;
 let y = 0;
@@ -31,7 +31,7 @@ let inkrement1 = 0.02;
 let inkrement2 = 0.02;
 let inkrement3 = 0.02;
 
-let logo;
+// let logo;
 
 let marqueeFondo;
 
@@ -40,10 +40,10 @@ let family2;
 let family3;
 
 function preload() {
-  cacca = loadModel("./addons/Fiore2.obj");
-  cacchina = loadModel("./addons/Fiore1.obj");
-  caccona = loadModel("./addons/Fiore3.obj");
-  logo = loadImage("./addons/luppio.png");
+  tree = loadModel("./2-familyChoice/addons/albero.obj");
+  flower = loadModel("./2-familyChoice/addons/Fiore1.obj");
+  succulent = loadModel("./2-familyChoice/addons/Grassa.obj");
+  // logo = loadImage("./addons/luppio.png");
 }
 
 function setup() {
@@ -52,18 +52,21 @@ function setup() {
   family1.style("left", "50%");
   family1.mouseOver(selectFlorij);
   family1.mouseOut(normalSpeed);
+  family1.mousePressed(goToScanning);
 
   family2 = createElement("button", "SUKULAAS");
   family2.class("familyButton");
   family2.style("left", "80%");
   family2.mouseOver(selectSukulaas);
   family2.mouseOut(normalSpeed);
+  family2.mousePressed(goToScanning);
 
   family3 = createElement("button", "TRIXIMOS");
   family3.class("familyButton");
   family3.style("left", "20%");
   family3.mouseOver(selectTriximos);
   family3.mouseOut(normalSpeed);
+  family3.mousePressed(goToScanning);
 
   // marquee on the bottom of the page with info about the planet
   let north = nf(random(0, 90), 2, 4);
@@ -154,25 +157,25 @@ function draw() {
   scale(size1);
   scale(mScale3, mScale2, mScale3);
   rotateY(angle1 * 0.8);
-  model(cacchina);
+  model(flower);
   pop();
 
   push();
   specularMaterial(220);
-  translate(x - 7, y + 0, z);
+  translate(x - 7, y - 1.5, z);
   scale(size2);
   scale(mScale3, mScale2, mScale3);
   rotateY(-angle2 * 1);
-  model(caccona);
+  model(succulent);
   pop();
 
   push();
   specularMaterial(220);
-  translate(x + 7, y, z);
+  translate(x + 7, y - 2, z);
   scale(size3);
   scale(mScale3, mScale2, mScale3);
   rotateY(-angle3 * 1.3);
-  model(cacca);
+  model(tree);
   pop();
 
   angle1 += inkrement1;
@@ -187,12 +190,12 @@ function selectFlorij() {
 
 function selectSukulaas() {
   inkrement2 = inkrement2 * 4;
-  size2 = 1.25;
+  size2 = 2.4;
 }
 
 function selectTriximos() {
   inkrement3 = inkrement3 * 4;
-  size3 = 1.2;
+  size3 = 2;
 }
 
 function normalSpeed() {
@@ -200,6 +203,10 @@ function normalSpeed() {
   inkrement2 = 0.02;
   inkrement3 = 0.02;
   size1 = 1.1;
-  size2 = 1;
-  size3 = 0.95;
+  size2 = 2.1;
+  size3 = 1.7;
+}
+
+function goToScanning() {
+  window.open("3-camera_scanning.html", "_self");
 }
