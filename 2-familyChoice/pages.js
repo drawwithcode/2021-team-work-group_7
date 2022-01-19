@@ -82,8 +82,8 @@ function setup() {
   family3.mouseOut(normalSpeed);
   family3.mousePressed(openFamily1);
 
-  // let background = createElement("div");
-  // background.class("background");
+  let background = createElement("div");
+  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
   speech = new p5.Speech();
 
   // loadingPage = createElement("div");

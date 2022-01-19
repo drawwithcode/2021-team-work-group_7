@@ -77,11 +77,12 @@ canvas {
   border-color: transparent;
   cursor: pointer;
   vertical-align: middle;
+  transition: font-size 0.15s;
 }
 
 .familyButton:hover {
   color: #ffaa88;
-  font-size: 55px;
+  font-size: 52px;
 }
 
 .property1 {

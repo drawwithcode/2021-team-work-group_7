@@ -82,16 +82,43 @@ body {
 #button-start-exp {
   z-index: 1;
   position: absolute;
+  font-size: 18px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+  padding: 5px 10px;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
   border-color: white;
-  color: white;
   border-radius: 30px;
   margin: 4px 2px;
   background-color: rgb(81, 38, 194);
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 #button-start-exp:hover {
-  background-color: #02f886;
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+/* #button-start-exp a {
+  text-decoration: none;
+} */
+/* 
+#button-start-exp :visited {
+  color: white;
+  text-decoration: none;
+} */
+
+/* #button-start-exp a:hover {
+  color: rgb(81, 38, 194);
+  background-color: white;
+  text-decoration: none;
+} */
