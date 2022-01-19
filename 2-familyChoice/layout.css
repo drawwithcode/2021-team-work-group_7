@@ -112,7 +112,7 @@ body {
   margin: 0;
   float: right; /* makes animation go left-to-right */
   width: 0; /* graceful degradation: if animation doesn't work, these are invisible by default */
-  background-color: #5820c5;
+  background-color: rgb(81, 38, 194);
   color-adjust: exact;
   animation: typing 2s steps(30, end);
   animation-fill-mode: both; /* load first keyframe on page load, leave on last frame at end */

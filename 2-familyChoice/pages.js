@@ -48,6 +48,11 @@ let typingBox;
 let aboutButton;
 let gardenButton;
 
+let chosenFamily;
+
+const urlString = window.location.href;
+let url = new URL(urlString);
+
 function preload() {
   tree = loadModel("./2-familyChoice/addons/albero.obj");
   flower = loadModel("./2-familyChoice/addons/Fiore1.obj");
@@ -61,21 +66,21 @@ function setup() {
   family1.style("left", "50%");
   family1.mouseOver(selectFlorij);
   family1.mouseOut(normalSpeed);
-  family1.mousePressed(goToScanning);
+  family1.mousePressed(openFamily2);
 
   family2 = createElement("button", "SUKULAAS");
   family2.class("familyButton");
   family2.style("left", "80%");
   family2.mouseOver(selectSukulaas);
   family2.mouseOut(normalSpeed);
-  family2.mousePressed(goToScanning);
+  family2.mousePressed(openFamily3);
 
   family3 = createElement("button", "TRIXIMOS");
   family3.class("familyButton");
   family3.style("left", "20%");
   family3.mouseOver(selectTriximos);
   family3.mouseOut(normalSpeed);
-  family3.mousePressed(goToScanning);
+  family3.mousePressed(openFamily1);
 
   // let background = createElement("div");
   // background.class("background");
@@ -268,8 +273,28 @@ function normalSpeed() {
   size3 = 1.7;
 }
 
-function goToScanning() {
-  window.open("3-camera_scanning.html", "_self");
+function openFamily1() {
+  chosenFamily = 1;
+  window.open(
+    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    "_self"
+  );
+}
+
+function openFamily2() {
+  chosenFamily = 2;
+  window.open(
+    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    "_self"
+  );
+}
+
+function openFamily3() {
+  chosenFamily = 3;
+  window.open(
+    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    "_self"
+  );
 }
 
 function voice() {
@@ -278,9 +303,6 @@ function voice() {
   speech.setRate(1);
   speech.setPitch(2);
   speech.speak(text);
-}
-function openPage() {
-  document.getElementById("loadingPage").style.display = "none";
 }
 
 function openAbout() {}
