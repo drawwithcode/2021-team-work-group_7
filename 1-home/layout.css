@@ -30,9 +30,11 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 30px;
-  background-color: pink;
+  background-color: rgb(255, 170, 136);
+  transform: translate(-50%, -50%);
+  transform-origin: center;
   border: none;
-  color: pink;
+  color: rgb(255, 170, 136);
   z-index: 1;
 }
 
@@ -50,7 +52,7 @@ body {
 }
 
 #aboutButton:hover {
-  color: #02f886;
+  color: rgb(255, 170, 136);
 }
 #gardenButton {
   font-family: "Trispace", sans-serif;
@@ -66,7 +68,7 @@ body {
 }
 
 #gardenButton:hover {
-  color: #02f886;
+  color: rgb(255, 170, 136);
 }
 
 .logoHome {

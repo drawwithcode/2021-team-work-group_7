@@ -60,7 +60,7 @@ body {
 }
 
 #aboutButton:hover {
-  color: #02f886;
+  color: rgb(255, 170, 136);
 }
 #gardenButton {
   font-family: "Trispace", sans-serif;
@@ -76,7 +76,7 @@ body {
 }
 
 #gardenButton:hover {
-  color: #02f886;
+  color: rgb(255, 170, 136);
 }
 
 .logoHome {
