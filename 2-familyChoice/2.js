@@ -1,4 +1,4 @@
-const urlString = window.location.href;
+const urlString = window.location.origin;
 let url = new URL(urlString);
 console.log(url);
 
@@ -277,7 +277,7 @@ function normalSpeed() {
 function openFamily1() {
   chosenFamily = 1;
   window.open(
-    url + "/3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
     "_self"
   );
 }
@@ -285,7 +285,7 @@ function openFamily1() {
 function openFamily2() {
   chosenFamily = 2;
   window.open(
-    url + "/3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
     "_self"
   );
 }

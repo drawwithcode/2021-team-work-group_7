@@ -2,6 +2,17 @@ const urlString = window.location.href;
 let url = new URL(urlString);
 let parameter = url.searchParams.get("family");
 let family = JSON.parse(parameter);
+console.log(url);
+console.log(parameter);
+
+let text =
+  "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
+let speech;
+let enterButton;
+let loadingPage;
+let typingBox;
+let aboutButton;
+let gardenButton;
 
 var self = [0, 0, 0],
   cam,
@@ -56,35 +67,132 @@ let grassaFoglie2;
 let grassaFoglie3;
 
 function preload() {
-  fioreStelo = loadModel("./addons/fioreStelo.obj");
-  fioreFoglia1 = loadModel("./addons/fioreFoglia1.obj");
-  fioreFoglia2 = loadModel("./addons/fioreFoglia2.obj");
-  fioreFoglia3 = loadModel("./addons/fioreFoglia3.obj");
-  fiorePetali1 = loadModel("./addons/fiorePetali1.obj");
-  fiorePetali2 = loadModel("./addons/fiorePetali2.obj");
-  fiorePetali3 = loadModel("./addons/fiorePetali3.obj");
-  fiorePistillo = loadModel("./addons/fiorePistillo.obj");
+  fioreStelo = loadModel("./3-camera_scanning/addons/fioreStelo.obj");
+  fioreFoglia1 = loadModel("./3-camera_scanning/addons/fioreFoglia1.obj");
+  fioreFoglia2 = loadModel("./3-camera_scanning/addons/fioreFoglia2.obj");
+  fioreFoglia3 = loadModel("./3-camera_scanning/addons/fioreFoglia3.obj");
+  fiorePetali1 = loadModel("./3-camera_scanning/addons/fiorePetali1.obj");
+  fiorePetali2 = loadModel("./3-camera_scanning/addons/fiorePetali2.obj");
+  fiorePetali3 = loadModel("./3-camera_scanning/addons/fiorePetali3.obj");
+  fiorePistillo = loadModel("./3-camera_scanning/addons/fiorePistillo.obj");
 
-  alberoStelo = loadModel("./addons/alberoStelo.obj");
-  alberoRami = loadModel("./addons/alberoRami.obj");
-  alberoFrutto1 = loadModel("./addons/alberoFrutto1.obj");
-  alberoFrutto2 = loadModel("./addons/alberoFrutto2.obj");
-  alberoFrutto3 = loadModel("./addons/alberoFrutto3.obj");
-  alberoRadici1 = loadModel("./addons/alberoRadici1.obj");
-  alberoRadici2 = loadModel("./addons/alberoRadici2.obj");
-  alberoRadici3 = loadModel("./addons/alberoRadici3.obj");
+  alberoStelo = loadModel("./3-camera_scanning/addons/alberoStelo.obj");
+  alberoRami = loadModel("./3-camera_scanning/addons/alberoRami.obj");
+  alberoFrutto1 = loadModel("./3-camera_scanning/addons/alberoFrutto1.obj");
+  alberoFrutto2 = loadModel("./3-camera_scanning/addons/alberoFrutto2.obj");
+  alberoFrutto3 = loadModel("./3-camera_scanning/addons/alberoFrutto3.obj");
+  alberoRadici1 = loadModel("./3-camera_scanning/addons/alberoRadici1.obj");
+  alberoRadici2 = loadModel("./3-camera_scanning/addons/alberoRadici2.obj");
+  alberoRadici3 = loadModel("./3-camera_scanning/addons/alberoRadici3.obj");
 
-  grassaStelo = loadModel("./addons/grassaStelo.obj");
-  grassaSpine = loadModel("./addons/grassaSpine.obj");
-  grassaPetali1 = loadModel("./addons/grassaPetali1.obj");
-  grassaPetali2 = loadModel("./addons/grassaPetali2.obj");
-  grassaPetali3 = loadModel("./addons/grassaPetali3.obj");
-  grassaFoglie1 = loadModel("./addons/grassaFoglie1.obj");
-  grassaFoglie2 = loadModel("./addons/grassaFoglie2.obj");
-  grassaFoglie3 = loadModel("./addons/grassaFoglie3.obj");
+  grassaStelo = loadModel("./3-camera_scanning/addons/grassaStelo.obj");
+  grassaSpine = loadModel("./3-camera_scanning/addons/grassaSpine.obj");
+  grassaPetali1 = loadModel("./3-camera_scanning/addons/grassaPetali1.obj");
+  grassaPetali2 = loadModel("./3-camera_scanning/addons/grassaPetali2.obj");
+  grassaPetali3 = loadModel("./3-camera_scanning/addons/grassaPetali3.obj");
+  grassaFoglie1 = loadModel("./3-camera_scanning/addons/grassaFoglie1.obj");
+  grassaFoglie2 = loadModel("./3-camera_scanning/addons/grassaFoglie2.obj");
+  grassaFoglie3 = loadModel("./3-camera_scanning/addons/grassaFoglie3.obj");
 }
 
 function setup() {
+  let background = createElement("div");
+  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  speech = new p5.Speech();
+
+  // loadingPage = createElement("div");
+  // loadingPage.id("loadingPage");
+  // enterButton = createElement("button");
+  // enterButton.id("enterButton");
+  // enterButton.mouseClicked(openPage);
+  // loadingPage.child(enterButton);
+
+  aboutButton = createElement("button", "about");
+  aboutButton.id("aboutButton");
+  aboutButton.mouseClicked(openAbout);
+
+  gardenButton = createElement("button", "garden");
+  gardenButton.id("gardenButton");
+  gardenButton.mouseClicked(openGarden);
+
+  typingBox = createElement("div");
+  typingBox.class("typingBox");
+  let container = createElement("div");
+  container.class("container");
+  typingBox.child(container);
+  let typing = createElement("p", ">> " + text + " //");
+  typing.class("typing");
+  container.child(typing);
+  let hiders = createElement("div");
+  hiders.class("hiders");
+  container.child(hiders);
+  let hider1 = createElement("p", "\xa0");
+  hiders.child(hider1);
+  let hider2 = createElement("p", "\xa0");
+  hiders.child(hider2);
+  let hider3 = createElement("p", "\xa0");
+  hiders.child(hider3);
+  let hider4 = createElement("p", "\xa0");
+  hiders.child(hider4);
+  let hider5 = createElement("p", "\xa0");
+  hiders.child(hider5);
+  let hider6 = createElement("p", "\xa0");
+  hiders.child(hider6);
+  let hider7 = createElement("p", "\xa0");
+  hiders.child(hider7);
+  let hider8 = createElement("p", "\xa0");
+  hiders.child(hider8);
+  let hider9 = createElement("p", "\xa0");
+  hiders.child(hider9);
+
+  setTimeout(voice, 100);
+
+  let north = nf(random(0, 90), 2, 4);
+  let west = nf(random(0, 90), 2, 4);
+  marqueeFondo = createElement(
+    "marquee",
+    north +
+      "° N  ○  " +
+      west +
+      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      north +
+      "  ° N  ○  " +
+      west +
+      "  ° W" +
+      north +
+      "° N  ○  " +
+      west +
+      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      north +
+      "  ° N  ○  " +
+      west +
+      "  ° W" +
+      north +
+      "° N  ○  " +
+      west +
+      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      north +
+      "  ° N  ○  " +
+      west +
+      "  ° W" +
+      north +
+      "° N  ○  " +
+      west +
+      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      north +
+      "  ° N  ○  " +
+      west +
+      "  ° W" +
+      north +
+      "° N  ○  " +
+      west +
+      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      north +
+      "  ° N  ○  " +
+      west +
+      "  ° W"
+  );
+  marqueeFondo.class("marqueeFondo");
   createCanvas(windowWidth, windowHeight, WEBGL);
 
   pixelDensity(1);
@@ -104,8 +212,14 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(40, 30);
   video.hide();
-  let toto;
-  toto = createElement("button", family);
+}
+
+function voice() {
+  speech.listVoices();
+  speech.setVoice("Fred");
+  speech.setRate(1);
+  speech.setPitch(2);
+  speech.speak(text);
 }
 
 function draw() {
@@ -131,10 +245,10 @@ function draw() {
   }
 
   if (family == 1) {
-    buildFiore();
+    buildAlbero();
   }
   if (family == 2) {
-    buildAlbero();
+    buildFiore();
   }
   if (family == 3) {
     buildGrassa();
@@ -209,7 +323,7 @@ function buildFiore() {
     d = 1.78;
   }
   rotateZ(PI);
-  translate(0, -45, 0);
+  translate(0, -35, 0);
   rotateY((-PI / 5) * 2);
   scale(30);
   specularMaterial(220);
@@ -561,9 +675,9 @@ function buildGrassa() {
       cacca = map(bright, 0, 255, 0, 5);
     }
   }
-  r = r / 255;
-  g = g / 255;
-  b = b / 255;
+  // r = r / 255;
+  // g = g / 255;
+  // b = b / 255;
 
   let max = Math.max(r, g, b);
   let min = Math.min(r, g, b);
@@ -587,7 +701,7 @@ function buildGrassa() {
   // }
 
   hue = Math.round(hue);
-
+  console.log(max);
   pipi = map(hue, 0, 360, 0, 255);
 
   if (max == r) {
@@ -649,3 +763,5 @@ function buildGrassa() {
   model(grassaSpine);
   pop();
 }
+function openAbout() {}
+function openGarden() {}

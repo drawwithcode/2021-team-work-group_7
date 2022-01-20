@@ -1,0 +1,63 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.intro {
+  height: 100vh;
+}
+
+.intro video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 130px;
+  color: #02f886;
+  z-index: 1;
+  font-family: Syne;
+}
+
+.botanical {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: azure;
+  font-family: trispace;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.intro p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: trispace;
+  font-weight: 300;
+  font-size: 25px;
+  color: white;
+  width: 600px;
+  text-align: center;
+}
+
+.video-bg {
+  position: absolute;
+  z-index: -1;
+}
+
+.boh {
+  height: 0vh;
+  color: black;
+}
