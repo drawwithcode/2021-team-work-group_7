@@ -62,6 +62,12 @@ function preload() {
 }
 
 function setup() {
+  var cursor = document.getElementById("cursor");
+  document.body.addEventListener("mousemove", function (e) {
+    (cursor.style.left = e.clientX + "px"),
+      (cursor.style.top = e.clientY + "px");
+  });
+
   family1 = createElement("button", "FLORIJ");
   family1.class("familyButton");
   family1.style("left", "50%");

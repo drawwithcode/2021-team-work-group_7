@@ -11,8 +11,20 @@ let typingBox;
 let aboutButton;
 let gardenButton;
 
+// var cursor = document.getElementById("cursor");
+// document.body.addEventListener("mousemove", function (e) {
+//   (cursor.style.left = e.clientX + "px"), (cursor.style.top = e.clientY + "px");
+// });
+
 function setup() {
   noCanvas();
+
+  var cursor = document.getElementById("cursor");
+  document.body.addEventListener("mousemove", function (e) {
+    (cursor.style.left = e.clientX + "px"),
+      (cursor.style.top = e.clientY + "px");
+  });
+
   // let background = createElement("div");
   // background.class("background");
   speech = new p5.Speech();

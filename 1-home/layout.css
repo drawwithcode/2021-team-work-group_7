@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
+
 /* .background {
   position: absolute;
   top: 0%;
@@ -13,6 +15,7 @@ body {
   background-color: rgb(81, 38, 194);
   z-index: -3;
 } */
+
 #loadingPage {
   position: fixed;
   top: 0%;
@@ -109,7 +112,7 @@ body {
   font-weight: 400;
   background-color: white;
   text-decoration: none;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 @keyframes typing {
@@ -213,4 +216,19 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #02f886;
+}
+
+.cursor {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  background-color: #ff1bb6;
+  opacity: 0.7;
+  z-index: 10000;
+  border: 2px solid #ff1bb6;
+  height: 30px;
+  width: 30px;
 }
