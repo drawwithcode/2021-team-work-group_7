@@ -293,7 +293,7 @@ function openFamily2() {
 function openFamily3() {
   chosenFamily = 3;
   window.open(
-    "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
     "_self"
   );
 }

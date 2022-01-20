@@ -1,3 +1,7 @@
+const urlString = window.location.href;
+let url = new URL(urlString);
+console.log(url);
+
 let text =
   "Hey, welcome to Luppio. You might be confused: the Earth does not exist anymore because of global warming. Luckily, we were able to find a new livable planet. The first thing to do to start building your own life is creating a plant.";
 let speech;
