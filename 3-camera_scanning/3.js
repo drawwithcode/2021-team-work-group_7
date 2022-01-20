@@ -312,15 +312,15 @@ function buildFiore() {
   }
   if (cacca < 1) {
     variabile2 = fiorePetali1;
-    d = 1.7;
+    d = 1.8;
   }
   if (cacca > 1 && cacca < 2) {
     variabile2 = fiorePetali2;
-    d = 1.88;
+    d = 2;
   }
   if (cacca > 2 && cacca < 3) {
     variabile2 = fiorePetali3;
-    d = 1.78;
+    d = 1.9;
   }
   rotateZ(PI);
   translate(0, -35, 0);
