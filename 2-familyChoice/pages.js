@@ -1,3 +1,7 @@
+const urlString = window.location.href;
+let url = new URL(urlString);
+console.log(url);
+
 var self = [0, 0, 0],
   cam,
   state = {
@@ -49,9 +53,6 @@ let aboutButton;
 let gardenButton;
 
 let chosenFamily;
-
-const urlString = window.location.href;
-let url = new URL(urlString);
 
 function preload() {
   tree = loadModel("./2-familyChoice/addons/albero.obj");
@@ -276,7 +277,7 @@ function normalSpeed() {
 function openFamily1() {
   chosenFamily = 1;
   window.open(
-    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    url + "/3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
     "_self"
   );
 }
@@ -284,7 +285,7 @@ function openFamily1() {
 function openFamily2() {
   chosenFamily = 2;
   window.open(
-    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    url + "/3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
     "_self"
   );
 }
@@ -292,7 +293,7 @@ function openFamily2() {
 function openFamily3() {
   chosenFamily = 3;
   window.open(
-    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
+    "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
     "_self"
   );
 }
