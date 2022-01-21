@@ -1,10 +1,12 @@
 html,
 canvas {
+  position: fixed;
+  left: 25%;
   display: block;
 }
 .input_video {
   position: fixed;
-
+  opacity: 50%;
   right: 50%;
   transform: scaleX(-1);
   filter: invert(100%) hue-rotate(60deg) brightness(0.7) contrast(300%);

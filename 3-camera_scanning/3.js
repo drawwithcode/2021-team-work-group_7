@@ -104,6 +104,7 @@ function preload() {
 function setup() {
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+
   speech = new p5.Speech();
 
   // loadingPage = createElement("div");
@@ -318,15 +319,16 @@ function buildFiore() {
   }
   if (cacca < 1) {
     variabile2 = fiorePetali1;
-    d = 1.8;
+    d = 1.7;
   }
   if (cacca > 1 && cacca < 2) {
     variabile2 = fiorePetali2;
-    d = 2;
+    d = 1.88;
   }
   if (cacca > 2 && cacca < 3) {
     variabile2 = fiorePetali3;
-    d = 1.9;
+
+    d = 1.78;
   }
   rotateZ(PI);
   translate(0, -35, 0);
@@ -528,19 +530,16 @@ function buildAlbero() {
   }
   if (cacca < 1) {
     variabile2 = alberoFrutto1;
-    d = 1.7;
   }
   if (cacca > 1 && cacca < 2) {
     variabile2 = alberoFrutto2;
-    d = 1.88;
   }
   if (cacca > 2 && cacca < 3) {
     variabile2 = alberoFrutto3;
-    d = 1.78;
   }
 
   rotateZ(PI);
-  translate(0, -35, 0);
+  translate(0, -32, 0);
   rotateY((-PI / 5) * 2);
   scale(22);
   specularMaterial(220);
@@ -721,15 +720,12 @@ function buildGrassa() {
   }
   if (cacca < 1) {
     variabile2 = grassaPetali1;
-    d = 1.7;
   }
   if (cacca > 1 && cacca < 2) {
     variabile2 = grassaPetali2;
-    d = 1.88;
   }
   if (cacca > 2 && cacca < 3) {
     variabile2 = grassaPetali3;
-    d = 1.78;
   }
 
   rotateZ(PI);
