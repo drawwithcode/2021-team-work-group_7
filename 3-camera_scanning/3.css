@@ -2,3 +2,12 @@ html,
 canvas {
   display: block;
 }
+.input_video {
+  position: fixed;
+
+  right: 50%;
+  transform: scaleX(-1);
+  filter: invert(100%) hue-rotate(60deg) brightness(0.7) contrast(300%);
+  height: 100%;
+  z-index: 1;
+}

@@ -6,7 +6,7 @@ body {
   cursor: none;
 }
 
-/* .background {
+.background {
   position: absolute;
   top: 0%;
 
@@ -14,7 +14,7 @@ body {
   height: 100%;
   background-color: rgb(81, 38, 194);
   z-index: -3;
-} */
+}
 
 #loadingPage {
   position: fixed;
@@ -43,6 +43,7 @@ body {
 
 #aboutButton {
   font-family: "Trispace", sans-serif;
+  text-transform: uppercase;
   font-weight: 300;
   color: white;
   stroke: none;
@@ -56,9 +57,13 @@ body {
 
 #aboutButton:hover {
   color: rgb(255, 170, 136);
+  cursor: none;
 }
+
 #gardenButton {
   font-family: "Trispace", sans-serif;
+  text-transform: uppercase;
+
   font-weight: 300;
   color: white;
   stroke: none;
@@ -94,7 +99,7 @@ body {
   font-weight: 300;
   color: white;
   padding: 5px 10px;
-  top: 70%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-style: none;
