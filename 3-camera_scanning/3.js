@@ -13,6 +13,9 @@ let loadingPage;
 let typingBox;
 let aboutButton;
 let gardenButton;
+let logo;
+let nextButton;
+let analysingSpace;
 
 var self = [0, 0, 0],
   cam,
@@ -23,7 +26,9 @@ var self = [0, 0, 0],
   };
 let video;
 let iterator1 = 0;
-let iterator2 = 0;
+let iterator2 = -0.02;
+let a = 0;
+
 let d;
 
 let r;
@@ -67,12 +72,7 @@ let grassaFoglie2;
 let grassaFoglie3;
 
 function preload() {
-  var cursor = document.getElementById("cursor");
-  document.body.addEventListener("mousemove", function (e) {
-    (cursor.style.left = e.clientX + "px"),
-      (cursor.style.top = e.clientY + "px");
-  });
-
+  logo = loadImage("./1-home/addons/luppio.png");
   fioreStelo = loadModel("./3-camera_scanning/addons/fioreStelo.obj");
   fioreFoglia1 = loadModel("./3-camera_scanning/addons/fioreFoglia1.obj");
   fioreFoglia2 = loadModel("./3-camera_scanning/addons/fioreFoglia2.obj");
@@ -102,17 +102,19 @@ function preload() {
 }
 
 function setup() {
+  var cursor = document.getElementById("cursor");
+  document.body.addEventListener("mousemove", function (e) {
+    (cursor.style.left = e.clientX + "px"),
+      (cursor.style.top = e.clientY + "px");
+  });
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
 
   speech = new p5.Speech();
 
-  // loadingPage = createElement("div");
-  // loadingPage.id("loadingPage");
-  // enterButton = createElement("button");
-  // enterButton.id("enterButton");
-  // enterButton.mouseClicked(openPage);
-  // loadingPage.child(enterButton);
+  enterButton = createElement("button", "START WEBCAM");
+  enterButton.id("enterButton");
+  enterButton.mouseClicked(moveSpace);
 
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
@@ -149,8 +151,6 @@ function setup() {
   hiders.child(hider7);
   let hider8 = createElement("p", "\xa0");
   hiders.child(hider8);
-  let hider9 = createElement("p", "\xa0");
-  hiders.child(hider9);
 
   setTimeout(voice, 100);
 
@@ -215,10 +215,8 @@ function setup() {
   // (This can still be over-ridden with the 'shift' key)
   cam.setZoomScale(0);
   cam.setRotationConstraint(true, false, false);
-
-  video = createCapture(VIDEO);
-  video.size(40, 30);
-  video.hide();
+  image(logo, 0, 0, 0, 0);
+  video = logo;
 }
 
 function voice() {
@@ -236,33 +234,12 @@ function draw() {
   pointLight(1, 80, 20, 30, -500, 300);
   pointLight(60, 5, 80, -300, -600, -300);
 
+  iterator1 += a;
+  iterator2 += a;
+  if (iterator1 > 1) {
+    a = 0;
+  }
   noStroke();
-
-  if (frameCount > 100 && frameCount < 300) {
-    iterator1 += 0.005;
-  }
-  if (frameCount > 300) {
-    iterator1 += 0;
-  }
-  if (frameCount > 250 && frameCount < 450) {
-    iterator2 += 0.005;
-  }
-  if (frameCount > 450) {
-    iterator2 += 0;
-  }
-
-  if (family == 1) {
-    buildAlbero();
-  }
-  if (family == 2) {
-    buildFiore();
-  }
-  if (family == 3) {
-    buildGrassa();
-  }
-}
-
-function buildFiore() {
   video.loadPixels();
   for (let y = 0; y < video.height; y++) {
     for (let x = 0; x < video.width; x++) {
@@ -279,6 +256,18 @@ function buildFiore() {
       cacca = map(bright, 0, 255, 0, 5);
     }
   }
+  if (family == 1) {
+    buildAlbero();
+  }
+  if (family == 2) {
+    buildFiore();
+  }
+  if (family == 3) {
+    buildGrassa();
+  }
+}
+
+function buildFiore() {
   r = r / 255;
   g = g / 255;
   b = b / 255;
@@ -474,22 +463,6 @@ function buildFiore() {
 }
 
 function buildAlbero() {
-  video.loadPixels();
-  for (let y = 0; y < video.height; y++) {
-    for (let x = 0; x < video.width; x++) {
-      let i = (x + y * video.width) * 4;
-
-      r = video.pixels[i];
-      g = video.pixels[i + 1];
-      b = video.pixels[i + 2];
-
-      bright = (r + g + b) / 3;
-
-      // let averageB = 0;
-      // averageB += bright;
-      cacca = map(bright, 0, 255, 0, 5);
-    }
-  }
   r = r / 255;
   g = g / 255;
   b = b / 255;
@@ -664,25 +637,9 @@ function buildAlbero() {
 }
 
 function buildGrassa() {
-  video.loadPixels();
-  for (let y = 0; y < video.height; y++) {
-    for (let x = 0; x < video.width; x++) {
-      let i = (x + y * video.width) * 4;
-
-      r = video.pixels[i];
-      g = video.pixels[i + 1];
-      b = video.pixels[i + 2];
-
-      bright = (r + g + b) / 3;
-
-      // let averageB = 0;
-      // averageB += bright;
-      cacca = map(bright, 0, 255, 0, 5);
-    }
-  }
-  // r = r / 255;
-  // g = g / 255;
-  // b = b / 255;
+  r = r / 255;
+  g = g / 255;
+  b = b / 255;
 
   let max = Math.max(r, g, b);
   let min = Math.min(r, g, b);
@@ -706,7 +663,7 @@ function buildGrassa() {
   // }
 
   hue = Math.round(hue);
-  console.log(max);
+  // console.log(max);
   pipi = map(hue, 0, 360, 0, 255);
 
   if (max == r) {
@@ -767,3 +724,31 @@ function buildGrassa() {
 }
 function openAbout() {}
 function openGarden() {}
+
+function moveSpace() {
+  camera.start();
+
+  document.getElementById("enterButton").style.display = "none";
+
+  canvas.style.left = "23%";
+  canvas.style.transition = "0.5s";
+  setTimeout(moveWebcam, 2000);
+}
+function moveWebcam() {
+  document.getElementsByClassName("input_video")[0].style.right = "50%";
+  document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
+  a = 0.005;
+  video = createCapture(VIDEO);
+  video.size(40, 30);
+  video.hide();
+  analyzingSpace = createElement("h1", "ANALYSING THE SPACE");
+  analyzingSpace.id("analyser");
+  setTimeout(goNext, 10000);
+}
+function goNext() {
+  document.getElementById("analyser").style.display = "none";
+  scanCompleted = createElement("h1", "SCAN COMPLETED");
+  scanCompleted.id("scan");
+  nextButton = createElement("button", "NEXT");
+  nextButton.id("nextButton");
+}

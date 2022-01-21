@@ -5,6 +5,9 @@ body {
   box-sizing: border-box;
   cursor: none;
 }
+body:hover {
+  cursor: none;
+}
 
 .background {
   position: absolute;
@@ -117,7 +120,6 @@ body {
   font-weight: 400;
   background-color: white;
   text-decoration: none;
-  /* cursor: pointer; */
 }
 
 @keyframes typing {
