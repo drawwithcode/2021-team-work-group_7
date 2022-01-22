@@ -1,9 +1,15 @@
-const urlString = window.location.href;
-let url = new URL(urlString);
-let parameter = url.searchParams.get("family");
-let family = JSON.parse(parameter);
-console.log(url);
+const urlStringOrigin = window.location.origin;
+const urlStringArrive = window.location.href;
+let urlOrigin = new URL(urlStringOrigin);
+let urlArrive = new URL(urlStringArrive);
+let parameter = urlArrive.searchParams.get("family");
+let family = 3;
+console.log(urlArrive);
 console.log(parameter);
+
+let part1;
+let part2;
+let chosenParts;
 
 let text =
   "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
@@ -200,6 +206,7 @@ function setup() {
       "  ° W"
   );
   marqueeFondo.class("marqueeFondo");
+
   createCanvas(windowWidth, windowHeight, WEBGL);
 
   pixelDensity(1);
@@ -215,7 +222,7 @@ function setup() {
   // (This can still be over-ridden with the 'shift' key)
   cam.setZoomScale(0);
   cam.setRotationConstraint(true, false, false);
-  image(logo, 0, 0, 0, 0);
+
   video = logo;
 }
 
@@ -746,9 +753,63 @@ function moveWebcam() {
   setTimeout(goNext, 10000);
 }
 function goNext() {
+  video = video.get();
   document.getElementById("analyser").style.display = "none";
+
+  if (
+    variabile1 == fioreFoglia1 ||
+    variabile1 == alberoRadici1 ||
+    variabile1 == grassaFoglie1
+  ) {
+    part1 = 1;
+  }
+  if (
+    variabile1 == fioreFoglia2 ||
+    variabile1 == alberoRadici2 ||
+    variabile1 == grassaFoglie2
+  ) {
+    part1 = 2;
+  }
+  if (
+    variabile1 == fioreFoglia3 ||
+    variabile1 == alberoRadici3 ||
+    variabile1 == grassaFoglie3
+  ) {
+    part1 = 3;
+  }
+  if (
+    variabile2 == fiorePetali1 ||
+    variabile2 == alberoFrutto1 ||
+    variabile2 == grassaPetali1
+  ) {
+    part2 = 1;
+  }
+  if (
+    variabile2 == fiorePetali2 ||
+    variabile2 == alberoFrutto2 ||
+    variabile2 == grassaPetali2
+  ) {
+    part2 = 2;
+  }
+  if (
+    variabile2 == fiorePetali3 ||
+    variabile2 == alberoFrutto3 ||
+    variabile2 == grassaPetali3
+  ) {
+    part2 = 3;
+  }
+  chosenParts = family + "." + part1 + "." + part2;
+
   scanCompleted = createElement("h1", "SCAN COMPLETED");
   scanCompleted.id("scan");
   nextButton = createElement("button", "NEXT");
   nextButton.id("nextButton");
+  nextButton.mouseClicked(nextPage);
+  console.log(chosenParts);
+}
+function nextPage() {
+  window.open(
+    urlOrigin + "4-shout.html?case=" + chosenParts + "&parameter=",
+    "_self"
+  );
 }

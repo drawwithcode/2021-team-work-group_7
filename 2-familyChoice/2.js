@@ -1,6 +1,7 @@
 const urlString = window.location.origin;
 let url = new URL(urlString);
 console.log(url);
+let chosenFamily;
 
 var self = [0, 0, 0],
   cam,
@@ -51,8 +52,6 @@ let loadingPage;
 let typingBox;
 let aboutButton;
 let gardenButton;
-
-let chosenFamily;
 
 function preload() {
   tree = loadModel("./2-familyChoice/addons/albero.obj");
