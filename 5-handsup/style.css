@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #5820c5;
+
+  /* This centers our sketch horizontally.
+  justify-content: center;
+
+  /* This centers our sketch vertically. */
+  /* align-items: center; */
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left:50%;
+  border-radius: 25px;
+}
+
+#canva2 {
+  display: block;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left:50%;
+  border-radius: 100px;
+  z-index: 10
+}
