@@ -281,26 +281,17 @@ function normalSpeed() {
 
 function openFamily1() {
   chosenFamily = 1;
-  window.open(
-    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
-    "_self"
-  );
+  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
 }
 
 function openFamily2() {
   chosenFamily = 2;
-  window.open(
-    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
-    "_self"
-  );
+  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
 }
 
 function openFamily3() {
   chosenFamily = 3;
-  window.open(
-    url + "3-camera_scanning.html?family=" + chosenFamily + "&parameter=",
-    "_self"
-  );
+  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
 }
 
 function voice() {

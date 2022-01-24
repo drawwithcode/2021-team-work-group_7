@@ -9,6 +9,14 @@ body:hover {
   cursor: none;
 }
 
+#loadingImage {
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  position: fixed;
+  z-index: 3;
+}
+
 .background {
   position: absolute;
   top: 0%;
@@ -19,29 +27,21 @@ body:hover {
   z-index: -3;
 }
 
-#loadingPage {
-  position: fixed;
-  top: 0%;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: #5820c5;
-  z-index: 2;
-}
 #enterButton {
-  position: absolute;
+  position: fixed;
+  opacity: 100%;
   left: 50%;
-  bottom: 50%;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  background-color: rgb(255, 170, 136);
+  bottom: 37%;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 100px;
+  background-color: rgb(81, 38, 194);
   transform: translate(-50%, -50%);
   transform-origin: center;
-  border: none;
-  color: rgb(255, 170, 136);
-  z-index: 1;
+  border: 2px solid;
+  border-color: rgb(81, 38, 194);
+  color: #02f886;
+  z-index: 5;
 }
 
 #aboutButton {
@@ -87,39 +87,11 @@ body:hover {
   background-color: transparent;
   border-radius: 0px;
   border-color: transparent;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 7%;
-}
-
-#button-start-exp {
-  z-index: 1;
-  position: absolute;
-  font-size: 18px;
-  font-family: "Trispace", sans-serif;
-  font-weight: 300;
-  color: white;
-  padding: 5px 10px;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-style: none;
-  border: 1px solid currentColor;
-  border-color: white;
-  border-radius: 30px;
-  margin: 4px 2px;
-  background-color: rgb(81, 38, 194);
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-#button-start-exp:hover {
-  color: rgb(81, 38, 194);
-  font-weight: 400;
-  background-color: white;
-  text-decoration: none;
+  top: 50px;
 }
 
 @keyframes typing {

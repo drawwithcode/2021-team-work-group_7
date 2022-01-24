@@ -25,4 +25,3 @@ const camera = new Camera(videoElement, {
   width: 640,
   height: 480,
 });
-// camera.start();

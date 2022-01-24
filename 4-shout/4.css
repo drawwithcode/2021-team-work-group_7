@@ -1,0 +1,205 @@
+html,
+canvas {
+  position: fixed;
+  left: 0%;
+  display: block;
+}
+
+.input_video {
+  position: fixed;
+  height: 100%;
+  opacity: 50%;
+  right: 100%;
+  transform: scaleX(-1);
+  background-color: rgb(81, 38, 194);
+  filter: invert(100%) hue-rotate(60deg) brightness(0.7) contrast(300%);
+  z-index: 1;
+}
+
+#enterButton {
+  position: fixed;
+  left: 50%;
+  bottom: 30%;
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+  padding: 5px 10px;
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#enterButton:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+  text-decoration: none;
+}
+
+#fixButton1 {
+  position: fixed;
+  left: 50%;
+  bottom: 30%;
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+  /* padding: 5px 10px; */
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#fixButton1:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+  text-decoration: none;
+}
+#fixButton2 {
+  position: fixed;
+  left: 50%;
+  bottom: 30%;
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+  /* padding: 5px 10px; */
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#fixButton2:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+  text-decoration: none;
+}
+#fixButton3 {
+  position: fixed;
+  left: 50%;
+  bottom: 30%;
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+  /* padding: 5px 10px; */
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#fixButton3:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+  text-decoration: none;
+}
+#nextButton {
+  position: fixed;
+  left: 50%;
+  bottom: 29%;
+  /* width: 100px; */
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#nextButton:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+}
+#fixButton2Button {
+  position: fixed;
+  left: 50%;
+  bottom: 29%;
+  /* width: 100px; */
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#fixButton2:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+}
+#scan {
+  position: fixed;
+
+  margin: 0px;
+  left: 50%;
+  top: 55%;
+  z-index: 4;
+  font-size: 150px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+#analyser {
+  position: fixed;
+  margin: 0px;
+  left: 50%;
+  top: 55%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 100px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

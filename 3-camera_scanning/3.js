@@ -3,7 +3,7 @@ const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
 let parameter = urlArrive.searchParams.get("family");
-let family = 3;
+let family = parameter;
 console.log(urlArrive);
 console.log(parameter);
 
@@ -798,7 +798,7 @@ function goNext() {
   ) {
     part2 = 3;
   }
-  chosenParts = family + "." + part1 + "." + part2;
+  chosenParts = family + "" + part1 + "" + part2;
 
   scanCompleted = createElement("h1", "SCAN COMPLETED");
   scanCompleted.id("scan");
@@ -808,8 +808,5 @@ function goNext() {
   console.log(chosenParts);
 }
 function nextPage() {
-  window.open(
-    urlOrigin + "4-shout.html?case=" + chosenParts + "&parameter=",
-    "_self"
-  );
+  window.open(urlOrigin + "4-shout.html?case=" + chosenParts, "_self");
 }
