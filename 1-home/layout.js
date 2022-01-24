@@ -21,6 +21,7 @@ function setup() {
       (cursor.style.top = e.clientY + "px");
   });
   noCanvas();
+
   let background = createElement("div");
   background.class("background");
 

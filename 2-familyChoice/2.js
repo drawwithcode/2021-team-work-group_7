@@ -88,6 +88,9 @@ function setup() {
   family3.mouseOut(normalSpeed);
   family3.mousePressed(openFamily1);
 
+  loadingImage = document.getElementById("loadingImage");
+  loadingImage.style.left = "-100%";
+  loadingImage.style.transition = "1.5s";
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
   speech = new p5.Speech();

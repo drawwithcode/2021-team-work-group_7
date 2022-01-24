@@ -78,33 +78,33 @@ let grassaFoglie2;
 let grassaFoglie3;
 
 function preload() {
-  logo = loadImage("./1-home/addons/luppio.png");
-  fioreStelo = loadModel("./3-camera_scanning/addons/fioreStelo.obj");
-  fioreFoglia1 = loadModel("./3-camera_scanning/addons/fioreFoglia1.obj");
-  fioreFoglia2 = loadModel("./3-camera_scanning/addons/fioreFoglia2.obj");
-  fioreFoglia3 = loadModel("./3-camera_scanning/addons/fioreFoglia3.obj");
-  fiorePetali1 = loadModel("./3-camera_scanning/addons/fiorePetali1.obj");
-  fiorePetali2 = loadModel("./3-camera_scanning/addons/fiorePetali2.obj");
-  fiorePetali3 = loadModel("./3-camera_scanning/addons/fiorePetali3.obj");
-  fiorePistillo = loadModel("./3-camera_scanning/addons/fiorePistillo.obj");
+  logo = loadImage("./addons/luppio.png");
+  fioreStelo = loadModel("./addons/fioreStelo.obj");
+  fioreFoglia1 = loadModel("./addons/fioreFoglia1.obj");
+  fioreFoglia2 = loadModel("./addons/fioreFoglia2.obj");
+  fioreFoglia3 = loadModel("./addons/fioreFoglia3.obj");
+  fiorePetali1 = loadModel("./addons/fiorePetali1.obj");
+  fiorePetali2 = loadModel("./addons/fiorePetali2.obj");
+  fiorePetali3 = loadModel("./addons/fiorePetali3.obj");
+  fiorePistillo = loadModel("./addons/fiorePistillo.obj");
 
-  alberoStelo = loadModel("./3-camera_scanning/addons/alberoStelo.obj");
-  alberoRami = loadModel("./3-camera_scanning/addons/alberoRami.obj");
-  alberoFrutto1 = loadModel("./3-camera_scanning/addons/alberoFrutto1.obj");
-  alberoFrutto2 = loadModel("./3-camera_scanning/addons/alberoFrutto2.obj");
-  alberoFrutto3 = loadModel("./3-camera_scanning/addons/alberoFrutto3.obj");
-  alberoRadici1 = loadModel("./3-camera_scanning/addons/alberoRadici1.obj");
-  alberoRadici2 = loadModel("./3-camera_scanning/addons/alberoRadici2.obj");
-  alberoRadici3 = loadModel("./3-camera_scanning/addons/alberoRadici3.obj");
+  alberoStelo = loadModel("./addons/alberoStelo.obj");
+  alberoRami = loadModel("./addons/alberoRami.obj");
+  alberoFrutto1 = loadModel("./addons/alberoFrutto1.obj");
+  alberoFrutto2 = loadModel("./addons/alberoFrutto2.obj");
+  alberoFrutto3 = loadModel("./addons/alberoFrutto3.obj");
+  alberoRadici1 = loadModel("./addons/alberoRadici1.obj");
+  alberoRadici2 = loadModel("./addons/alberoRadici2.obj");
+  alberoRadici3 = loadModel("./addons/alberoRadici3.obj");
 
-  grassaStelo = loadModel("./3-camera_scanning/addons/grassaStelo.obj");
-  grassaSpine = loadModel("./3-camera_scanning/addons/grassaSpine.obj");
-  grassaPetali1 = loadModel("./3-camera_scanning/addons/grassaPetali1.obj");
-  grassaPetali2 = loadModel("./3-camera_scanning/addons/grassaPetali2.obj");
-  grassaPetali3 = loadModel("./3-camera_scanning/addons/grassaPetali3.obj");
-  grassaFoglie1 = loadModel("./3-camera_scanning/addons/grassaFoglie1.obj");
-  grassaFoglie2 = loadModel("./3-camera_scanning/addons/grassaFoglie2.obj");
-  grassaFoglie3 = loadModel("./3-camera_scanning/addons/grassaFoglie3.obj");
+  grassaStelo = loadModel("./addons/grassaStelo.obj");
+  grassaSpine = loadModel("./addons/grassaSpine.obj");
+  grassaPetali1 = loadModel("./addons/grassaPetali1.obj");
+  grassaPetali2 = loadModel("./addons/grassaPetali2.obj");
+  grassaPetali3 = loadModel("./addons/grassaPetali3.obj");
+  grassaFoglie1 = loadModel("./addons/grassaFoglie1.obj");
+  grassaFoglie2 = loadModel("./addons/grassaFoglie2.obj");
+  grassaFoglie3 = loadModel("./addons/grassaFoglie3.obj");
 }
 
 function setup() {
@@ -113,6 +113,11 @@ function setup() {
     (cursor.style.left = e.clientX + "px"),
       (cursor.style.top = e.clientY + "px");
   });
+
+  loadingImage = document.getElementById("loadingImage");
+  loadingImage.style.left = "-100%";
+  loadingImage.style.transition = "1.5s";
+
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
 

@@ -47,7 +47,7 @@ canvas {
   position: fixed;
   left: 50%;
   bottom: 30%;
-
+  padding: 5px 10px;
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
@@ -65,7 +65,7 @@ canvas {
 }
 #fixButton1:hover {
   color: rgb(81, 38, 194);
-  font-weight: 400;
+  font-weight: 500;
   background-color: white;
   text-decoration: none;
 }
@@ -73,7 +73,7 @@ canvas {
   position: fixed;
   left: 50%;
   bottom: 30%;
-
+  padding: 5px 10px;
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
@@ -91,7 +91,7 @@ canvas {
 }
 #fixButton2:hover {
   color: rgb(81, 38, 194);
-  font-weight: 400;
+  font-weight: 500;
   background-color: white;
   text-decoration: none;
 }
@@ -99,7 +99,7 @@ canvas {
   position: fixed;
   left: 50%;
   bottom: 30%;
-
+  padding: 5px 10px;
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
@@ -117,7 +117,7 @@ canvas {
 }
 #fixButton3:hover {
   color: rgb(81, 38, 194);
-  font-weight: 400;
+  font-weight: 500;
   background-color: white;
   text-decoration: none;
 }
@@ -176,9 +176,9 @@ canvas {
 
   margin: 0px;
   left: 50%;
-  top: 55%;
+  top: 57%;
   z-index: 4;
-  font-size: 150px;
+  font-size: 110px;
   font-family: "Syne", sans-serif;
   color: #02f886;
   transform: translate(-50%, -50%);

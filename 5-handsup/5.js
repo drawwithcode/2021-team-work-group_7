@@ -97,6 +97,10 @@ function preload() {
 }
 
 function setup() {
+  loadingImage = document.getElementById("loadingImage");
+  loadingImage.style.left = "-100%";
+  loadingImage.style.transition = "1.5s";
+
   var cursor = document.getElementById("cursor");
   document.body.addEventListener("mousemove", function (e) {
     (cursor.style.left = e.clientX + "px"),
