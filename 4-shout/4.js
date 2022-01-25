@@ -17,10 +17,26 @@ let gardenButton;
 let fixButton1;
 let fixButton2;
 let gotScale;
+let gotScale2;
+let gotScale3;
 let nextButton1;
 let nextButton2;
 let nextButton3;
 let loadingImage;
+
+let title1;
+let subtitle1;
+let title2;
+let subtitle2;
+let title3;
+let subtitle3;
+
+let partText1;
+let partText2;
+let partText3;
+let familyText;
+let titleText;
+let subtitleText;
 
 var self = [0, 0, 0],
   cam,
@@ -124,6 +140,35 @@ function setup() {
   gardenButton.id("gardenButton");
   gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
+  selectCase();
+
+  if (family == 1) {
+    familyText = "Triximos";
+    partText1 = "roots";
+    partText2 = "branches";
+    partText3 = "fruits";
+  }
+  if (family == 2) {
+    familyText = "Florij";
+    partText1 = "pistil";
+    partText2 = "leaves";
+    partText3 = "flower";
+  }
+  if (family == 3) {
+    familyText = "Sukulaas";
+    partText1 = "thorn";
+    partText2 = "leaves";
+    partText3 = "flower";
+  }
+
+  titleText = "SHOUT";
+  subtitleText = "to modify " + partText1;
+  title1 = createElement("h1", titleText);
+  title1.id("title");
+
+  subtitle1 = createElement("p", subtitleText);
+  subtitle1.id("subtitle");
+  title1.child(subtitle1);
 
   typingBox = createElement("div");
   typingBox.class("typingBox");
@@ -235,6 +280,9 @@ function selectCase() {
     family = 1;
     variabile1 = alberoRadici1;
     variabile2 = alberoFrutto1;
+    partText1 = "roots";
+    partText2 = "branches";
+    partText3 = "fruits";
   }
   if (parameter == 112) {
     family = 1;
@@ -389,8 +437,8 @@ function draw() {
     scale3 = nf(map(micLevel2, 0, 1, 1, 4), 1, 2);
   }
 
-  console.log(micLevel1);
-  console.log(a);
+  // console.log(micLevel1);
+  // console.log(a);
   background(81, 38, 194);
 
   pointLight(40, 20, 70, 300, 600, 300);
@@ -412,12 +460,24 @@ function draw() {
 
   if (family == 1) {
     buildAlbero();
+    familyText = "Triximos";
+    partText1 = "roots";
+    partText2 = "branches";
+    partText3 = "fruits";
   }
   if (family == 2) {
     buildFiore();
+    familyText = "Florij";
+    partText1 = "pistil";
+    partText2 = "leaves";
+    partText3 = "flower";
   }
   if (family == 3) {
     buildGrassa();
+    familyText = "Sukulaas";
+    partText1 = "thorn";
+    partText2 = "leaves";
+    partText3 = "flower";
   }
 
   if (detections != undefined) {
@@ -781,6 +841,14 @@ function firstInteraction() {
   a = 0;
   document.getElementById("enterButton").style.display = "none";
 
+  document.getElementById("title").style.top = "20%";
+  document.getElementById("title").style.fontSize = "40px";
+  document.getElementById("subtitle").style.fontSize = "10px";
+  document.getElementById("title").style.animation =
+    "blinker 1s linear infinite";
+  document.getElementById("title").style.transition = "0.5s";
+  document.getElementById("subtitle").style.transition = "0.5s";
+
   fixButton1 = createElement("button", "FIX SCALE");
   fixButton1.id("fixButton1");
   fixButton1.mouseClicked(fixScale1);
@@ -789,6 +857,7 @@ function fixScale1() {
   storeItem("micLevel1", micLevel1);
   mic.stop();
   document.getElementById("fixButton1").style.display = "none";
+  document.getElementById("title").style.display = "none";
   gotScale = createElement("h1", "GOT IT");
   gotScale.id("scan");
   nextButton1 = createElement("button", "NEXT");
@@ -798,24 +867,24 @@ function fixScale1() {
 
 function secondInteraction() {
   camera.start();
-  analyzingSpace = createElement("h1", "MOVE YOUR HAND");
-  analyzingSpace.id("analyser");
+  titleText = "MOVE YOUR HAND";
+  subtitleText = "to modify " + partText2;
+  title2 = createElement("h1", titleText);
+  title2.id("title2");
+  subtitle2 = createElement("p", subtitleText);
+  subtitle2.id("subtitle2");
+  title2.child(subtitle2);
+
   document.getElementById("nextButton").style.display = "none";
   document.getElementById("scan").style.display = "none";
-
   canvas.style.left = "23%";
   canvas.style.transition = "0.5s";
-  setTimeout(moveWebcam, 500);
+  setTimeout(moveWebcam, 1000);
 }
 function moveWebcam() {
-  canvas.style.left = "23%";
-  canvas.style.transition = "0.5s";
   document.getElementsByClassName("input_video")[0].style.right = "50%";
   document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
 
-  document.getElementById("analyser").style.top = "15%";
-  document.getElementById("analyser").style.fontSize = "40px";
-  document.getElementById("analyser").style.transition = "0.5s";
   fixButton2 = createElement("button", "FIX SCALE");
   fixButton2.id("fixButton2");
   fixButton2.mouseClicked(fixScale2);
@@ -823,13 +892,14 @@ function moveWebcam() {
 function fixScale2() {
   camera.stop();
   document.getElementById("fixButton2").style.display = "none";
-  document.getElementById("analyser").style.display = "none";
+  document.getElementById("title2").style.display = "none";
+  document.getElementById("title").style.display = "none";
   canvas.style.left = "0%";
   canvas.style.transition = "0.5s";
   document.getElementsByClassName("input_video")[0].style.right = "100%";
   document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
-  gotScale = createElement("h1", "GOT IT");
-  gotScale.id("scan");
+  gotScale2 = createElement("h1", "GOT IT");
+  gotScale2.id("scan2");
   nextButton2 = createElement("button", "NEXT");
   nextButton2.id("nextButton2");
   nextButton2.mouseClicked(thirdInteraction);
@@ -840,6 +910,21 @@ function thirdInteraction() {
   a = 1;
 
   document.getElementById("nextButton2").style.display = "none";
+  document.getElementById("scan2").style.display = "none";
+  titleText = "BLOW";
+  subtitleText = "to modify " + partText3;
+  title3 = createElement("h1", titleText);
+  title3.id("title3");
+  subtitle3 = createElement("p", subtitleText);
+  subtitle3.id("subtitle3");
+  title3.child(subtitle3);
+  document.getElementById("title3").style.top = "20%";
+  document.getElementById("title3").style.fontSize = "40px";
+  document.getElementById("subtitle3").style.fontSize = "10px";
+  document.getElementById("title3").style.animation =
+    "blinker 1s linear infinite";
+  document.getElementById("title3").style.transition = "1s";
+  document.getElementById("subtitle3").style.transition = "1s";
 
   fixButton3 = createElement("button", "FIX SCALE");
   fixButton3.id("fixButton3");
@@ -850,8 +935,9 @@ function fixScale3() {
   storeItem = ("micLevel2", micLevel2);
   mic.stop();
   document.getElementById("fixButton3").style.display = "none";
-  gotScale = createElement("h1", "GOT IT");
-  gotScale.id("scan");
+  document.getElementById("title3").style.display = "none";
+  gotScale3 = createElement("h1", "GOT IT");
+  gotScale3.id("scan3");
   nextButton1 = createElement("button", "NEXT");
   nextButton1.id("nextButton");
   nextButton1.mouseClicked(nextPage);

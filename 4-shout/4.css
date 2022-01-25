@@ -11,7 +11,6 @@ canvas {
   opacity: 50%;
   right: 100%;
   transform: scaleX(-1);
-  background-color: rgb(81, 38, 194);
   filter: invert(100%) hue-rotate(60deg) brightness(0.7) contrast(300%);
   z-index: 1;
 }
@@ -209,6 +208,32 @@ canvas {
   transform: translate(-50%, -50%);
   transform-origin: center;
 }
+#scan2 {
+  position: fixed;
+
+  margin: 0px;
+  left: 50%;
+  top: 57%;
+  z-index: 4;
+  font-size: 110px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+#scan3 {
+  position: fixed;
+
+  margin: 0px;
+  left: 50%;
+  top: 57%;
+  z-index: 4;
+  font-size: 110px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
 #analyser {
   position: fixed;
   margin: 0px;
@@ -227,4 +252,90 @@ canvas {
   50% {
     opacity: 0;
   }
+}
+
+#title {
+  position: fixed;
+  margin: 0px;
+  left: 50%;
+  top: 45%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 150px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+#subtitle {
+  position: absolute;
+  margin: 0px;
+  left: 50%;
+  top: 90%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 30px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 400;
+  color: white;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+#title2 {
+  position: fixed;
+  margin: 0px;
+  left: 50%;
+  top: 20%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 40px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: blinker 1s linear infinite;
+}
+#subtitle2 {
+  position: absolute;
+  margin: 0px;
+  left: 50%;
+  top: 90%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 10px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 400;
+  color: white;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+#title3 {
+  position: fixed;
+  margin: 0px;
+  left: 50%;
+  top: 45%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 150px;
+  font-family: "Syne", sans-serif;
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: blinker 1s linear infinite;
+}
+#subtitle3 {
+  position: absolute;
+  margin: 0px;
+  left: 50%;
+  top: 90%;
+  z-index: 4;
+  white-space: nowrap;
+  font-size: 30px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 400;
+  color: white;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
 }
