@@ -831,14 +831,15 @@ function fixScale2() {
   gotScale = createElement("h1", "GOT IT");
   gotScale.id("scan");
   nextButton2 = createElement("button", "NEXT");
-  nextButton2.id("nextButton");
+  nextButton2.id("nextButton2");
   nextButton2.mouseClicked(thirdInteraction);
 }
 
 function thirdInteraction() {
   mic.start();
   a = 1;
-  document.getElementById("nextButton").style.display = "none";
+
+  document.getElementById("nextButton2").style.display = "none";
 
   fixButton3 = createElement("button", "FIX SCALE");
   fixButton3.id("fixButton3");
@@ -859,7 +860,7 @@ function fixScale3() {
 function nextPage() {
   window.open(
     urlOrigin +
-      "5-handsup.html?case=" +
+      "5-share.html?case=" +
       parameter +
       "&scale1=" +
       scale1 +

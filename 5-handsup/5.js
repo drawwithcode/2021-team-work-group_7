@@ -4,14 +4,12 @@ let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
 let parameter = urlArrive.searchParams.get("case");
 let scale1 = urlArrive.searchParams.get("scale1");
+let scale2 = urlArrive.searchParams.get("scale2");
+let scale3 = urlArrive.searchParams.get("scale3");
 
-console.log(urlArrive);
-console.log(parameter);
+let bgcolor = "#02f886";
 
-let altezzaMano;
-let scale2 = 1;
-
-let text =
+let text1 =
   "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
 let speech;
 let enterButton;
@@ -30,9 +28,6 @@ var self = [0, 0, 0],
     center: [0, 0, 0],
     rotation: [1, 0, 0, 0],
   };
-
-let iterator1 = 0;
-let iterator2 = -0.02;
 
 let d;
 
@@ -66,37 +61,62 @@ let grassaFoglie1;
 let grassaFoglie2;
 let grassaFoglie3;
 
+let button;
+let button2;
+let button3;
+let button4;
+
+let scrivinome;
+let nome;
+let myFont;
+let myFont2;
+let myFont3;
+let myFont4;
+
+let angolo = 0;
+let increment = 0.02;
+
 function preload() {
-  logo = loadImage("./1-home/addons/luppio.png");
-  fioreStelo = loadModel("./3-camera_scanning/addons/fioreStelo.obj");
-  fioreFoglia1 = loadModel("./3-camera_scanning/addons/fioreFoglia1.obj");
-  fioreFoglia2 = loadModel("./3-camera_scanning/addons/fioreFoglia2.obj");
-  fioreFoglia3 = loadModel("./3-camera_scanning/addons/fioreFoglia3.obj");
-  fiorePetali1 = loadModel("./3-camera_scanning/addons/fiorePetali1.obj");
-  fiorePetali2 = loadModel("./3-camera_scanning/addons/fiorePetali2.obj");
-  fiorePetali3 = loadModel("./3-camera_scanning/addons/fiorePetali3.obj");
-  fiorePistillo = loadModel("./3-camera_scanning/addons/fiorePistillo.obj");
+  fioreStelo = loadModel("./addons/fioreStelo.obj");
+  fioreFoglia1 = loadModel("./addons/fioreFoglia1.obj");
+  fioreFoglia2 = loadModel("./addons/fioreFoglia2.obj");
+  fioreFoglia3 = loadModel("./addons/fioreFoglia3.obj");
+  fiorePetali1 = loadModel("./addons/fiorePetali1.obj");
+  fiorePetali2 = loadModel("./addons/fiorePetali2.obj");
+  fiorePetali3 = loadModel("./addons/fiorePetali3.obj");
+  fiorePistillo = loadModel("./addons/fiorePistillo.obj");
 
-  alberoStelo = loadModel("./3-camera_scanning/addons/alberoStelo.obj");
-  alberoRami = loadModel("./3-camera_scanning/addons/alberoRami.obj");
-  alberoFrutto1 = loadModel("./3-camera_scanning/addons/alberoFrutto1.obj");
-  alberoFrutto2 = loadModel("./3-camera_scanning/addons/alberoFrutto2.obj");
-  alberoFrutto3 = loadModel("./3-camera_scanning/addons/alberoFrutto3.obj");
-  alberoRadici1 = loadModel("./3-camera_scanning/addons/alberoRadici1.obj");
-  alberoRadici2 = loadModel("./3-camera_scanning/addons/alberoRadici2.obj");
-  alberoRadici3 = loadModel("./3-camera_scanning/addons/alberoRadici3.obj");
+  alberoStelo = loadModel("./addons/alberoStelo.obj");
+  alberoRami = loadModel("./addons/alberoRami.obj");
+  alberoFrutto1 = loadModel("./addons/alberoFrutto1.obj");
+  alberoFrutto2 = loadModel("./addons/alberoFrutto2.obj");
+  alberoFrutto3 = loadModel("./addons/alberoFrutto3.obj");
+  alberoRadici1 = loadModel("./addons/alberoRadici1.obj");
+  alberoRadici2 = loadModel("./addons/alberoRadici2.obj");
+  alberoRadici3 = loadModel("./addons/alberoRadici3.obj");
 
-  grassaStelo = loadModel("./3-camera_scanning/addons/grassaStelo.obj");
-  grassaSpine = loadModel("./3-camera_scanning/addons/grassaSpine.obj");
-  grassaPetali1 = loadModel("./3-camera_scanning/addons/grassaPetali1.obj");
-  grassaPetali2 = loadModel("./3-camera_scanning/addons/grassaPetali2.obj");
-  grassaPetali3 = loadModel("./3-camera_scanning/addons/grassaPetali3.obj");
-  grassaFoglie1 = loadModel("./3-camera_scanning/addons/grassaFoglie1.obj");
-  grassaFoglie2 = loadModel("./3-camera_scanning/addons/grassaFoglie2.obj");
-  grassaFoglie3 = loadModel("./3-camera_scanning/addons/grassaFoglie3.obj");
+  grassaStelo = loadModel("./addons/grassaStelo.obj");
+  grassaSpine = loadModel("./addons/grassaSpine.obj");
+  grassaPetali1 = loadModel("./addons/grassaPetali1.obj");
+  grassaPetali2 = loadModel("./addons/grassaPetali2.obj");
+  grassaPetali3 = loadModel("./addons/grassaPetali3.obj");
+  grassaFoglie1 = loadModel("./addons/grassaFoglie1.obj");
+  grassaFoglie2 = loadModel("./addons/grassaFoglie2.obj");
+  grassaFoglie3 = loadModel("./addons/grassaFoglie3.obj");
+
+  myFont = loadFont("./5-handsup/addons/Syne-ExtraBold.ttf");
+  myFont2 = loadFont("./5-handsup/addons/Syne-Bold.ttf");
+  myFont3 = loadFont("./5-handsup/addons/Trispace_Condensed-Bold.ttf");
+  myFont4 = loadFont("./5-handsup/addons/Trispace-Regular.ttf");
+  loghino = loadImage("./5-handsup/addons/loghino.png");
 }
 
 function setup() {
+  createCanvas(
+    ((windowHeight - windowHeight / 8) * 9) / 16,
+    windowHeight - windowHeight / 8,
+    WEBGL
+  );
   loadingImage = document.getElementById("loadingImage");
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
@@ -111,18 +131,12 @@ function setup() {
 
   speech = new p5.Speech();
 
-  enterButton = createElement("button", "START WEBCAM");
-  enterButton.id("enterButton");
-  enterButton.mouseClicked(moveSpace);
-
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
-  aboutButton.class("menuButton");
   aboutButton.mouseClicked(openAbout);
 
   gardenButton = createElement("button", "garden");
   gardenButton.id("gardenButton");
-  gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
 
   typingBox = createElement("div");
@@ -130,7 +144,7 @@ function setup() {
   let container = createElement("div");
   container.class("container");
   typingBox.child(container);
-  let typing = createElement("p", ">> " + text + " //");
+  let typing = createElement("p", ">> " + text1 + " //");
   typing.class("typing");
   container.child(typing);
   let hiders = createElement("div");
@@ -202,10 +216,6 @@ function setup() {
   );
   marqueeFondo.class("marqueeFondo");
 
-  createCanvas(windowWidth, windowHeight, WEBGL);
-
-  pixelDensity(1);
-
   setAttributes("antialias", true);
   document.oncontextmenu = () => false;
   cam = createEasyCam();
@@ -218,7 +228,23 @@ function setup() {
   cam.setZoomScale(0);
   cam.setRotationConstraint(true, false, false);
 
-  video = logo;
+  button = createButton("cambia");
+  button.id("cambia");
+  button.mousePressed(changeBackground);
+
+  // button2 = createButton("ricambia");
+  // button2.mousePressed(changeBackground2);
+
+  button3 = createButton("SALVA");
+  button3.id("salva");
+  button3.mousePressed(snapshot);
+
+  // button4 = createButton("ASSEGNA")
+  // button4.position(0, 150)
+  // button4.mousePressed(scrivi)
+
+  scrivinome = createInput("COME SI CHIAMA?");
+  scrivinome.id("scrivinome");
 }
 
 function voice() {
@@ -226,7 +252,7 @@ function voice() {
   speech.setVoice("Fred");
   speech.setRate(1);
   speech.setPitch(2);
-  speech.speak(text);
+  speech.speak(text1);
 }
 
 function selectCase() {
@@ -377,23 +403,12 @@ function selectCase() {
 }
 
 function draw() {
-  background(81, 38, 194);
-
   pointLight(40, 20, 70, 300, 600, 300);
   pointLight(1, 80, 20, 30, -500, 300);
   pointLight(60, 5, 80, -300, -600, -300);
 
+  background(bgcolor);
   noStroke();
-
-  if (frameCount > 50 && frameCount < 250) {
-    iterator1 += 0.005;
-    iterator2 += 0.005;
-  }
-  if (frameCount > 250) {
-    iterator1 += 0;
-    iterator2 += 0;
-  }
-
   selectCase();
 
   if (family == 1) {
@@ -406,26 +421,25 @@ function draw() {
     buildGrassa();
   }
 
-  if (detections != undefined) {
-    if (detections.multiHandLandmarks != undefined) {
-      drawHands();
-    }
-  }
-}
+  angolo += increment;
 
-function drawHands() {
-  for (let i = 0; i < detections.multiHandLandmarks.length; i++) {
-    for (let j = 0; j < detections.multiHandLandmarks[i].length; j++) {
-      altezzaMano = detections.multiHandLandmarks[0][8].y;
-      scale2 = nf(map(altezzaMano, 1, 0, 0.3, 1.7), 1, 2);
-    }
-  }
+  rotateZ(PI);
+  rotateY(angolo - 0.02);
+  fill("#5820c5");
+  textSize(0.2);
+  textFont(myFont4);
+  textAlign(CENTER);
+  text(scrivinome.value(), 0, 0.3);
+  textSize(0.05);
+  textFont(myFont4);
+  // text("questo fiorellino è per te", 0, 0.4);
+  imageMode(CENTER);
+  image(loghino, 0, -2.5, 1.8, 1.8);
 }
-
 function buildFiore() {
   rotateZ(PI);
   translate(0, -35, 0);
-  rotateY((-PI / 5) * 2);
+  rotateY(angolo);
   scale(30);
   specularMaterial(220);
   model(fioreStelo);
@@ -434,7 +448,6 @@ function buildFiore() {
   push();
   translate(0.2, 0.1, -0.2);
   scale(0.8);
-  scale(iterator1);
   scale(scale2);
   rotateY(-PI / 2);
   model(variabile1);
@@ -443,7 +456,6 @@ function buildFiore() {
   push();
   translate(0.2, 0.5, -0.2);
   scale(0.3);
-  scale(iterator1);
   scale(scale2);
   rotateY(-PI / 2);
   model(variabile1);
@@ -452,7 +464,6 @@ function buildFiore() {
   push();
   translate(0.2, 0.9, -0.2);
   scale(0.7);
-  scale(iterator1);
   scale(scale2);
   rotateY(-PI / 2);
   model(variabile1);
@@ -461,7 +472,6 @@ function buildFiore() {
   push();
   translate(0.2, 1.3, -0.2);
   scale(0.4);
-  scale(iterator1);
   scale(scale2);
   rotateY(-PI / 2);
   model(variabile1);
@@ -472,7 +482,6 @@ function buildFiore() {
   push();
   translate(0, 0.2, -0.4);
   scale(0.9);
-  scale(iterator1);
   scale(scale2);
   // rotateY(-PI);
   model(variabile1);
@@ -480,7 +489,6 @@ function buildFiore() {
 
   push();
   translate(0, 0.6, -0.4);
-  scale(iterator1);
   scale(scale2);
   // rotateY(PI);
   model(variabile1);
@@ -489,7 +497,6 @@ function buildFiore() {
   push();
   translate(0, 1, -0.4);
   scale(0.5);
-  scale(iterator1);
   scale(scale2);
   // rotateY(PI);
   model(variabile1);
@@ -498,7 +505,6 @@ function buildFiore() {
   push();
   translate(0, 1.4, -0.4);
   scale(0.7);
-  scale(iterator1);
   scale(scale2);
   // rotateY(PI);
   model(variabile1);
@@ -508,7 +514,6 @@ function buildFiore() {
 
   push();
   translate(-0.2, 0.3, -0.2);
-  scale(iterator1);
   scale(scale2);
   rotateY(PI / 2);
   model(variabile1);
@@ -517,7 +522,6 @@ function buildFiore() {
   push();
   translate(-0.2, 0.7, -0.2);
   scale(0.4);
-  scale(iterator1);
   scale(scale2);
   rotateY(PI / 2);
   model(variabile1);
@@ -526,7 +530,6 @@ function buildFiore() {
   push();
   translate(-0.2, 1.1, -0.2);
   scale(0.6);
-  scale(iterator1);
   scale(scale2);
   rotateY(PI / 2);
   model(variabile1);
@@ -537,7 +540,6 @@ function buildFiore() {
   push();
   translate(0, 0.4, 0);
   scale(0.8);
-  scale(iterator1);
   scale(scale2);
   rotateY(PI);
   model(variabile1);
@@ -546,7 +548,6 @@ function buildFiore() {
   push();
   translate(0, 0.8, 0);
   scale(0.3);
-  scale(iterator1);
   scale(scale2);
   rotateY(PI);
   model(variabile1);
@@ -554,7 +555,6 @@ function buildFiore() {
 
   push();
   translate(0, 1.2, 0);
-  scale(iterator1);
   scale(scale2);
   rotateY(PI);
   model(variabile1);
@@ -565,14 +565,15 @@ function buildFiore() {
   push();
   translate(0, 1.6, 0);
   scale(0.5);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
 
   //fiorePistillo
   push();
-  translate(0, d, 0);
-  scale(iterator2);
+  translate(0, 1.6 + (d - 1.6) * scale3, 0);
+  scale(1.2);
   scale(scale1);
   // rotateX(PI / 3);
   model(fiorePistillo);
@@ -582,7 +583,7 @@ function buildFiore() {
 function buildAlbero() {
   rotateZ(PI);
   translate(0, -35, 0);
-  rotateY((-PI / 5) * 2);
+  rotateY(angolo);
   scale(22);
   specularMaterial(220);
   model(alberoStelo);
@@ -590,8 +591,9 @@ function buildAlbero() {
   //4
   push();
   translate(0, 0, 0);
+  scale(0.9);
   scale(scale1);
-  // scale(iterator1);
+  // ;
   rotateY(-PI / 2);
   model(variabile1);
   pop();
@@ -601,30 +603,30 @@ function buildAlbero() {
   //4
 
   push();
-  translate(0, 1.35, 0.8);
+  translate(0, 1.35, 0.8 * scale2);
   scale(0.8);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
   push();
-  translate(0.8, 1.35, 0);
+  translate(0.8 * scale2, 1.35, 0);
   scale(0.6);
-  scale(iterator2);
+  scale(scale3);
   rotateY(PI / 2);
   model(variabile2);
   pop();
   push();
-  translate(0, 1.35, -0.8);
+  translate(0, 1.35, -0.8 * scale2);
   scale(0.4);
-  scale(iterator2);
+  scale(scale3);
   rotateY(PI);
   model(variabile2);
   pop();
   push();
-  translate(-0.8, 1.35, 0);
+  translate(-0.8 * scale2, 1.35, 0);
   scale(0.9);
-  scale(iterator2);
+  scale(scale3);
   rotateY(-PI / 2);
   model(variabile2);
   pop();
@@ -632,30 +634,30 @@ function buildAlbero() {
   //4
 
   push();
-  translate(0, 2.49, 0.8);
+  translate(0, 2.49, 0.8 * scale2);
   scale(0.8);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
   push();
-  translate(0.8, 2.49, 0);
+  translate(0.8 * scale2, 2.49, 0);
   scale(0.5);
-  scale(iterator2);
+  scale(scale3);
   rotateY(PI / 2);
   model(variabile2);
   pop();
   push();
-  translate(0, 2.49, -0.8);
+  translate(0, 2.49, -0.8 * scale2);
   scale(0.4);
-  scale(iterator2);
+  scale(scale3);
   rotateY(PI);
   model(variabile2);
   pop();
   push();
-  translate(-0.8, 2.49, 0);
+  translate(-0.8 * scale2, 2.49, 0);
   scale(0.7);
-  scale(iterator2);
+  scale(scale3);
   rotateY(-PI / 2);
   model(variabile2);
   pop();
@@ -664,33 +666,33 @@ function buildAlbero() {
 
   push();
   rotateY(PI / 4);
-  translate(0, 1.9, 0.8);
+  translate(0, 1.9, 0.8 * scale2);
   scale(0.6);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
   push();
   rotateY(-PI / 4);
-  translate(0, 1.9, 0.8);
+  translate(0, 1.9, 0.8 * scale2);
   scale(0.8);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
   push();
   rotateY((-PI / 4) * 3);
-  translate(0, 1.9, 0.8);
+  translate(0, 1.9, 0.8 * scale2);
   scale(0.4);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
   push();
   rotateY((PI / 4) * 3);
-  translate(0, 1.9, 0.8);
+  translate(0, 1.9, 0.8 * scale2);
   scale(0.7);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
@@ -699,8 +701,8 @@ function buildAlbero() {
   push();
   translate(0, 1.62, 0);
   scale(1.1);
-  // scale(iterator2);
-
+  // ;
+  scale(scale2, 1, scale2);
   model(alberoRami);
   pop();
 }
@@ -708,7 +710,7 @@ function buildAlbero() {
 function buildGrassa() {
   rotateZ(PI);
   translate(0, -35, 0);
-  rotateY((-PI / 5) * 2);
+  rotateY(angolo);
   scale(30);
   specularMaterial(220);
   model(grassaStelo);
@@ -716,8 +718,8 @@ function buildGrassa() {
   //4
   push();
   translate(0, 0, 0);
-  scale(0.65);
-  scale(iterator1);
+  scale(0.5);
+  scale(scale2);
   rotateY(-PI / 2);
   model(variabile1);
   pop();
@@ -729,7 +731,7 @@ function buildGrassa() {
   push();
   translate(0, 1.45, 0);
   scale(1.2);
-  scale(iterator2);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
@@ -738,7 +740,7 @@ function buildGrassa() {
   push();
   translate(0, 2.2, 0);
   scale(scale1);
-  // scale(iterator2);
+  // ;
   model(grassaSpine);
   pop();
 }
@@ -746,40 +748,20 @@ function buildGrassa() {
 function openAbout() {}
 function openGarden() {}
 
-function moveSpace() {
-  camera.start();
+function changeBackground() {
+  bgcolor = "#ffaa88";
+}
 
-  document.getElementById("enterButton").style.display = "none";
+function changeBackground2() {
+  bgcolor = "#02f886";
+}
 
-  canvas.style.left = "23%";
-  canvas.style.transition = "0.5s";
-  setTimeout(moveWebcam, 2000);
+function snapshot() {
+  save("cazzullo.jpg");
 }
-function moveWebcam() {
-  document.getElementsByClassName("input_video")[0].style.right = "50%";
-  document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
-  analyzingSpace = createElement("h1", "MOVE YOUR HAND");
-  analyzingSpace.id("analyser");
-  fixButton = createElement("button", "FIX SCALE");
-  fixButton.id("nextButton");
-  fixButton.mouseClicked(fixScale);
-}
-function fixScale() {
-  document.getElementById("fixButton").style.display = "none";
-  gotScale = createElement("h1", "GOT IT");
-  gotScale.id("scan");
-  nextButton = createElement("button", "NEXT");
-  nextButton.id("nextButton");
-  nextButton.mouseClicked(nextPage);
-}
-function goNext() {
-  document.getElementById("analyser").style.display = "none";
-  scanCompleted = createElement("h1", "SCAN COMPLETED");
-  scanCompleted.id("scan");
-  nextButton = createElement("button", "NEXT");
-  nextButton.id("nextButton");
-  nextButton.mouseClicked(nextPage);
-}
-function nextPage() {
-  window.open(urlOrigin + "4-shout.html?case=" + chosenParts, "_self");
-}
+
+// function scrivi(){
+//   nomeDato = scrivinome.value();
+//   scrivinome.value("");
+//   nome = nomeDato;
+// }

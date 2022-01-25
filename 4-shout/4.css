@@ -146,6 +146,31 @@ canvas {
   font-weight: 400;
   background-color: white;
 }
+#nextButton2 {
+  position: fixed;
+  left: 50%;
+  bottom: 29%;
+  /* width: 100px; */
+
+  z-index: 4;
+  font-size: 24px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+  color: white;
+
+  transform: translate(-50%, -50%);
+  border-style: none;
+  border: 1px solid currentColor;
+  border-color: white;
+  border-radius: 30px;
+  margin: 4px 2px;
+  background-color: rgb(81, 38, 194);
+}
+#nextButton2:hover {
+  color: rgb(81, 38, 194);
+  font-weight: 400;
+  background-color: white;
+}
 #fixButton2Button {
   position: fixed;
   left: 50%;
