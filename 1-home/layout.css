@@ -215,7 +215,7 @@ body:hover {
   background: #02f886;
 }
 
-.cursor {
+/* .cursor {
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -228,4 +228,62 @@ body:hover {
   border: 2px solid #ff1bb6;
   height: 30px;
   width: 30px;
+} */
+
+.cursor {
+  position: absolute;
+  background: magenta;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  z-index: 4;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0.8);
+  font-size: 0px;
+  opacity: 1;
+}
+
+.cursor::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 4;
+  opacity: 1;
+
+  border-radius: 100%;
+}
+
+.cursor.active {
+  transform: scale(3);
+  transition-duration: 0.1s;
+  font-size: 8px;
+}
+
+.cursor.active::before {
+  opacity: 1;
+}
+
+.text-cursor {
+  position: absolute;
+  z-index: 5;
+
+  user-select: none;
+  pointer-events: none;
+
+  opacity: 0;
+  font-family: "trispace";
+  text-transform: uppercase;
+}
+
+.text-cursor.active {
+  opacity: 1;
+  transition-duration: 0.01s;
+  font-size: 11px;
+  color: white;
+  transform-origin: 50px;
 }
