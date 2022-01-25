@@ -7,8 +7,6 @@ let scale1 = urlArrive.searchParams.get("scale1");
 let scale2 = urlArrive.searchParams.get("scale2");
 let scale3 = urlArrive.searchParams.get("scale3");
 
-let bgcolor = "#02f886";
-
 let text1 =
   "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
 let speech;
@@ -20,6 +18,11 @@ let gardenButton;
 let logo;
 let nextButton;
 let analysingSpace;
+let nameTitle;
+let sub;
+let sub1;
+let sub2;
+let sub3;
 
 var self = [0, 0, 0],
   cam,
@@ -73,6 +76,9 @@ let myFont2;
 let myFont3;
 let myFont4;
 
+let bgcolor = "#02f886";
+let txcolor = "#5126c2";
+
 let angolo = 0;
 let increment = 0.02;
 
@@ -112,6 +118,10 @@ function preload() {
 }
 
 function setup() {
+  bgcolor = "#02f886";
+  txcolor = "#5126c2";
+
+  let angolo = 0;
   createCanvas(
     ((windowHeight - windowHeight / 8) * 9) / 16,
     windowHeight - windowHeight / 8,
@@ -264,14 +274,14 @@ function setup() {
   cam.setZoomScale(0);
   cam.setRotationConstraint(true, false, false);
 
-  button = createButton("cambia");
+  button = createButton("change background");
   button.id("cambia");
-  button.mousePressed(changeBackground);
+  button.mousePressed(changeBackground1);
 
   // button2 = createButton("ricambia");
-  // button2.mousePressed(changeBackground2);
+  // button2.mousePressed(changeBackground);
 
-  button3 = createButton("SALVA");
+  button3 = createButton("take a picture");
   button3.id("salva");
   button3.mousePressed(snapshot);
 
@@ -279,8 +289,9 @@ function setup() {
   // button4.position(0, 150)
   // button4.mousePressed(scrivi)
 
-  scrivinome = createInput("COME SI CHIAMA?");
+  scrivinome = createInput("type name here");
   scrivinome.id("scrivinome");
+  nameTitle = scrivinome.value().toUpperCase();
 }
 
 function voice() {
@@ -296,145 +307,226 @@ function selectCase() {
     family = 1;
     variabile1 = alberoRadici1;
     variabile2 = alberoFrutto1;
+    sub1 = "trixilos";
+    sub2 = "tarolico";
+    sub3 = "taratus";
   }
   if (parameter == 112) {
     family = 1;
     variabile1 = alberoRadici1;
     variabile2 = alberoFrutto2;
+    sub1 = "trixilos";
+    sub2 = "tarolico";
+    sub3 = "feratiscus";
   }
   if (parameter == 113) {
     family = 1;
     variabile1 = alberoRadici1;
     variabile2 = alberoFrutto3;
+    sub1 = "trixilos";
+    sub2 = "tarolico";
+    sub3 = "testinus";
   }
   if (parameter == 121) {
     family = 1;
     variabile1 = alberoRadici2;
     variabile2 = alberoFrutto1;
+    sub1 = "trixilos";
+    sub2 = "retticulo";
+    sub3 = "taratus";
   }
   if (parameter == 122) {
     family = 1;
     variabile1 = alberoRadici2;
     variabile2 = alberoFrutto2;
+    sub1 = "trixilos";
+    sub2 = "retticulo";
+    sub3 = "feratiscus";
   }
   if (parameter == 123) {
     family = 1;
     variabile1 = alberoRadici2;
     variabile2 = alberoFrutto3;
+    sub1 = "trixilos";
+    sub2 = "retticulo";
+    sub3 = "testinus";
   }
   if (parameter == 131) {
     family = 1;
     variabile1 = alberoRadici3;
     variabile2 = alberoFrutto1;
+    sub1 = "trixilos";
+    sub2 = "ionico";
+    sub3 = "taratus";
   }
   if (parameter == 132) {
     family = 1;
     variabile1 = alberoRadici3;
     variabile2 = alberoFrutto2;
+    sub1 = "trixilos";
+    sub2 = "ionico";
+    sub3 = "feratiscus";
   }
   if (parameter == 133) {
     family = 1;
     variabile1 = alberoRadici3;
     variabile2 = alberoFrutto3;
+    sub1 = "trixilos";
+    sub2 = "ionico";
+    sub3 = "testinus";
   }
   if (parameter == 211) {
     family = 2;
     variabile1 = fioreFoglia1;
     variabile2 = fiorePetali1;
     d = 1.7;
+    sub1 = "florij";
+    sub2 = "blomico";
+    sub3 = "bonzorulum";
   }
   if (parameter == 212) {
     family = 2;
     variabile1 = fioreFoglia1;
     variabile2 = fiorePetali2;
     d = 1.88;
+    sub1 = "florij";
+    sub2 = "blomico";
+    sub3 = "gledonio";
   }
   if (parameter == 213) {
     family = 2;
     variabile1 = fioreFoglia1;
     variabile2 = fiorePetali3;
     d = 1.78;
+    sub1 = "florij";
+    sub2 = "blomico";
+    sub3 = "dindirolon";
   }
   if (parameter == 221) {
     family = 2;
     variabile1 = fioreFoglia2;
     variabile2 = fiorePetali1;
     d = 1.7;
+    sub1 = "florij";
+    sub2 = "alavico";
+    sub3 = "bonzorulum";
   }
   if (parameter == 222) {
     family = 2;
     variabile1 = fioreFoglia2;
     variabile2 = fiorePetali2;
     d = 1.88;
+    sub1 = "florij";
+    sub2 = "alavico";
+    sub3 = "gledonio";
   }
   if (parameter == 223) {
     family = 2;
     variabile1 = fioreFoglia2;
     variabile2 = fiorePetali3;
     d = 1.78;
+    sub1 = "florij";
+    sub2 = "alavico";
+    sub3 = "dindirolon";
   }
   if (parameter == 231) {
     family = 2;
     variabile1 = fioreFoglia3;
     variabile2 = fiorePetali1;
     d = 1.7;
+    sub1 = "florij";
+    sub2 = "mascellico";
+    sub3 = "bonzorullum";
   }
   if (parameter == 232) {
     family = 2;
     variabile1 = fioreFoglia3;
     variabile2 = fiorePetali2;
     d = 1.88;
+    sub1 = "florij";
+    sub2 = "mascellico";
+    sub3 = "gledonico";
   }
   if (parameter == 233) {
     family = 2;
     variabile1 = fioreFoglia3;
     variabile2 = fiorePetali3;
     d = 1.78;
+    sub1 = "florij";
+    sub2 = "mascellico";
+    sub3 = "dindirolon";
   }
   if (parameter == 311) {
     family = 3;
     variabile1 = grassaFoglie1;
     variabile2 = grassaPetali1;
+    sub1 = "sukulaas";
+    sub2 = "bonzoorola";
+    sub3 = "siricida";
   }
   if (parameter == 312) {
     family = 3;
     variabile1 = grassaFoglie1;
     variabile2 = grassaPetali2;
+    sub1 = "sukulaas";
+    sub2 = "bonzoorola";
+    sub3 = "balbonza";
   }
   if (parameter == 313) {
     family = 3;
     variabile1 = grassaFoglie1;
     variabile2 = grassaPetali3;
+    sub1 = "sukulaas";
+    sub2 = "bonzoorola";
+    sub3 = "pimpinula";
   }
   if (parameter == 321) {
     family = 3;
     variabile1 = grassaFoglie2;
     variabile2 = grassaPetali1;
+    sub1 = "sukulaas";
+    sub2 = "fellonia";
+    sub3 = "siricida";
   }
   if (parameter == 322) {
     family = 3;
     variabile1 = grassaFoglie2;
     variabile2 = grassaPetali2;
+    sub1 = "sukulaas";
+    sub2 = "fellonia";
+    sub3 = "balbonza";
   }
   if (parameter == 323) {
     family = 3;
     variabile1 = grassaFoglie2;
     variabile2 = grassaPetali3;
+    sub1 = "sukulaas";
+    sub2 = "fellonia";
+    sub3 = "pimpinula";
   }
   if (parameter == 331) {
     family = 3;
     variabile1 = grassaFoglie3;
     variabile2 = grassaPetali1;
+    sub1 = "sukulaas";
+    sub2 = "porlezia";
+    sub3 = "siricida";
   }
   if (parameter == 332) {
     family = 3;
     variabile1 = grassaFoglie3;
     variabile2 = grassaPetali2;
+    sub1 = "sukulaas";
+    sub2 = "porlezia";
+    sub3 = "balbonza";
   }
   if (parameter == 333) {
     family = 3;
     variabile1 = grassaFoglie3;
     variabile2 = grassaPetali3;
+    sub1 = "sukulaas";
+    sub2 = "porlezia";
+    sub3 = "pimpinula";
   }
 }
 
@@ -445,6 +537,7 @@ function draw() {
 
   background(bgcolor);
   noStroke();
+
   selectCase();
 
   if (family == 1) {
@@ -458,19 +551,22 @@ function draw() {
   }
 
   angolo += increment;
-
+  push();
   rotateZ(PI);
   rotateY(angolo - 0.02);
-  fill("#5820c5");
+  fill(txcolor);
   textSize(0.2);
   textFont(myFont4);
   textAlign(CENTER);
-  text(scrivinome.value(), 0, 0.3);
-  textSize(0.05);
+  nameTitle = scrivinome.value().toUpperCase();
+  text(nameTitle, 0, 0.3);
+  textSize(0.06);
   textFont(myFont4);
-  // text("questo fiorellino è per te", 0, 0.4);
+  sub = sub1 + " " + sub2 + " " + sub3;
+  text(sub.toUpperCase(), 0, 0.4);
   imageMode(CENTER);
   image(loghino, 0, -2.5, 1.8, 1.8);
+  pop();
 }
 function buildFiore() {
   rotateZ(PI);
@@ -784,16 +880,39 @@ function buildGrassa() {
 function openAbout() {}
 function openGarden() {}
 
-function changeBackground() {
+function changeBackground1() {
   bgcolor = "#ffaa88";
+  txcolor = "#02f886";
+}
+function changeBackground2() {
+  bgcolor = "#5126c2";
+  txcolor = "#02f886";
 }
 
-function changeBackground2() {
+function changeBackground3() {
   bgcolor = "#02f886";
+  txcolor = "#5126c2";
+}
+function changeBackground() {
+  if (b == 0) {
+    bgcolor = "#ffaa88";
+    txcolor = "#5126c2";
+    b = 1;
+  }
+  if (b == 1) {
+    bgcolor = "#5126c2";
+    txcolor = "#02f886";
+    b = 2;
+  }
+  if (b == 2) {
+    bgcolor = "#02f886";
+    txcolor = "#5126c2";
+    b = 0;
+  }
 }
 
 function snapshot() {
-  save("cazzullo.jpg");
+  save(nameTitle + ".jpg");
 }
 
 // function scrivi(){

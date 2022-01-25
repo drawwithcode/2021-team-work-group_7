@@ -16,7 +16,7 @@ body {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   top: 0%;
 
   width: 100%;
@@ -273,7 +273,9 @@ body {
   transform-origin: 50px;
 }
 
-.about-section {
+#about-section {
+  overflow: hidden;
+  left: 100%;
   position: fixed;
   border: 1px solid black;
   height: 100vh;
@@ -283,6 +285,7 @@ body {
 }
 
 .text-about {
+  overflow: hidden;
   font-family: "Trispace", sans-serif;
   padding: 0;
   font-weight: 300;
@@ -291,23 +294,25 @@ body {
   background: none;
   border: none;
   font-size: 30px;
-  position: fixed;
+  position: absolute;
   left: 2.5%;
   /* top: 0.5%; */
   width: 60%;
 }
 
 .names-about-container {
+  overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
   justify-content: space-between;
   position: relative;
   top: 70%;
 }
 
 .names-about-container > div {
+  overflow: hidden;
   width: 100px;
   text-align: center;
   line-height: 40px;
@@ -320,6 +325,7 @@ body {
 }
 
 .x-button-about {
+  overflow: hidden;
   position: absolute;
   top: 5%;
   left: 95%;

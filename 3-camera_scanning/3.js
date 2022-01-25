@@ -4,8 +4,8 @@ let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
 let parameter = urlArrive.searchParams.get("family");
 let family = parameter;
-console.log(urlArrive);
-console.log(parameter);
+// console.log(urlArrive);
+// console.log(parameter);
 
 let part1;
 let part2;

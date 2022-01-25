@@ -344,7 +344,14 @@ function voice() {
   speech.speak(text);
 }
 
-function openAbout() {}
+function openAbout() {
+  document.getElementById("about-section").style.left = "0%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
+function closeAbout() {
+  document.getElementById("about-section").style.left = "100%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
 function openGarden() {}
 
 function fadingH1() {

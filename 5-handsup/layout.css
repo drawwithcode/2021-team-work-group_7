@@ -94,6 +94,7 @@ body {
 }
 
 .logoHome {
+  display: none;
   transform-origin: center;
   background-color: transparent;
   border-radius: 0px;
