@@ -7,6 +7,7 @@ const text2 = intro.querySelector(".text-home-1");
 
 const logo = intro.querySelector(".logoHome");
 const button = intro.querySelector("#button-start-exp");
+const scroll = intro.querySelector(".scroll-down");
 
 //END SECTION
 const section = document.querySelector("section");
@@ -15,6 +16,7 @@ const end2 = section.querySelector(".text-home-1");
 const end3 = section.querySelector(".logoHome");
 const end4 = section.querySelector("#button-start-exp");
 const end5 = section.querySelector(".botanical");
+const end6 = section.querySelector(".scroll-down");
 
 //SCROLLMAGIC
 const controller = new ScrollMagic.Controller();
@@ -107,4 +109,16 @@ let scene6 = new ScrollMagic.Scene({
 })
 
   .setTween(botanicalAnim)
+  .addTo(controller);
+
+//scroll animation
+let scrollAnim = TweenMax.fromTo(scroll, 8, { opacity: 1 }, { opacity: 0 });
+
+let scene7 = new ScrollMagic.Scene({
+  duration: 4000,
+  triggerElement: intro,
+  triggerHook: 0,
+})
+
+  .setTween(scrollAnim)
   .addTo(controller);

@@ -90,3 +90,22 @@ body {
   background-color: white;
   text-decoration: none;
 }
+
+.scroll-down {
+  position: fixed;
+  left: 50%;
+  bottom: 8%;
+  z-index: 4;
+  font-size: 20px;
+  font-family: "trispace";
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  animation: blinker 1s linear infinite;
+  text-transform: uppercase;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
