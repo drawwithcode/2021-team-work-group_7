@@ -32,8 +32,9 @@ var self = [0, 0, 0],
   };
 let video;
 let iterator1 = 0;
-let iterator2 = -0.02;
-let a = 0;
+let iterator2 = 0;
+let a1 = 0;
+let a2 = 0;
 
 let d;
 
@@ -246,10 +247,16 @@ function draw() {
   pointLight(1, 80, 20, 30, -500, 300);
   pointLight(60, 5, 80, -300, -600, -300);
 
-  iterator1 += a;
-  iterator2 += a;
+  iterator1 += a1;
+  iterator2 += a2;
   if (iterator1 > 1) {
-    a = 0;
+    a1 = 0;
+  }
+  if (iterator1 > 0.5) {
+    a2 = 0.005;
+  }
+  if (iterator2 > 1) {
+    a2 = 0;
   }
   noStroke();
   video.loadPixels();
@@ -268,6 +275,7 @@ function draw() {
       cacca = map(bright, 0, 255, 0, 5);
     }
   }
+  console.log(cacca);
   if (family == 1) {
     buildAlbero();
   }
@@ -280,10 +288,6 @@ function draw() {
 }
 
 function buildFiore() {
-  r = r / 255;
-  g = g / 255;
-  b = b / 255;
-
   let max = Math.max(r, g, b);
   let min = Math.min(r, g, b);
 
@@ -300,11 +304,6 @@ function buildFiore() {
 
   hue = hue * 60;
 
-  // if (hue < 0) {
-  //   // if red is the predominent color
-  //   hue = hue + 360;
-  // }
-
   hue = Math.round(hue);
 
   pipi = map(hue, 0, 360, 0, 255);
@@ -318,15 +317,15 @@ function buildFiore() {
   if (max == b) {
     variabile1 = fioreFoglia3;
   }
-  if (cacca < 1) {
+  if (cacca < 0.5) {
     variabile2 = fiorePetali1;
     d = 1.7;
   }
-  if (cacca > 1 && cacca < 2) {
+  if (cacca > 0.5 && cacca < 1.5) {
     variabile2 = fiorePetali2;
     d = 1.88;
   }
-  if (cacca > 2 && cacca < 3) {
+  if (cacca > 1.5 && cacca < 5) {
     variabile2 = fiorePetali3;
 
     d = 1.78;
@@ -475,10 +474,6 @@ function buildFiore() {
 }
 
 function buildAlbero() {
-  r = r / 255;
-  g = g / 255;
-  b = b / 255;
-
   let max = Math.max(r, g, b);
   let min = Math.min(r, g, b);
 
@@ -495,11 +490,6 @@ function buildAlbero() {
 
   hue = hue * 60;
 
-  // if (hue < 0) {
-  //   // if red is the predominent color
-  //   hue = hue + 360;
-  // }
-
   hue = Math.round(hue);
 
   pipi = map(hue, 0, 360, 0, 255);
@@ -513,18 +503,18 @@ function buildAlbero() {
   if (max == b) {
     variabile1 = alberoRadici3;
   }
-  if (cacca < 1) {
+  if (cacca < 0.5) {
     variabile2 = alberoFrutto1;
   }
-  if (cacca > 1 && cacca < 2) {
-    variabile2 = alberoFrutto2;
+  if (cacca > 0.5 && cacca < 1.5) {
+    variabile2 = alberoFrutto1;
   }
-  if (cacca > 2 && cacca < 3) {
-    variabile2 = alberoFrutto3;
+  if (cacca > 1.5 && cacca < 5) {
+    variabile2 = alberoFrutto1;
   }
 
   rotateZ(PI);
-  translate(0, -32, 0);
+  translate(0, -35, 0);
   rotateY((-PI / 5) * 2);
   scale(22);
   specularMaterial(220);
@@ -649,10 +639,6 @@ function buildAlbero() {
 }
 
 function buildGrassa() {
-  r = r / 255;
-  g = g / 255;
-  b = b / 255;
-
   let max = Math.max(r, g, b);
   let min = Math.min(r, g, b);
 
@@ -669,13 +655,8 @@ function buildGrassa() {
 
   hue = hue * 60;
 
-  // if (hue < 0) {
-  //   // if red is the predominent color
-  //   hue = hue + 360;
-  // }
-
   hue = Math.round(hue);
-  // console.log(max);
+
   pipi = map(hue, 0, 360, 0, 255);
 
   if (max == r) {
@@ -687,13 +668,13 @@ function buildGrassa() {
   if (max == b) {
     variabile1 = grassaFoglie3;
   }
-  if (cacca < 1) {
+  if (cacca < 0.5) {
     variabile2 = grassaPetali1;
   }
-  if (cacca > 1 && cacca < 2) {
+  if (cacca > 0.5 && cacca < 1.5) {
     variabile2 = grassaPetali2;
   }
-  if (cacca > 2 && cacca < 3) {
+  if (cacca > 1.5 && cacca < 5) {
     variabile2 = grassaPetali3;
   }
 
@@ -707,7 +688,7 @@ function buildGrassa() {
   //4
   push();
   translate(0, 0, 0);
-  scale(0.65);
+  scale(0.6);
   scale(iterator1);
   rotateY(-PI / 2);
   model(variabile1);
@@ -719,7 +700,7 @@ function buildGrassa() {
 
   push();
   translate(0, 1.45, 0);
-  scale(1.2);
+  scale(1.5);
   scale(iterator2);
   // rotateX(PI / 3);
   model(variabile2);
@@ -749,7 +730,7 @@ function moveSpace() {
 function moveWebcam() {
   document.getElementsByClassName("input_video")[0].style.right = "50%";
   document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
-  a = 0.005;
+  a1 = 0.005;
   video = createCapture(VIDEO);
   video.size(40, 30);
   video.hide();
