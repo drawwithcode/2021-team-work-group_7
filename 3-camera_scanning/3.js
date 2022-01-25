@@ -22,6 +22,7 @@ let gardenButton;
 let logo;
 let nextButton;
 let analysingSpace;
+let loadingImage;
 
 var self = [0, 0, 0],
   cam,

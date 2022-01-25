@@ -52,6 +52,8 @@ let loadingPage;
 let typingBox;
 let aboutButton;
 let gardenButton;
+let loadingImage;
+let title;
 
 function preload() {
   tree = loadModel("./2-familyChoice/addons/albero.obj");
@@ -66,6 +68,10 @@ function setup() {
     (cursor.style.left = e.clientX + "px"),
       (cursor.style.top = e.clientY + "px");
   });
+
+  title = createElement("h1", "CHOOSE YOUR FAMILY");
+  title.id("title");
+  setTimeout(fadingH1, 5000);
 
   family1 = createElement("button", "FLORIJ");
   family1.class("familyButton");
@@ -91,6 +97,7 @@ function setup() {
   loadingImage = document.getElementById("loadingImage");
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
+
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
   speech = new p5.Speech();
@@ -239,7 +246,7 @@ function draw() {
 
   push();
   specularMaterial(220);
-  translate(x - 7, y - 1.5, z);
+  translate(x - 6, y - 1.8, z);
   scale(size2);
   scale(mScale3, mScale2, mScale3);
   rotateY(-angle2 * 1);
@@ -248,7 +255,7 @@ function draw() {
 
   push();
   specularMaterial(220);
-  translate(x + 7, y - 2, z);
+  translate(x + 6, y - 2, z);
   scale(size3);
   scale(mScale3, mScale2, mScale3);
   rotateY(-angle3 * 1.3);
@@ -309,3 +316,7 @@ function voice() {
 
 function openAbout() {}
 function openGarden() {}
+
+function fadingH1() {
+  document.getElementById("title").style.display = "none";
+}
