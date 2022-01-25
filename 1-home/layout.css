@@ -231,6 +231,7 @@ body:hover {
   transform: translate(-50%, -50%);
   font-size: 0px;
   opacity: 1;
+  scroll-behavior: inherit;
 }
 
 .cursor::before {
