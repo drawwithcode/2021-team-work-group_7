@@ -12,7 +12,7 @@ let part2;
 let chosenParts;
 
 let text =
-  "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
+  "Reveal yourself: we will detect the HUE and BRIGHTNESS to see where you’re located on Luppio. Move around to change the plant’s characteristics.";
 let speech;
 let enterButton;
 let loadingPage;
@@ -110,11 +110,46 @@ function preload() {
 }
 
 function setup() {
-  var cursor = document.getElementById("cursor");
-  document.body.addEventListener("mousemove", function (e) {
-    (cursor.style.left = e.clientX + "px"),
-      (cursor.style.top = e.clientY + "px");
+  // CURSOR FUNCTIONS
+  var cursor = $(".cursor"),
+    follower = $(".text-cursor");
+
+  (mouseX = 0), (mouseY = 0);
+
+  TweenMax.to({}, 0.016, {
+    repeat: -1,
+    onRepeat: function () {
+      TweenMax.set(follower, {
+        css: {
+          left: mouseX,
+          top: mouseY,
+        },
+      });
+
+      TweenMax.set(cursor, {
+        css: {
+          left: mouseX,
+          top: mouseY,
+        },
+      });
+    },
   });
+
+  $(document).on("mousemove", function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+  });
+
+  $(".luppioBigHome").on("mouseenter", function () {
+    cursor.addClass("active");
+    follower.addClass("active");
+  });
+
+  $(".luppioBigHome").on("mouseleave", function () {
+    cursor.removeClass("active");
+    follower.removeClass("active");
+  });
+  // END CURSOR
 
   loadingImage = document.getElementById("loadingImage");
   loadingImage.style.left = "-100%";
@@ -160,12 +195,12 @@ function setup() {
   hiders.child(hider4);
   let hider5 = createElement("p", "\xa0");
   hiders.child(hider5);
-  let hider6 = createElement("p", "\xa0");
-  hiders.child(hider6);
-  let hider7 = createElement("p", "\xa0");
-  hiders.child(hider7);
-  let hider8 = createElement("p", "\xa0");
-  hiders.child(hider8);
+  // let hider6 = createElement("p", "\xa0");
+  // hiders.child(hider6);
+  // let hider7 = createElement("p", "\xa0");
+  // hiders.child(hider7);
+  // let hider8 = createElement("p", "\xa0");
+  // hiders.child(hider8);
 
   setTimeout(voice, 100);
 

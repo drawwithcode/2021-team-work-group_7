@@ -29,11 +29,13 @@ body:hover {
 
 #enterButton {
   position: fixed;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
   opacity: 100%;
   left: 50%;
-  bottom: 37%;
+  bottom: 36%;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 100px;
   background-color: rgb(81, 38, 194);
   transform: translate(-50%, -50%);
@@ -215,31 +217,18 @@ body:hover {
   background: #02f886;
 }
 
-/* .cursor {
-  position: fixed;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  pointer-events: none;
-  left: -100px;
-  top: 50%;
-  background-color: #ff1bb6;
-  opacity: 0.7;
-  z-index: 10000;
-  border: 2px solid #ff1bb6;
-  height: 30px;
-  width: 30px;
-} */
-
+/* CURSOR */
 .cursor {
-  position: absolute;
+  position: fixed;
   background: magenta;
   width: 25px;
   height: 25px;
   border-radius: 100%;
-  z-index: 4;
+  z-index: 20;
   user-select: none;
   pointer-events: none;
   transform: scale(0.8);
+  transform: translate(-50%, -50%);
   font-size: 0px;
   opacity: 1;
 }
@@ -248,7 +237,7 @@ body:hover {
   content: "";
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: block;
@@ -269,11 +258,12 @@ body:hover {
 }
 
 .text-cursor {
-  position: absolute;
-  z-index: 5;
+  position: fixed;
+  z-index: 21;
 
   user-select: none;
   pointer-events: none;
+  transform: translate(0, 25%);
 
   opacity: 0;
   font-family: "trispace";

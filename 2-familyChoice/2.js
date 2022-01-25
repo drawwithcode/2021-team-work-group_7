@@ -45,7 +45,7 @@ let family2;
 let family3;
 
 let text =
-  "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
+  "Now it's time to choose a family of plants. Each one provides an element, select the one you feel most connected to.";
 let speech;
 let enterButton;
 let loadingPage;
@@ -63,11 +63,56 @@ function preload() {
 }
 
 function setup() {
-  var cursor = document.getElementById("cursor");
-  document.body.addEventListener("mousemove", function (e) {
-    (cursor.style.left = e.clientX + "px"),
-      (cursor.style.top = e.clientY + "px");
+  // CURSOR FUNCTIONS
+  var cursor = $(".cursor"),
+    follower = $(".text-cursor");
+
+  (mouseX = 0), (mouseY = 0);
+
+  TweenMax.to({}, 0.016, {
+    repeat: -1,
+    onRepeat: function () {
+      TweenMax.set(follower, {
+        css: {
+          left: mouseX,
+          top: mouseY,
+        },
+      });
+
+      TweenMax.set(cursor, {
+        css: {
+          left: mouseX,
+          top: mouseY,
+        },
+      });
+    },
   });
+
+  $(document).on("mousemove", function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+  });
+
+  $(".luppioBigHome").on("mouseenter", function () {
+    cursor.addClass("active");
+    follower.addClass("active");
+  });
+
+  $(".luppioBigHome").on("mouseleave", function () {
+    cursor.removeClass("active");
+    follower.removeClass("active");
+  });
+  // END CURSOR
+
+  noCanvas();
+
+  loadingImage = document.getElementById("loadingImage");
+  loadingImage.style.left = "-100%";
+  loadingImage.style.transition = "1.5s";
+
+  let background = createElement("div");
+  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  speech = new p5.Speech();
 
   title = createElement("h1", "CHOOSE YOUR FAMILY");
   title.id("title");
@@ -93,21 +138,6 @@ function setup() {
   family3.mouseOver(selectTriximos);
   family3.mouseOut(normalSpeed);
   family3.mousePressed(openFamily1);
-
-  loadingImage = document.getElementById("loadingImage");
-  loadingImage.style.left = "-100%";
-  loadingImage.style.transition = "1.5s";
-
-  let background = createElement("div");
-  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
-  speech = new p5.Speech();
-
-  // loadingPage = createElement("div");
-  // loadingPage.id("loadingPage");
-  // enterButton = createElement("button");
-  // enterButton.id("enterButton");
-  // enterButton.mouseClicked(openPage);
-  // loadingPage.child(enterButton);
 
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");

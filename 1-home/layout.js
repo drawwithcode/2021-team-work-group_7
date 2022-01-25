@@ -15,12 +15,7 @@ let gardenButton;
 function setup() {
   loadingImage = document.getElementById("loadingImage");
 
-  // var cursor = document.getElementById("cursor");
-  // document.body.addEventListener("mousemove", function (e) {
-  //   (cursor.style.left = e.clientX + "px"),
-  //     (cursor.style.top = e.clientY + "px");
-  // });
-
+  // CURSOR FUNCTIONS
   var cursor = $(".cursor"),
     follower = $(".text-cursor");
 
@@ -59,6 +54,7 @@ function setup() {
     cursor.removeClass("active");
     follower.removeClass("active");
   });
+  // END CURSOR
 
   noCanvas();
 

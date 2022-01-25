@@ -8,7 +8,7 @@ console.log(urlArrive);
 console.log(parameter);
 
 let text =
-  "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
+  "Now use your voice and your gestures to alter and personalyze the components of your beautiful alien plant.";
 let speech;
 let enterButton;
 let typingBox;
@@ -189,16 +189,16 @@ function setup() {
   hiders.child(hider3);
   let hider4 = createElement("p", "\xa0");
   hiders.child(hider4);
-  let hider5 = createElement("p", "\xa0");
-  hiders.child(hider5);
-  let hider6 = createElement("p", "\xa0");
-  hiders.child(hider6);
-  let hider7 = createElement("p", "\xa0");
-  hiders.child(hider7);
-  let hider8 = createElement("p", "\xa0");
-  hiders.child(hider8);
-  let hider9 = createElement("p", "\xa0");
-  hiders.child(hider9);
+  // let hider5 = createElement("p", "\xa0");
+  // hiders.child(hider5);
+  // let hider6 = createElement("p", "\xa0");
+  // hiders.child(hider6);
+  // let hider7 = createElement("p", "\xa0");
+  // hiders.child(hider7);
+  // let hider8 = createElement("p", "\xa0");
+  // hiders.child(hider8);
+  // let hider9 = createElement("p", "\xa0");
+  // hiders.child(hider9);
 
   setTimeout(voice, 100);
 
