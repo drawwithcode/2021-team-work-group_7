@@ -60,7 +60,7 @@ let bright;
 let hue;
 
 let cacca;
-let pipi;
+let pipi = 50;
 
 let variabile1;
 let variabile2;
@@ -329,7 +329,7 @@ function draw() {
       cacca = map(bright, 0, 255, 0, 5);
     }
   }
-  console.log(cacca);
+  // console.log(cacca);
   if (family == 1) {
     buildAlbero();
   }
@@ -544,27 +544,26 @@ function buildAlbero() {
 
   hue = hue * 60;
 
-  hue = Math.round(hue);
+  console.log(cacca);
+  pipi = abs(map(hue, 0, 360, 0, 255));
 
-  pipi = map(hue, 0, 360, 0, 255);
-
-  if (max == r) {
+  if (min < 85) {
     variabile1 = alberoRadici1;
   }
-  if (max == g) {
+  if (min > 85 && min < 190) {
     variabile1 = alberoRadici2;
   }
-  if (max == b) {
+  if (min > 190 && min < 255) {
     variabile1 = alberoRadici3;
   }
   if (cacca < 2) {
     variabile2 = alberoFrutto1;
   }
   if (cacca > 2 && cacca < 4) {
-    variabile2 = alberoFrutto1;
+    variabile2 = alberoFrutto2;
   }
   if (cacca > 4 && cacca < 5) {
-    variabile2 = alberoFrutto1;
+    variabile2 = alberoFrutto3;
   }
 
   rotateZ(PI);
