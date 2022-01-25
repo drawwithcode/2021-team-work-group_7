@@ -384,7 +384,7 @@ function draw() {
   if (a == 1) {
     micLevel2 = mic.getLevel();
     micLevel1 = getItem("micLevel1");
-    scale3 = nf(map(micLevel2, 0, 1, 0.7, 4), 1, 2);
+    scale3 = nf(map(micLevel2, 0, 1, 1, 4), 1, 2);
   }
 
   console.log(micLevel1);
@@ -577,7 +577,7 @@ function buildFiore() {
   push();
   translate(0, 1.6, 0);
   scale(0.5);
-  scale(scale3, 1, scale3);
+  scale(scale3, 0, scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
@@ -585,6 +585,7 @@ function buildFiore() {
   //fiorePistillo
   push();
   translate(0, d, 0);
+  scale(1.2);
   scale(iterator2);
   scale(scale1);
   // rotateX(PI / 3);
