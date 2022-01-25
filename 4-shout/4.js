@@ -71,7 +71,7 @@ let scale1;
 let scale2 = 1;
 let micLevel2;
 let b = 0;
-let scale3;
+let scale3 = 1;
 
 function preload() {
   fioreStelo = loadModel("./addons/fioreStelo.obj");
@@ -577,7 +577,7 @@ function buildFiore() {
   push();
   translate(0, 1.6, 0);
   scale(0.5);
-  scale(scale3, 0, scale3);
+  scale(scale3);
   // rotateX(PI / 3);
   model(variabile2);
   pop();
