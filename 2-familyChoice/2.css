@@ -95,12 +95,12 @@ canvas {
   bottom: 50px;
   z-index: 4;
   white-space: nowrap;
-  font-size: 80px;
+  font-size: 50px;
   font-family: "Syne", sans-serif;
   color: #02f886;
   transform: translate(-50%, -50%);
   transform-origin: center;
-  animation: blinker 1s linear infinite;
+  /* animation: blinker 1s linear infinite; */
 }
 @keyframes blinker {
   50% {

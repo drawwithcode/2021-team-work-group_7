@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   cursor: none;
 }
 body:hover {
@@ -29,6 +30,7 @@ body:hover {
 
 #enterButton {
   position: fixed;
+  opacity: 90%;
   font-family: "Trispace", sans-serif;
   font-weight: 300;
   opacity: 100%;

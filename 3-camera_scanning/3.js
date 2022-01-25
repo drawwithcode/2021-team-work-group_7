@@ -10,9 +10,21 @@ let family = parameter;
 let part1;
 let part2;
 let chosenParts;
-
+let textFamily;
+if (family == 1) {
+  textFamily = "Triximos";
+}
+if (family == 2) {
+  textFamily = "Forij";
+}
+if (family == 3) {
+  textFamily = "Suculaas";
+}
 let text =
-  "Reveal yourself: we will detect the HUE and BRIGHTNESS to see where you’re located on Luppio. Move around to change the plant’s characteristics.";
+  "You selected: " +
+  textFamily +
+  "." +
+  " According to COLOR TONE and BRIGHTNESS we will get your location. Move around to change the plant’s characteristics.";
 let speech;
 let enterButton;
 let loadingPage;
@@ -23,6 +35,7 @@ let logo;
 let nextButton;
 let analysingSpace;
 let loadingImage;
+let title;
 
 var self = [0, 0, 0],
   cam,
@@ -202,6 +215,9 @@ function setup() {
   // let hider8 = createElement("p", "\xa0");
   // hiders.child(hider8);
 
+  title = createElement("h1", "REVEAL YOURSELF");
+  title.id("title");
+
   setTimeout(voice, 100);
 
   let north = nf(random(0, 90), 2, 4);
@@ -355,15 +371,15 @@ function buildFiore() {
   if (max == b) {
     variabile1 = fioreFoglia3;
   }
-  if (cacca < 0.5) {
+  if (cacca < 2) {
     variabile2 = fiorePetali1;
     d = 1.7;
   }
-  if (cacca > 0.5 && cacca < 1.5) {
+  if (cacca > 2 && cacca < 3) {
     variabile2 = fiorePetali2;
     d = 1.88;
   }
-  if (cacca > 1.5 && cacca < 5) {
+  if (cacca > 3 && cacca < 5) {
     variabile2 = fiorePetali3;
 
     d = 1.78;
@@ -541,13 +557,13 @@ function buildAlbero() {
   if (max == b) {
     variabile1 = alberoRadici3;
   }
-  if (cacca < 0.5) {
+  if (cacca < 2) {
     variabile2 = alberoFrutto1;
   }
-  if (cacca > 0.5 && cacca < 1.5) {
+  if (cacca > 2 && cacca < 4) {
     variabile2 = alberoFrutto1;
   }
-  if (cacca > 1.5 && cacca < 5) {
+  if (cacca > 4 && cacca < 5) {
     variabile2 = alberoFrutto1;
   }
 
@@ -706,13 +722,13 @@ function buildGrassa() {
   if (max == b) {
     variabile1 = grassaFoglie3;
   }
-  if (cacca < 0.5) {
+  if (cacca < 2) {
     variabile2 = grassaPetali1;
   }
-  if (cacca > 0.5 && cacca < 1.5) {
+  if (cacca > 2 && cacca < 4) {
     variabile2 = grassaPetali2;
   }
-  if (cacca > 1.5 && cacca < 5) {
+  if (cacca > 4 && cacca < 5) {
     variabile2 = grassaPetali3;
   }
 
@@ -758,7 +774,7 @@ function openGarden() {}
 
 function moveSpace() {
   camera.start();
-
+  document.getElementById("title").style.display = "none";
   document.getElementById("enterButton").style.display = "none";
 
   canvas.style.left = "23%";

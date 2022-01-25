@@ -67,3 +67,13 @@ canvas {
   font-family: Trispace;
   z-index: 1;
 }
+
+#planted {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  left: 50%;
+  top: 50%;
+  width: 0%;
+  z-index: 4;
+}

@@ -355,5 +355,6 @@ function closeAbout() {
 function openGarden() {}
 
 function fadingH1() {
-  document.getElementById("title").style.display = "none";
+  document.getElementById("title").style.fontSize = "0px";
+  document.getElementById("title").style.transition = "0.9s";
 }

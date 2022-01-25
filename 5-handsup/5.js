@@ -78,6 +78,7 @@ let myFont4;
 
 let bgcolor = "#02f886";
 let txcolor = "#5126c2";
+let h;
 
 let angolo = 0;
 let increment = 0.02;
@@ -542,12 +543,15 @@ function draw() {
 
   if (family == 1) {
     buildAlbero();
+    h = 3.1;
   }
   if (family == 2) {
+    h = 2.5;
     buildFiore();
   }
   if (family == 3) {
     buildGrassa();
+    h = 2.5;
   }
 
   angolo += increment;
@@ -565,7 +569,7 @@ function draw() {
   sub = sub1 + " " + sub2 + " " + sub3;
   text(sub.toUpperCase(), 0, 0.4);
   imageMode(CENTER);
-  image(loghino, 0, -2.5, 1.8, 1.8);
+  image(loghino, 0, -h, 1.8, 1.8);
   pop();
 }
 function buildFiore() {
@@ -883,6 +887,8 @@ function openGarden() {}
 function changeBackground1() {
   bgcolor = "#ffaa88";
   txcolor = "#02f886";
+  document.getElementById("planted").style.width = "100%";
+  document.getElementById("planted").style.transition = "0.5s";
 }
 function changeBackground2() {
   bgcolor = "#5126c2";
