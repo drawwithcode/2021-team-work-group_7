@@ -31,10 +31,12 @@ function setup() {
 
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
+  aboutButton.class("menuButton");
   aboutButton.mouseClicked(openAbout);
 
   gardenButton = createElement("button", "garden");
   gardenButton.id("gardenButton");
+  gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
 }
 

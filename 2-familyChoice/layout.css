@@ -58,6 +58,8 @@ body {
 
 #aboutButton {
   font-family: "Trispace", sans-serif;
+  text-transform: uppercase;
+  padding: 0px;
   font-weight: 300;
   color: white;
   stroke: none;
@@ -71,9 +73,13 @@ body {
 
 #aboutButton:hover {
   color: rgb(255, 170, 136);
+  cursor: none;
 }
+
 #gardenButton {
   font-family: "Trispace", sans-serif;
+  text-transform: uppercase;
+  padding: 0px;
   font-weight: 300;
   color: white;
   stroke: none;
@@ -87,6 +93,27 @@ body {
 
 #gardenButton:hover {
   color: rgb(255, 170, 136);
+}
+
+.menuButton:hover {
+  color: rgb(255, 170, 136);
+}
+
+.menuButton:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: rgb(255, 170, 136);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.menuButton:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .logoHome {

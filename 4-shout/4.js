@@ -117,10 +117,12 @@ function setup() {
 
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
+  aboutButton.class("menuButton");
   aboutButton.mouseClicked(openAbout);
 
   gardenButton = createElement("button", "garden");
   gardenButton.id("gardenButton");
+  gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
 
   typingBox = createElement("div");
@@ -584,7 +586,7 @@ function buildFiore() {
 
   //fiorePistillo
   push();
-  translate(0, d, 0);
+  translate(0, 1.6 + (d - 1.6) * scale3, 0);
   scale(1.2);
   scale(iterator2);
   scale(scale1);
