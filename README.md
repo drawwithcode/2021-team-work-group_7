@@ -91,6 +91,9 @@ SInce the website requires a few seconds to fully load, there is a screen with a
 
 
 ## Coding challenges
-Archive
+The archive is complete but a few more things could be implemented: 
+a better form of visualization, for example a system for plant positioning in a 3d world that is explorable
+a hover function that shows the name and characteristics of the plants
+
 
 
