@@ -111,7 +111,7 @@ function setup() {
       (cursor.style.top = e.clientY + "px");
   });
   let background = createElement("div");
-  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  background.class("background");
 
   speech = new p5.Speech();
 
@@ -201,14 +201,8 @@ function setup() {
   cam = createEasyCam();
   resetMatrix();
   cam.setState(state, 1000);
-  // cam.setRotationScale(0);
   cam.setZoomScale(0);
-  cam.state_reset = state; // state to use on reset
-  // Set one of these three parameters to 'true' to
-  // constrain yaw, pitch, roll rotation.
-  // (This can still be over-ridden with the 'shift' key)
-
-  // cam.setZoomScale(0);
+  cam.state_reset = state;
   cam.setRotationConstraint(false, false, false);
 }
 
@@ -221,6 +215,7 @@ function voice() {
 }
 
 let distanza = -1;
+
 function draw() {
   pointLight(40, 20, 70, 300, 600, 300);
   pointLight(1, 80, 20, 30, -500, 300);
@@ -232,15 +227,18 @@ function draw() {
 
   rotateZ(PI);
   rotateY(PI / 5 + PI);
+  // Linear disposition of the plants
   translate(0, -70, distanza * 60);
 
   scale(60);
 
+  // Render a plant for each one saved in the Firebase database
   if (piante) {
     for (key in piante) {
       const pnt = piante[key];
       let piante1 = Object.values(piante);
 
+      // Load the parameters
       let parameter = pnt.case;
 
       let scale1 = pnt.scale1;
@@ -395,8 +393,8 @@ function draw() {
         variabile2 = grassaPetali3;
       }
 
-      //costruiscco i modelli con i parametri di scala settati
-
+      // Costruiscco i modelli con i parametri di scala settati,
+      // sempre in dipendenza delle tipologie selezionate
       if (family == 1) {
         model(alberoStelo);
 
@@ -688,6 +686,7 @@ function draw() {
         model(grassaSpine);
         pop();
       }
+
       push();
       rotateZ(PI);
       rotateY(PI / 5 + PI);
@@ -708,6 +707,8 @@ function openGarden() {}
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+// Scroll the plants through the arrows
 function keyPressed() {
   if (keyCode == RIGHT_ARROW) {
     distanza += -5;
@@ -715,6 +716,8 @@ function keyPressed() {
     distanza += 5;
   }
 }
+
+// Scroll the plants through the mousewheel
 function mouseWheel(event) {
   print(event.delta);
   distanza -= event.delta / 50;

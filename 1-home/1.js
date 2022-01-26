@@ -1,4 +1,4 @@
-//inizio animazioni
+//Animations
 const intro = document.querySelector(".intro");
 const video = intro.querySelector("video");
 const title = intro.querySelector(".luppioBigHome");
@@ -9,7 +9,7 @@ const logo = intro.querySelector(".logoHome");
 const button = intro.querySelector("#button-start-exp");
 const scroll = intro.querySelector(".scroll-down");
 
-//END SECTION
+//End section
 const section = document.querySelector("section");
 const end = section.querySelector(".luppioBigHome");
 const end2 = section.querySelector(".text-home-1");
@@ -18,7 +18,7 @@ const end4 = section.querySelector("#button-start-exp");
 const end5 = section.querySelector(".botanical");
 const end6 = section.querySelector(".scroll-down");
 
-//SCROLLMAGIC
+//Scrollmagic
 const controller = new ScrollMagic.Controller();
 
 //Scenes
@@ -31,7 +31,7 @@ let scene = new ScrollMagic.Scene({
   .setPin(intro)
   .addTo(controller);
 
-//Text Animation
+//Text animation
 let textAnim = TweenMax.fromTo(title, 2, { opacity: 1 }, { opacity: 0 });
 
 let scene2 = new ScrollMagic.Scene({
@@ -39,11 +39,10 @@ let scene2 = new ScrollMagic.Scene({
   triggerElement: intro,
   triggerHook: 0,
 })
-  // .addIndicators()
   .setTween(textAnim)
   .addTo(controller);
 
-//Video Animation
+//Video animation
 let accelamount = 0.5;
 let scrollpos = 0.2;
 let delay = 0;
@@ -58,7 +57,7 @@ setInterval(() => {
   video.currentTime = delay;
 }, 80);
 
-//Text2 Animation
+//Text2 animation
 let textAnim2 = TweenMax.fromTo(text2, 3, { opacity: -6 }, { opacity: 1 });
 
 let scene3 = new ScrollMagic.Scene({
@@ -82,7 +81,7 @@ let scene4 = new ScrollMagic.Scene({
   .setTween(logoAnim)
   .addTo(controller);
 
-//button animation
+//Button animation
 let buttonAnim = TweenMax.fromTo(button, 2, { opacity: -50 }, { opacity: 1 });
 
 let scene5 = new ScrollMagic.Scene({
@@ -94,7 +93,7 @@ let scene5 = new ScrollMagic.Scene({
   .setTween(buttonAnim)
   .addTo(controller);
 
-//botanical animation
+//Botanical animation
 let botanicalAnim = TweenMax.fromTo(
   textBotanic,
   2,
@@ -111,7 +110,7 @@ let scene6 = new ScrollMagic.Scene({
   .setTween(botanicalAnim)
   .addTo(controller);
 
-//scroll animation
+// Scroll animation
 let scrollAnim = TweenMax.fromTo(scroll, 8, { opacity: 1 }, { opacity: 0 });
 
 let scene7 = new ScrollMagic.Scene({

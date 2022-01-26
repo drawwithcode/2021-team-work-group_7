@@ -2,6 +2,7 @@ const urlStringOrigin = window.location.origin;
 const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
+// Estrapolate parameters from the url
 let parameter = urlArrive.searchParams.get("case");
 let scale1 = urlArrive.searchParams.get("scale1");
 let scale2 = urlArrive.searchParams.get("scale2");
@@ -87,7 +88,6 @@ let angolo = 0;
 let increment = 0.02;
 
 function preload() {
-  // CURSOR FUNCTIONS
   var cursor = document.getElementById("cursor");
   document.body.addEventListener("mousemove", function (e) {
     (cursor.style.left = e.clientX + "px"),
@@ -143,10 +143,8 @@ function setup() {
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
 
-  //
-
   let background = createElement("div");
-  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  background.class("background");
 
   speech = new p5.Speech();
 
@@ -242,10 +240,7 @@ function setup() {
   cam = createEasyCam();
   resetMatrix();
   cam.setState(state, 1000);
-  cam.state_reset = state; // state to use on reset
-  // Set one of these three parameters to 'true' to
-  // constrain yaw, pitch, roll rotation.
-  // (This can still be over-ridden with the 'shift' key)
+  cam.state_reset = state;
   cam.setZoomScale(0);
   cam.setRotationConstraint(true, false, false);
 
@@ -253,16 +248,9 @@ function setup() {
   button.id("cambia");
   button.mousePressed(changeBackground1);
 
-  // button2 = createButton("ricambia");
-  // button2.mousePressed(changeBackground);
-
   button3 = createButton("PLANT IT");
   button3.id("salva");
   button3.mousePressed(snapshot);
-
-  // button4 = createButton("PLANT IT!");
-  // button4.id("plant");
-  // button4.mousePressed(plantIt);
 
   scrivinome = createInput().attribute("placeholder", "type name here");
   scrivinome.id("scrivinome");
@@ -278,6 +266,7 @@ function voice() {
   speech.speak(text1);
 }
 
+// This function translates the parameter taken from the url into the variables
 function selectCase() {
   if (parameter == 111) {
     family = 1;
@@ -516,6 +505,7 @@ function draw() {
 
   selectCase();
 
+  // Variables are now connected to the functions that build the plant
   if (family == 1) {
     buildAlbero();
   }
@@ -544,6 +534,7 @@ function draw() {
   image(loghino, 0, -1.4, 1.8, 0.744);
   pop();
 }
+
 function buildFiore() {
   push();
   rotateZ(PI);
@@ -861,6 +852,7 @@ function buildGrassa() {
 
 function openGarden() {}
 
+// These functions are concatenated to change the background color
 function changeBackground1() {
   bgcolor = "magenta";
   txcolor = "#5126c2";
@@ -872,8 +864,6 @@ function changeBackground2() {
   button.mousePressed(changeBackground3);
   canvas.style.borderColor = "#02f886";
   loghino = loghino2;
-  // document.getElementById("aboutButton").style.backgroundColor = "#5126c2";
-  // document.getElementById("gardenButton").style.backgroundColor = "#5126c2";
 }
 
 function changeBackground3() {
@@ -883,6 +873,7 @@ function changeBackground3() {
   canvas.style.borderColor = "#5126c2";
   button.mousePressed(changeBackground1);
 }
+
 function changeBackground() {
   if (b == 0) {
     bgcolor = "magenta";
@@ -901,6 +892,7 @@ function changeBackground() {
   }
 }
 
+// Save your plant on your device!
 function snapshot() {
   save(nameTitle + ".jpg");
   document.getElementById("planted").style.width = "100%";
@@ -917,10 +909,13 @@ function openAbout() {
   document.getElementById("about-section").style.left = "0%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
+
 function closeAbout() {
   document.getElementById("about-section").style.left = "100%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
+
+// This function save your selected parameters in the Firebase realtime database
 function salvaParametri() {
   let thisPianta = null;
 
