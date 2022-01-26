@@ -336,6 +336,7 @@ body {
 
 .names-about-container > div > a:hover {
   color: white;
+  font-weight: 500;
 }
 
 .names-about-container > div > a {
@@ -363,4 +364,9 @@ body {
   position: absolute;
   top: 5%;
   left: 95%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.x-button-about:hover {
+  transform: rotate(90deg);
 }
