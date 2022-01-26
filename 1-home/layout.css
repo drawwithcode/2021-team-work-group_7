@@ -196,6 +196,7 @@ body:hover {
 }
 .marqueeFondo {
   position: fixed;
+  font-weight: 400;
   font-size: 16px;
   color: #02f886;
   top: 95%;
