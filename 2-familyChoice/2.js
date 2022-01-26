@@ -74,7 +74,6 @@ function setup() {
   let background = createElement("div");
   background.class("background");
 
-
   speech = new p5.Speech();
 
   // Plant families' names
@@ -423,10 +422,8 @@ function closeAbout() {
   document.getElementById("about-section").style.transition = "0.5s";
 }
 
-<<<<<<< Updated upstream
 function openGarden() {}
-=======
+
 function openGarden() {
   window.open(url + "archive.html", "_self");
 }
->>>>>>> Stashed changes
