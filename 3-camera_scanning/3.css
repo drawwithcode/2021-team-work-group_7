@@ -20,7 +20,7 @@ canvas {
   bottom: 35%;
 
   z-index: 4;
-  font-size: 24px;
+  font-size: 25px;
   font-family: "Trispace", sans-serif;
   font-weight: 400;
   color: white;
@@ -42,11 +42,11 @@ canvas {
 #nextButton {
   position: fixed;
   left: 25%;
-  bottom: 28%;
+  bottom: 35%;
   width: 100px;
 
   z-index: 4;
-  font-size: 24px;
+  font-size: 25px;
   font-family: "Trispace", sans-serif;
   font-weight: 400;
   color: white;
@@ -67,7 +67,7 @@ canvas {
 #analyser {
   position: fixed;
   left: 25%;
-  bottom: 27%;
+  bottom: 35%;
   z-index: 4;
   font-size: 40px;
   width: 20%;
@@ -89,7 +89,7 @@ canvas {
   position: fixed;
   left: 25%;
   width: 20%;
-  bottom: 27%;
+  bottom: 35%;
   text-align: center;
   z-index: 4;
   font-size: 40px;

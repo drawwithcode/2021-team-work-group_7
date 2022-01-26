@@ -843,7 +843,7 @@ function firstInteraction() {
 
   document.getElementById("title").style.top = "15%";
   document.getElementById("title").style.fontSize = "60px";
-  document.getElementById("subtitle").style.fontSize = "10px";
+  document.getElementById("subtitle").style.fontSize = "16px";
   // document.getElementById("title").style.animation =
   //   "blinker 1s linear infinite";
   document.getElementById("title").style.transition = "0.5s";
@@ -919,8 +919,8 @@ function thirdInteraction() {
   subtitle3.id("subtitle3");
   title3.child(subtitle3);
   document.getElementById("title3").style.top = "15%";
-  document.getElementById("title3").style.fontSize = "54px";
-  document.getElementById("subtitle3").style.fontSize = "10px";
+  document.getElementById("title3").style.fontSize = "60px";
+  document.getElementById("subtitle3").style.fontSize = "16px";
   // document.getElementById("title3").style.animation =
   //   "blinker 1s linear infinite";
   document.getElementById("title3").style.transition = "1s";
