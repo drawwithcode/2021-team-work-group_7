@@ -93,6 +93,23 @@ canvas {
   z-index: 4;
 }
 
+.dragMouse {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  font-size: 16px;
+  color: #02f886;
+  text-align: center;
+  top: 47%;
+  padding: 0px;
+  margin: 0px;
+  right: -5.5%;
+  transform-origin: center;
+  font-family: "Trispace", sans-serif;
+  z-index: 25;
+}
+
 /* #plant {
   position: fixed;
   right: 2.5%;

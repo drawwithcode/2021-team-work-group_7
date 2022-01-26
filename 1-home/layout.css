@@ -267,7 +267,7 @@ body:hover {
   overflow: hidden;
   font-family: "Trispace", sans-serif;
   padding: 0;
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(81, 38, 194);
   stroke: none;
   background: none;
@@ -308,7 +308,7 @@ body:hover {
 .names-about-container > div {
   width: 100px;
   line-height: 40px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: trispace;
   text-transform: uppercase;
   transform-origin: center;
@@ -321,7 +321,7 @@ body:hover {
 }
 
 .names-about-container > div > a:hover {
-  color: white;
+  color: magenta;
   font-weight: 400;
 }
 
