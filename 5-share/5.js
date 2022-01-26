@@ -356,7 +356,7 @@ function selectCase() {
     variabile1 = fioreFoglia1;
     variabile2 = fiorePetali1;
     d = 1.7;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "blomico";
     sub3 = "bonzorulum";
   }
@@ -365,7 +365,7 @@ function selectCase() {
     variabile1 = fioreFoglia1;
     variabile2 = fiorePetali2;
     d = 1.88;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "blomico";
     sub3 = "gledonio";
   }
@@ -374,7 +374,7 @@ function selectCase() {
     variabile1 = fioreFoglia1;
     variabile2 = fiorePetali3;
     d = 1.78;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "blomico";
     sub3 = "dindirolon";
   }
@@ -383,7 +383,7 @@ function selectCase() {
     variabile1 = fioreFoglia2;
     variabile2 = fiorePetali1;
     d = 1.7;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "alavico";
     sub3 = "bonzorulum";
   }
@@ -392,7 +392,7 @@ function selectCase() {
     variabile1 = fioreFoglia2;
     variabile2 = fiorePetali2;
     d = 1.88;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "alavico";
     sub3 = "gledonio";
   }
@@ -401,7 +401,7 @@ function selectCase() {
     variabile1 = fioreFoglia2;
     variabile2 = fiorePetali3;
     d = 1.78;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "alavico";
     sub3 = "dindirolon";
   }
@@ -410,7 +410,7 @@ function selectCase() {
     variabile1 = fioreFoglia3;
     variabile2 = fiorePetali1;
     d = 1.7;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "mascellico";
     sub3 = "bonzorullum";
   }
@@ -419,7 +419,7 @@ function selectCase() {
     variabile1 = fioreFoglia3;
     variabile2 = fiorePetali2;
     d = 1.88;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "mascellico";
     sub3 = "gledonico";
   }
@@ -428,7 +428,7 @@ function selectCase() {
     variabile1 = fioreFoglia3;
     variabile2 = fiorePetali3;
     d = 1.78;
-    sub1 = "florij";
+    sub1 = "frillyu";
     sub2 = "mascellico";
     sub3 = "dindirolon";
   }

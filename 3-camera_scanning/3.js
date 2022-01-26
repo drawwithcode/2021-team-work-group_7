@@ -15,7 +15,7 @@ if (family == 1) {
   textFamily = "Triximos";
 }
 if (family == 2) {
-  textFamily = "Forij";
+  textFamily = "Frillyu";
 }
 if (family == 3) {
   textFamily = "Sukulaas";
