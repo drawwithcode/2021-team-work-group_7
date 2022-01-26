@@ -1,4 +1,4 @@
-![This is an image](./addons/LuppioLoghino.gif)
+ <p align="center"> ![This is an image](./addons/LuppioLoghino.gif) </p>
 
 
 
