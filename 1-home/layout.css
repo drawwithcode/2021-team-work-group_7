@@ -73,7 +73,7 @@ body:hover {
 }
 
 #aboutButton:hover {
-  color: rgb(255, 170, 136);
+  color: magenta;
   cursor: none;
   cursor: none;
 }
@@ -94,8 +94,12 @@ body:hover {
 }
 
 #gardenButton:hover {
+<<<<<<< Updated upstream
   color: rgb(255, 170, 136);
   cursor: none;
+=======
+  color: magenta;
+>>>>>>> Stashed changes
 }
 
 .menuButton:after {
@@ -106,7 +110,7 @@ body:hover {
   height: 1px;
   left: 50%;
   position: absolute;
-  background: rgb(255, 170, 136);
+  background: magenta;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -260,8 +264,11 @@ body:hover {
   height: 100%;
   width: 100%;
   background: #02f886;
+<<<<<<< Updated upstream
 
   z-index: 5;
+=======
+>>>>>>> Stashed changes
   z-index: 999;
 }
 
