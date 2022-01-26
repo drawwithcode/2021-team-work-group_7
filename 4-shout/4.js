@@ -119,6 +119,13 @@ function preload() {
 }
 
 function setup() {
+  // CURSOR FUNCTIONS
+  var cursor = document.getElementById("cursor");
+  document.body.addEventListener("mousemove", function (e) {
+    (cursor.style.left = e.clientX + "px"),
+      (cursor.style.top = e.clientY + "px");
+  });
+
   loadingImage = document.getElementById("loadingImage");
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
@@ -887,8 +894,8 @@ function moveWebcam() {
   document.getElementById("subtitle2").style.fontSize = "16px";
   document.getElementById("title2").style.animation =
     "blinker 1s linear infinite";
-    document.getElementById("title2").style.transition = "0.5s";
-    document.getElementById("subtitle2").style.transition = "0.5s";
+  document.getElementById("title2").style.transition = "0.5s";
+  document.getElementById("subtitle2").style.transition = "0.5s";
 
   document.getElementsByClassName("input_video")[0].style.right = "50%";
   document.getElementsByClassName("input_video")[0].style.transition = "0.5s";

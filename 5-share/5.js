@@ -87,6 +87,13 @@ let angolo = 0;
 let increment = 0.02;
 
 function preload() {
+  // CURSOR FUNCTIONS
+  var cursor = document.getElementById("cursor");
+  document.body.addEventListener("mousemove", function (e) {
+    (cursor.style.left = e.clientX + "px"),
+      (cursor.style.top = e.clientY + "px");
+  });
+
   fioreStelo = loadModel("./addons/fioreStelo.obj");
   fioreFoglia1 = loadModel("./addons/fioreFoglia1.obj");
   fioreFoglia2 = loadModel("./addons/fioreFoglia2.obj");
