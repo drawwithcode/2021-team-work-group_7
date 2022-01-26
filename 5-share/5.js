@@ -348,15 +348,9 @@ function setup() {
   button3.id("salva");
   button3.mousePressed(snapshot);
 
-<<<<<<< Updated upstream
   scrivinome = createInput().attribute("placeholder", "type name here");
-=======
-  // button4 = createButton("PLANT IT!");
-  // button4.id("plant");
-  // button4.mousePressed(plantIt);
 
   scrivinome = createInput().attribute("placeholder", "give it a name");
->>>>>>> Stashed changes
   scrivinome.id("scrivinome");
   nameTitle = scrivinome.value().toUpperCase();
   loghino = loghino1;
@@ -1018,15 +1012,13 @@ function closeAbout() {
   document.getElementById("about-section").style.left = "100%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
-<<<<<<< Updated upstream
 
 // This function save your selected parameters in the Firebase realtime database
-=======
+
 function openGarden() {
   window.open(url + "archive.html", "_self");
 }
 
->>>>>>> Stashed changes
 function salvaParametri() {
   let thisPianta = null;
 
