@@ -550,36 +550,34 @@ function draw() {
 
   if (family == 1) {
     buildAlbero();
-    h = 3.1;
   }
   if (family == 2) {
-    h = 2.5;
     buildFiore();
   }
   if (family == 3) {
     buildGrassa();
-    h = 2.5;
   }
 
   angolo += increment;
   push();
-  rotateZ(PI);
-  rotateY(angolo - 0.02);
+  scale(30);
+
   fill(txcolor);
   textSize(0.2);
   textFont(myFont4);
   textAlign(CENTER);
   nameTitle = scrivinome.value().toUpperCase();
-  text(nameTitle, 0, 0.3);
+  text(nameTitle, 0, 1.5);
   textSize(0.06);
   textFont(myFont4);
   sub = sub1 + " " + sub2 + " " + sub3;
-  text(sub.toUpperCase(), 0, 0.4);
+  text(sub.toUpperCase(), 0, 1.6);
   imageMode(CENTER);
-  image(loghino, 0, -h, 1.8, 0.744);
+  image(loghino, 0, -1.4, 1.8, 0.744);
   pop();
 }
 function buildFiore() {
+  push();
   rotateZ(PI);
   translate(0, -35, 0);
   rotateY(angolo);
@@ -721,11 +719,13 @@ function buildFiore() {
   // rotateX(PI / 3);
   model(fiorePistillo);
   pop();
+  pop();
 }
 
 function buildAlbero() {
+  push();
   rotateZ(PI);
-  translate(0, -35, 0);
+  translate(0, -32, 0);
   rotateY(angolo);
   scale(22);
   specularMaterial(220);
@@ -848,9 +848,11 @@ function buildAlbero() {
   scale(scale2, 1, scale2);
   model(alberoRami);
   pop();
+  pop();
 }
 
 function buildGrassa() {
+  push();
   rotateZ(PI);
   translate(0, -35, 0);
   rotateY(angolo);
@@ -885,6 +887,7 @@ function buildGrassa() {
   scale(scale1);
   // ;
   model(grassaSpine);
+  pop();
   pop();
 }
 
