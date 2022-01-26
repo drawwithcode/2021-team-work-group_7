@@ -630,6 +630,14 @@ function draw() {
   text(sub.toUpperCase(), 0, 1.6);
   imageMode(CENTER);
   image(loghino, 0, -1.4, 1.8, 0.744);
+  
+  translate(0, 1.6)
+  rotateZ(PI/2)
+  textFont(myFont4)
+  textSize(0.06)
+  textAlign(CENTER);
+  fill(txcolor);
+  text("@LUPPIOFLOWERS", -1.5, -0.9)
   pop();
 }
 
