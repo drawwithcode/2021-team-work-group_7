@@ -71,21 +71,13 @@ body {
 }
 
 #gardenButton:hover {
-<<<<<<< Updated upstream
-  color: rgb(255, 170, 136);
+  color: magenta;
   cursor: none;
 }
 
 .menuButton:hover {
-  color: rgb(255, 170, 136);
+  color: magenta;
   cursor: none;
-=======
-  color: magenta;
-}
-
-.menuButton:hover {
-  color: magenta;
->>>>>>> Stashed changes
 }
 
 .menuButton:after {

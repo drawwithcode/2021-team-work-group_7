@@ -94,12 +94,8 @@ body:hover {
 }
 
 #gardenButton:hover {
-<<<<<<< Updated upstream
-  color: rgb(255, 170, 136);
-  cursor: none;
-=======
   color: magenta;
->>>>>>> Stashed changes
+  cursor: none;
 }
 
 .menuButton:after {
@@ -266,10 +262,11 @@ body:hover {
   background: #02f886;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-
-  z-index: 5;
+<<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes
+
+  z-index: 5;
   z-index: 999;
 =======
   z-index: 5;
