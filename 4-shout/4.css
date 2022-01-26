@@ -38,7 +38,8 @@ canvas {
 #enterButton:hover {
   color: rgb(81, 38, 194);
   font-weight: 400;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
   text-decoration: none;
 }
 
@@ -65,7 +66,8 @@ canvas {
 #fixButton1:hover {
   color: rgb(81, 38, 194);
   font-weight: 500;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
   text-decoration: none;
 }
 #fixButton2 {
@@ -91,7 +93,8 @@ canvas {
 #fixButton2:hover {
   color: rgb(81, 38, 194);
   font-weight: 500;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
   text-decoration: none;
 }
 #fixButton3 {
@@ -117,7 +120,8 @@ canvas {
 #fixButton3:hover {
   color: rgb(81, 38, 194);
   font-weight: 500;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
   text-decoration: none;
 }
 #nextButton {
@@ -143,7 +147,8 @@ canvas {
 #nextButton:hover {
   color: rgb(81, 38, 194);
   font-weight: 400;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
 }
 #nextButton2 {
   position: fixed;
@@ -168,7 +173,8 @@ canvas {
 #nextButton2:hover {
   color: rgb(81, 38, 194);
   font-weight: 400;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
 }
 #fixButton2Button {
   position: fixed;
@@ -193,7 +199,8 @@ canvas {
 #fixButton2:hover {
   color: rgb(81, 38, 194);
   font-weight: 400;
-  background-color: white;
+  background-color: magenta;
+  border-color: rgb(81, 38, 194);
 }
 #scan {
   position: fixed;

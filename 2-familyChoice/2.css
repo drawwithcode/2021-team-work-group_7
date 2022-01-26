@@ -41,7 +41,7 @@ body {
 }
 
 .familyButton:hover {
-  color: #ffaa88;
+  color: magenta;
   font-size: 48px;
   cursor: none;
 }

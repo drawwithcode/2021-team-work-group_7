@@ -50,7 +50,7 @@ body:hover {
 
 #enterButton:hover {
   transition: background-color 0.2s;
-  background-color: #02f886;
+  background-color: magenta;
   color: rgb(81, 38, 194);
   border-color: rgb(81, 38, 194);
   font-weight: 400;
@@ -265,11 +265,15 @@ body:hover {
   width: 100%;
   background: #02f886;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
   z-index: 5;
 =======
 >>>>>>> Stashed changes
   z-index: 999;
+=======
+  z-index: 5;
+>>>>>>> Stashed changes
 }
 
 .text-about {

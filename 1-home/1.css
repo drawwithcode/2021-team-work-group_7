@@ -38,6 +38,8 @@ body {
   font-weight: 400;
   font-size: 25px;
   text-transform: uppercase;
+  text-shadow: #02f886;
+  text-shadow: 10px;
 }
 
 .intro p {
@@ -90,7 +92,8 @@ body {
 #button-start-exp:hover {
   color: rgb(81, 38, 194);
   font-weight: 400;
-  background-color: white;
+  border-color: rgb(81, 38, 194);
+  background-color: magenta;
   text-decoration: none;
   cursor: none;
 }
@@ -103,7 +106,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-family: "Trispace", sans-serif;
-  color: magenta;
+  color: #02f886;
   transform: translate(-50%, -50%);
   animation: blinker 2s linear infinite;
   text-transform: uppercase;
