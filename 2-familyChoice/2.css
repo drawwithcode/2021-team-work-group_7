@@ -107,3 +107,16 @@ canvas {
     opacity: 0;
   }
 }
+
+.scroll-down {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  z-index: 4;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "trispace";
+  color: #02f886;
+  transform: translate(-50%, -50%);
+  animation: blinker 2s linear infinite;
+}

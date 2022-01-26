@@ -181,12 +181,13 @@ body {
 }
 .marqueeFondo {
   position: fixed;
-  font-size: 14px;
+  font-size: 16px;
   color: #02f886;
   top: 95%;
   left: 50%;
   transform: translate(-50%, 0);
   transform-origin: center;
+  font-weight: 400;
   font-family: "Trispace", sans-serif;
   width: 100vw;
   max-width: 100%;

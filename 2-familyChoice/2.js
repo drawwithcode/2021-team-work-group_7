@@ -114,9 +114,9 @@ function setup() {
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
   speech = new p5.Speech();
 
-  title = createElement("h1", "CHOOSE YOUR FAMILY");
-  title.id("title");
-  setTimeout(fadingH1, 5000);
+  // title = createElement("h1", "CHOOSE YOUR FAMILY");
+  // title.id("title");
+  // setTimeout(fadingH1, 5000);
 
   family1 = createElement("button", "FLORIJ");
   family1.class("familyButton");
