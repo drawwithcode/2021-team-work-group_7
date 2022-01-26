@@ -153,12 +153,34 @@ function setup() {
 
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -166,7 +188,21 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -174,7 +210,21 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -182,7 +232,21 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -190,7 +254,21 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +

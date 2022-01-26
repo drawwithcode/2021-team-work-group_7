@@ -198,13 +198,6 @@ function setup() {
   let hour = floor(random(0, 36));
   let minute = floor(random(0, 30));
 
-  let nPiante;
-  let piante1;
-
-  piante1 = Object.values(piante);
-  nPiante = piante1.length;
-  console.log(nPiante);
-
   marqueeFondo = createElement(
     "marquee",
     north +
@@ -214,9 +207,7 @@ function setup() {
       temperature +
       "°C  ○  HUMIDITY " +
       humidity +
-      "%  ○    PLANTS PLANTED " +
-      nPiante +
-      " ○  " +
+      "%  ○  " +
       y +
       "." +
       m +
@@ -238,9 +229,7 @@ function setup() {
       temperature +
       "°C  ○  HUMIDITY " +
       humidity +
-      "%  ○  PLANTS PLANTED " +
-      nPiante +
-      " ○  " +
+      "%  ○  " +
       y +
       "." +
       m +
@@ -262,9 +251,7 @@ function setup() {
       temperature +
       "°C  ○  HUMIDITY " +
       humidity +
-      "%  ○  PLANTS PLANTED " +
-      nPiante +
-      "  ○  " +
+      "%  ○  " +
       y +
       "." +
       m +
@@ -286,9 +273,7 @@ function setup() {
       temperature +
       "°C  ○  HUMIDITY " +
       humidity +
-      "%  ○  PLANTS PLANTED " +
-      nPiante +
-      "  ○  " +
+      "%  ○  " +
       y +
       "." +
       m +
@@ -310,9 +295,7 @@ function setup() {
       temperature +
       "°C  ○  HUMIDITY " +
       humidity +
-      "%  ○  PLANTS PLANTED " +
-      nPiante +
-      "  ○  " +
+      "%  ○  " +
       y +
       "." +
       m +
