@@ -1,3 +1,15 @@
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+
+
+
+
+
+
+
+
+
+
 # 2021-team-work-group_7
 2021-team-work-group_7 created by GitHub Classroom
 Luppio is a virtual experience built on p5.js in which the users can create their own alien plant and escape from their daily life.
