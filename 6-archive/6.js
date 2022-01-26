@@ -117,11 +117,13 @@ function setup() {
 
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
+  aboutButton.class("menuButton");
   aboutButton.mouseClicked(openAbout);
 
   gardenButton = createElement("button", "garden");
   gardenButton.id("gardenButton");
-  gardenButton.mouseClicked(openGarden);
+  // gardenButton.class("menuButton");
+  // gardenButton.mouseClicked(openGarden);
 
   typingBox = createElement("div");
   typingBox.class("typingBox");
@@ -702,8 +704,14 @@ function draw() {
   }
 }
 
-function openAbout() {}
-function openGarden() {}
+function openAbout() {
+  document.getElementById("about-section").style.left = "0%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
+function closeAbout() {
+  document.getElementById("about-section").style.left = "100%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
