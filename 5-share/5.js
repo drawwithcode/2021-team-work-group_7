@@ -918,7 +918,7 @@ function changeBackground3() {
 function changeBackground() {
   if (b == 0) {
     bgcolor = "magenta";
-    txcolor = "#5126c2";
+    txcolor = "whyte";
     b = 1;
   }
   if (b == 1) {
