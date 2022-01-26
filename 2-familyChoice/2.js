@@ -32,9 +32,9 @@ let y = 0;
 let z = 0;
 
 // let tX = 0;
-let inkrement1 = 0.02;
-let inkrement2 = 0.02;
-let inkrement3 = 0.02;
+let inkrement1 = 0.01;
+let inkrement2 = 0.01;
+let inkrement3 = 0.01;
 
 // let logo;
 
@@ -260,8 +260,8 @@ function draw() {
   pointLight(1, 80, 20, 30, -500, 300);
   pointLight(60, 5, 80, -300, -600, -300);
 
-  translate(0, 10, 0);
-  scale(10);
+  translate(0, 0, 0);
+  scale(8);
 
   rotateZ(PI);
 
@@ -269,25 +269,25 @@ function draw() {
   specularMaterial(220);
   translate(x, y, z);
   scale(size1);
-  scale(mScale3, mScale2, mScale3);
+  scale(1, 1, 1);
   rotateY(angle1 * 0.8);
   model(flower);
   pop();
 
   push();
   specularMaterial(220);
-  translate(x - 6, y - 1.8, z);
+  translate(x - 7, y - 1.8, z);
   scale(size2);
-  scale(mScale3, mScale2, mScale3);
+  scale(1, 1, 1);
   rotateY(-angle2 * 1);
   model(succulent);
   pop();
 
   push();
   specularMaterial(220);
-  translate(x + 6, y - 2, z);
+  translate(x + 7, y - 2, z);
   scale(size3);
-  scale(mScale3, mScale2, mScale3);
+  scale(1, 1, 1);
   rotateY(-angle3 * 1.3);
   model(tree);
   pop();
@@ -298,24 +298,24 @@ function draw() {
 }
 
 function selectFlorij() {
-  inkrement1 = inkrement1 * 4;
-  size1 = 1.4;
+  inkrement1 = inkrement1 * 3;
+  size1 = 1.2;
 }
 
 function selectSukulaas() {
-  inkrement2 = inkrement2 * 4;
-  size2 = 2.4;
+  inkrement2 = inkrement2 * 3;
+  size2 = 2.2;
 }
 
 function selectTriximos() {
-  inkrement3 = inkrement3 * 4;
-  size3 = 2;
+  inkrement3 = inkrement3 * 3;
+  size3 = 1.8;
 }
 
 function normalSpeed() {
-  inkrement1 = 0.02;
-  inkrement2 = 0.02;
-  inkrement3 = 0.02;
+  inkrement1 = 0.01;
+  inkrement2 = 0.01;
+  inkrement3 = 0.01;
   size1 = 1.1;
   size2 = 2.1;
   size3 = 1.7;
