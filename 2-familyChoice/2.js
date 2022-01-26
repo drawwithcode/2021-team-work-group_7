@@ -145,6 +145,7 @@ function setup() {
   setTimeout(voice, 100);
 
   // Moving Footer
+
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
   let temperature = nf(random(-21, 56), 2, 1);

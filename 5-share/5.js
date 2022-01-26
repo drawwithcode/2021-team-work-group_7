@@ -188,7 +188,6 @@ function setup() {
 
   setTimeout(voice, 100);
 
-  l;
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
   let temperature = nf(random(-21, 56), 2, 1);
@@ -630,14 +629,14 @@ function draw() {
   text(sub.toUpperCase(), 0, 1.6);
   imageMode(CENTER);
   image(loghino, 0, -1.4, 1.8, 0.744);
-  
-  translate(0, 1.6)
-  rotateZ(PI/2)
-  textFont(myFont4)
-  textSize(0.06)
+
+  translate(0, 1.6);
+  rotateZ(PI / 2);
+  textFont(myFont4);
+  textSize(0.06);
   textAlign(CENTER);
   fill(txcolor);
-  text("@LUPPIOFLOWERS", -1.5, -0.9)
+  text("@LUPPIOFLOWERS", -1.5, -0.9);
   pop();
 }
 
