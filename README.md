@@ -3,7 +3,6 @@
 Luppio is a virtual experience built on p5.js in which the users can create their own alien plant and escape from their daily life.
 The app is playable at [baby]
 
-## The app is playable at:
 Luppio was developed as a part of the Creative Coding course at Politecnico di Milano.
 Faculty: Michele Mauri, Tommaso Elli, Andrea Benedetti
 Team: Giovanni Bonassi, Giuseppe Defilippis, Maria Martinuz, Yuri Piemontese, Antonio Sacchet
