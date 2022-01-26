@@ -124,7 +124,7 @@ body {
 .container {
   position: relative;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 15px;
 }
 
@@ -332,13 +332,13 @@ body {
 
   text-align: center;
   line-height: 1.1;
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(81, 38, 194);
 }
 
 .names-about-container > div > a:hover {
   color: white;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .names-about-container > div > a {
