@@ -4,6 +4,7 @@ body {
   padding: 0;
 
   box-sizing: border-box;
+  cursor: none;
 }
 
 canvas {
@@ -36,6 +37,7 @@ canvas {
 #cambia:hover {
   background-color: magenta;
   color: rgb(81, 38, 194);
+  cursor: none;
 }
 
 #salva {
@@ -56,6 +58,7 @@ canvas {
 
 #salva:hover {
   background-color: magenta;
+  cursor: none;
 }
 
 #scrivinome {
@@ -77,6 +80,7 @@ canvas {
 
 #scrivinome:hover {
   border-color: magenta;
+  cursor: none;
 }
 
 #planted {

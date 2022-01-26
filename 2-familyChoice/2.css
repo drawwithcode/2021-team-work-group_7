@@ -43,6 +43,7 @@ body {
 .familyButton:hover {
   color: #ffaa88;
   font-size: 48px;
+  cursor: none;
 }
 
 .property1 {

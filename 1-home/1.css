@@ -92,6 +92,7 @@ body {
   font-weight: 400;
   background-color: white;
   text-decoration: none;
+  cursor: none;
 }
 
 .scroll-down {

@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* cursor: none; */
+  cursor: none;
 }
 
 .bakgroundPage {
@@ -275,6 +275,7 @@ body {
 
 .text-about a:hover {
   color: white;
+  cursor: none;
 }
 
 .names-about-container {
@@ -305,6 +306,7 @@ body {
 .names-about-container > div > a:hover {
   color: white;
   font-weight: 500;
+  cursor: none;
 }
 
 .names-about-container > div > a {
@@ -337,4 +339,5 @@ body {
 
 .x-button-about:hover {
   transform: rotate(90deg);
+  cursor: none;
 }

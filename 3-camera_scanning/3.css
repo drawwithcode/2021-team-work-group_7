@@ -38,6 +38,7 @@ canvas {
   color: rgb(81, 38, 194);
   background-color: white;
   text-decoration: none;
+  cursor: none;
 }
 #nextButton {
   position: fixed;
@@ -63,6 +64,7 @@ canvas {
 #nextButton:hover {
   color: rgb(81, 38, 194);
   background-color: white;
+  cursor: none;
 }
 #analyser {
   position: fixed;

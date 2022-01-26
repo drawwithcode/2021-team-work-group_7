@@ -52,6 +52,7 @@ body {
 #aboutButton:hover {
   color: rgb(255, 170, 136);
   cursor: none;
+  cursor: none;
 }
 
 #gardenButton {
@@ -71,10 +72,12 @@ body {
 
 #gardenButton:hover {
   color: rgb(255, 170, 136);
+  cursor: none;
 }
 
 .menuButton:hover {
   color: rgb(255, 170, 136);
+  cursor: none;
 }
 
 .menuButton:after {
@@ -92,6 +95,7 @@ body {
 .menuButton:hover:after {
   width: 100%;
   left: 0;
+  cursor: none;
 }
 
 .logoHome {
@@ -211,6 +215,7 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+  cursor: none;
 }
 
 /* CURSOR */
@@ -264,6 +269,7 @@ body {
 
 .text-about a:hover {
   color: white;
+  cursor: none;
 }
 
 .names-about-container {
@@ -294,6 +300,7 @@ body {
 .names-about-container > div > a:hover {
   color: white;
   font-weight: 400;
+  cursor: none;
 }
 
 .names-about-container > div > a {
@@ -326,4 +333,5 @@ body {
 
 .x-button-about:hover {
   transform: rotate(90deg);
+  cursor: none;
 }
