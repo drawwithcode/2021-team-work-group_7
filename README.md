@@ -1,5 +1,8 @@
- <p align="center"> ![This is an image](./addons/LuppioLoghino.gif) </p>
 
+
+<p align="center">
+  <img width="460" height="300" src="./addons/LuppioLoghino.gif">
+</p>
 
 
 
