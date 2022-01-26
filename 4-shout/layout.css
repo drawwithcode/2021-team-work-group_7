@@ -290,6 +290,10 @@ body {
   cursor: none;
 }
 
+.text-about a {
+  color: rgb(81, 38, 194);
+}
+
 .names-about-container {
   display: flex;
   flex-wrap: nowrap;
@@ -324,6 +328,7 @@ body {
 .names-about-container > div > a {
   text-decoration: none;
   font-weight: 400;
+  color: rgb(81, 38, 194);
 }
 
 .image-about-container {

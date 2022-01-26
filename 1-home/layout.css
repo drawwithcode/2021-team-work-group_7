@@ -286,6 +286,10 @@ body:hover {
   color: rgb(81, 38, 194);
 }
 
+.text-about a {
+  color: rgb(81, 38, 194);
+}
+
 .text-about a:hover {
   color: white;
   cursor: none;
@@ -326,6 +330,7 @@ body:hover {
 .names-about-container > div > a {
   text-decoration: none;
   font-weight: 400;
+  color: rgb(81, 38, 194);
 }
 
 .image-about-container {
