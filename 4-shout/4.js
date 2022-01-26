@@ -474,7 +474,7 @@ function draw() {
   }
   if (family == 2) {
     buildFiore();
-    familyText = "Florij";
+    familyText = "Frillyu";
     partText1 = "pistil";
     partText2 = "leaves";
     partText3 = "flower";

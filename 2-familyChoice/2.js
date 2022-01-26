@@ -85,7 +85,7 @@ function setup() {
   // title.id("title");
   // setTimeout(fadingH1, 5000);
 
-  family1 = createElement("button", "FLORIJ");
+  family1 = createElement("button", "FRILLYU");
   family1.class("familyButton");
   family1.style("left", "50%");
   family1.mouseOver(selectFlorij);
