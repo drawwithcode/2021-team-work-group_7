@@ -301,7 +301,11 @@ body:hover {
   height: 100%;
   width: 100%;
   background: #02f886;
+<<<<<<< Updated upstream
   z-index: 5;
+=======
+  z-index: 999;
+>>>>>>> Stashed changes
 }
 
 .text-about {

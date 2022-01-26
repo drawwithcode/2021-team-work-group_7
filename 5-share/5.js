@@ -288,13 +288,13 @@ function setup() {
   // button2 = createButton("ricambia");
   // button2.mousePressed(changeBackground);
 
-  button3 = createButton("take a picture");
+  button3 = createButton("PLANT IT");
   button3.id("salva");
   button3.mousePressed(snapshot);
 
-  button4 = createButton("PLANT IT!");
-  button4.id("plant");
-  button4.mousePressed(plantIt);
+  // button4 = createButton("PLANT IT!");
+  // button4.id("plant");
+  // button4.mousePressed(plantIt);
 
   scrivinome = createInput("type name here");
   scrivinome.id("scrivinome");
@@ -935,13 +935,14 @@ function changeBackground() {
 
 function snapshot() {
   save(nameTitle + ".jpg");
-}
-
-function plantIt() {
   document.getElementById("planted").style.width = "100%";
   document.getElementById("planted").style.transition = "0.5s";
   setTimeout(goNext, 5000);
 }
+
+// function plantIt() {
+//   // save(nameTitle + ".jpg");
+// }
 
 function goNext() {
   window.open(urlOrigin + "6-archive.html", "_self");
