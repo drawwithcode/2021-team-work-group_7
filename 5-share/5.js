@@ -891,7 +891,6 @@ function buildGrassa() {
   pop();
 }
 
-function openAbout() {}
 function openGarden() {}
 
 function changeBackground1() {
@@ -946,4 +945,13 @@ function plantIt() {
 
 function goNext() {
   window.open(urlOrigin + "6-archive.html", "_self");
+}
+
+function openAbout() {
+  document.getElementById("about-section").style.left = "0%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
+function closeAbout() {
+  document.getElementById("about-section").style.left = "100%";
+  document.getElementById("about-section").style.transition = "0.5s";
 }

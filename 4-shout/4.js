@@ -833,7 +833,7 @@ function buildGrassa() {
   model(grassaSpine);
   pop();
 }
-function openAbout() {}
+
 function openGarden() {}
 
 function firstInteraction() {
@@ -956,4 +956,13 @@ function nextPage() {
       scale3,
     "_self"
   );
+}
+
+function openAbout() {
+  document.getElementById("about-section").style.left = "0%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
+function closeAbout() {
+  document.getElementById("about-section").style.left = "100%";
+  document.getElementById("about-section").style.transition = "0.5s";
 }

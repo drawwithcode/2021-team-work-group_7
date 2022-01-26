@@ -768,7 +768,7 @@ function buildGrassa() {
   model(grassaSpine);
   pop();
 }
-function openAbout() {}
+
 function openGarden() {}
 
 function moveSpace() {
@@ -849,4 +849,13 @@ function goNext() {
 }
 function nextPage() {
   window.open(urlOrigin + "4-shout.html?case=" + chosenParts, "_self");
+}
+
+function openAbout() {
+  document.getElementById("about-section").style.left = "0%";
+  document.getElementById("about-section").style.transition = "0.5s";
+}
+function closeAbout() {
+  document.getElementById("about-section").style.left = "100%";
+  document.getElementById("about-section").style.transition = "0.5s";
 }
