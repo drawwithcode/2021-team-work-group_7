@@ -143,46 +143,7 @@ function setup() {
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
 
-  // CURSOR FUNCTIONS
-  var cursor = $(".cursor"),
-    follower = $(".text-cursor");
-
-  (mouseX = 0), (mouseY = 0);
-
-  TweenMax.to({}, 0.016, {
-    repeat: -1,
-    onRepeat: function () {
-      TweenMax.set(follower, {
-        css: {
-          left: mouseX,
-          top: mouseY,
-        },
-      });
-
-      TweenMax.set(cursor, {
-        css: {
-          left: mouseX,
-          top: mouseY,
-        },
-      });
-    },
-  });
-
-  $(document).on("mousemove", function (e) {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
-  });
-
-  $(".luppioBigHome").on("mouseenter", function () {
-    cursor.addClass("active");
-    follower.addClass("active");
-  });
-
-  $(".luppioBigHome").on("mouseleave", function () {
-    cursor.removeClass("active");
-    follower.removeClass("active");
-  });
-  // END CURSOR
+  // 
 
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE

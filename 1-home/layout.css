@@ -225,7 +225,7 @@ body:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(255, 170, 136);
+  background: magenta;
 }
 
 /* Handle on hover */
@@ -260,17 +260,7 @@ body:hover {
   height: 100%;
   width: 100%;
   background: #02f886;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-
-  z-index: 5;
   z-index: 999;
-=======
-  z-index: 5;
->>>>>>> Stashed changes
 }
 
 .text-about {

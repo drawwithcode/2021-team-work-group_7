@@ -64,13 +64,9 @@ canvas {
 }
 #nextButton:hover {
   color: rgb(81, 38, 194);
-<<<<<<< Updated upstream
-  background-color: white;
-  cursor: none;
-=======
   background-color: magenta;
-  border-color: rgb(81, 38, 194);
->>>>>>> Stashed changes
+  cursor: none;
+  border-color: rgb(81, 38, 194) ;
 }
 #analyser {
   position: fixed;

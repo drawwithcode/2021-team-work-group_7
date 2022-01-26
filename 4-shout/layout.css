@@ -215,25 +215,23 @@ body {
   z-index: 3;
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgb(81, 38, 194);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: magenta;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
-  cursor: none;
+  background: #02f886;
 }
 
 /* CURSOR */
