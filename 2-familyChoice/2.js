@@ -74,12 +74,11 @@ function setup() {
   let background = createElement("div");
   background.class("background");
 
-<<<<<<< Updated upstream
+
   speech = new p5.Speech();
 
   // Plant families' names
-=======
->>>>>>> Stashed changes
+
   family1 = createElement("button", "FRILLYU");
   family1.class("familyButton");
   family1.style("left", "50%");
