@@ -187,12 +187,43 @@ function setup() {
   // Moving Footer
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
+  let nPiante;
+  let piante1;
+
+  piante1 = Object.values(piante);
+  nPiante = piante1.length;
+  console.log(nPiante);
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○    PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -200,7 +231,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -208,7 +255,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -216,7 +279,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -224,7 +303,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -810,7 +905,10 @@ function goNext() {
 }
 
 function nextPage() {
-  window.open(urlOrigin + "4-shout.html?case=" + chosenParts, "_self");
+  window.open(urlOrigin + "personalize.html?case=" + chosenParts, "_self");
+}
+function openGarden() {
+  window.open(url + "archive.html", "_self");
 }
 
 function openAbout() {

@@ -10,7 +10,6 @@ let enterButton;
 let loadingPage;
 let typingBox;
 let aboutButton;
-let gardenButton;
 let logo;
 let nextButton;
 let analysingSpace;
@@ -119,10 +118,6 @@ function setup() {
   aboutButton.id("aboutButton");
   aboutButton.mouseClicked(openAbout);
 
-  gardenButton = createElement("button", "garden");
-  gardenButton.id("gardenButton");
-  gardenButton.mouseClicked(openGarden);
-
   typingBox = createElement("div");
   typingBox.class("typingBox");
   let container = createElement("div");
@@ -151,12 +146,43 @@ function setup() {
 
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
+  let nPiante;
+  let piante1;
+
+  piante1 = Object.values(piante);
+  nPiante = piante1.length;
+  console.log(nPiante);
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○    PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -164,7 +190,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -172,7 +214,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -180,7 +238,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -188,7 +262,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -201,6 +291,10 @@ function setup() {
   cam = createEasyCam();
   resetMatrix();
   cam.setState(state, 1000);
+<<<<<<< Updated upstream
+=======
+  cam.setRotationScale(0);
+>>>>>>> Stashed changes
   cam.setZoomScale(0);
   cam.state_reset = state;
   cam.setRotationConstraint(false, false, false);
@@ -236,7 +330,6 @@ function draw() {
   if (piante) {
     for (key in piante) {
       const pnt = piante[key];
-      let piante1 = Object.values(piante);
 
       // Load the parameters
       let parameter = pnt.case;
@@ -702,7 +795,6 @@ function draw() {
 }
 
 function openAbout() {}
-function openGarden() {}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

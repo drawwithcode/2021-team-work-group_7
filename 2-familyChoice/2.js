@@ -74,9 +74,12 @@ function setup() {
   let background = createElement("div");
   background.class("background");
 
+<<<<<<< Updated upstream
   speech = new p5.Speech();
 
   // Plant families' names
+=======
+>>>>>>> Stashed changes
   family1 = createElement("button", "FRILLYU");
   family1.class("familyButton");
   family1.style("left", "50%");
@@ -146,12 +149,43 @@ function setup() {
   // Moving Footer
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
+  let nPiante;
+  let piante1;
+
+  piante1 = Object.values(piante);
+  nPiante = piante1.length;
+  console.log(nPiante);
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○    PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -159,7 +193,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -167,7 +217,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -175,7 +241,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -183,14 +265,29 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
       "  ° W"
   );
   marqueeFondo.class("marqueeFondo");
-
   createCanvas(windowWidth, windowHeight, WEBGL);
 
   // Camera
@@ -293,17 +390,17 @@ function normalSpeed() {
 // Next page
 function openFamily1() {
   chosenFamily = 1;
-  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
+  window.open(url + "scan.html?family=" + chosenFamily, "_self");
 }
 
 function openFamily2() {
   chosenFamily = 2;
-  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
+  window.open(url + "scan.html?family=" + chosenFamily, "_self");
 }
 
 function openFamily3() {
   chosenFamily = 3;
-  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
+  window.open(url + "scan.html?family=" + chosenFamily, "_self");
 }
 
 // Mickey Mouse voice
@@ -327,4 +424,10 @@ function closeAbout() {
   document.getElementById("about-section").style.transition = "0.5s";
 }
 
+<<<<<<< Updated upstream
 function openGarden() {}
+=======
+function openGarden() {
+  window.open(url + "archive.html", "_self");
+}
+>>>>>>> Stashed changes
