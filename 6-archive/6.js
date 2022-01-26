@@ -699,15 +699,7 @@ function draw() {
       textAlign(CENTER);
       nameTitle = title;
       text(nameTitle, 0, 0.8);
-
-      textFont(myFont4)
-      textSize(0.4)
-      textAlign(CENTER);
-      fill("magenta");
-      text("@LUPPIOFLOWERS", 0, 0.8)
       pop();
-
-
     }
   }
 }
