@@ -330,8 +330,6 @@ function setup() {
   button3.id("salva");
   button3.mousePressed(snapshot);
 
-  scrivinome = createInput().attribute("placeholder", "type name here");
-
   scrivinome = createInput().attribute("placeholder", "give it a name");
   scrivinome.id("scrivinome");
   nameTitle = scrivinome.value().toUpperCase();
