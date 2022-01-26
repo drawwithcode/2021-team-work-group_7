@@ -162,7 +162,7 @@ function setup() {
   }
 
   titleText = "SHOUT";
-  subtitleText = "to modify " + partText1;
+  // subtitleText = "to modify " + partText1;
   title1 = createElement("h1", titleText);
   title1.id("title");
 
@@ -841,11 +841,11 @@ function firstInteraction() {
   a = 0;
   document.getElementById("enterButton").style.display = "none";
 
-  document.getElementById("title").style.top = "20%";
-  document.getElementById("title").style.fontSize = "40px";
+  document.getElementById("title").style.top = "15%";
+  document.getElementById("title").style.fontSize = "60px";
   document.getElementById("subtitle").style.fontSize = "10px";
-  document.getElementById("title").style.animation =
-    "blinker 1s linear infinite";
+  // document.getElementById("title").style.animation =
+  //   "blinker 1s linear infinite";
   document.getElementById("title").style.transition = "0.5s";
   document.getElementById("subtitle").style.transition = "0.5s";
 
@@ -868,7 +868,7 @@ function fixScale1() {
 function secondInteraction() {
   camera.start();
   titleText = "MOVE YOUR HAND";
-  subtitleText = "to modify " + partText2;
+  // subtitleText = "to modify " + partText2;
   title2 = createElement("h1", titleText);
   title2.id("title2");
   subtitle2 = createElement("p", subtitleText);
@@ -912,17 +912,17 @@ function thirdInteraction() {
   document.getElementById("nextButton2").style.display = "none";
   document.getElementById("scan2").style.display = "none";
   titleText = "BLOW";
-  subtitleText = "to modify " + partText3;
+  // subtitleText = "to modify " + partText3;
   title3 = createElement("h1", titleText);
   title3.id("title3");
   subtitle3 = createElement("p", subtitleText);
   subtitle3.id("subtitle3");
   title3.child(subtitle3);
-  document.getElementById("title3").style.top = "20%";
-  document.getElementById("title3").style.fontSize = "40px";
+  document.getElementById("title3").style.top = "15%";
+  document.getElementById("title3").style.fontSize = "54px";
   document.getElementById("subtitle3").style.fontSize = "10px";
-  document.getElementById("title3").style.animation =
-    "blinker 1s linear infinite";
+  // document.getElementById("title3").style.animation =
+  //   "blinker 1s linear infinite";
   document.getElementById("title3").style.transition = "1s";
   document.getElementById("subtitle3").style.transition = "1s";
 

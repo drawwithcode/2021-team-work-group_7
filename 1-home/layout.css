@@ -32,7 +32,7 @@ body:hover {
   position: fixed;
   opacity: 90%;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   opacity: 100%;
   left: 50%;
   bottom: 36%;
@@ -48,11 +48,19 @@ body:hover {
   z-index: 5;
 }
 
+#enterButton:hover {
+  transition: background-color 0.2s;
+  background-color: #02f886;
+  color: rgb(81, 38, 194);
+  border-color: rgb(81, 38, 194);
+  font-weight: 400;
+}
+
 #aboutButton {
   font-family: "Trispace", sans-serif;
   text-transform: uppercase;
   padding: 0px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   stroke: none;
   background: none;
@@ -72,7 +80,7 @@ body:hover {
   font-family: "Trispace", sans-serif;
   text-transform: uppercase;
   padding: 0px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   stroke: none;
   background: none;
@@ -188,7 +196,7 @@ body:hover {
 }
 .marqueeFondo {
   position: fixed;
-  font-size: 14px;
+  font-size: 16px;
   color: #02f886;
   top: 95%;
   left: 50%;

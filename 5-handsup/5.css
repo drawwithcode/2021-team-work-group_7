@@ -41,10 +41,10 @@ canvas {
 #salva {
   position: fixed;
   left: 2.5%;
-  top: 90%;
+  top: 280px;
   padding: 4px 12px;
   font-family: Trispace;
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 30px;
   text-transform: uppercase;
   background-color: #02f886;
@@ -87,10 +87,10 @@ canvas {
   top: 90%;
   padding: 4px 12px;
   font-family: Trispace;
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 30px;
   text-transform: uppercase;
-  background-color: #02f886;
+  background-color: rgb(255, 170, 136);
   border: none;
   transform: translate(0%, -50%);
   color: rgb(81, 38, 194);

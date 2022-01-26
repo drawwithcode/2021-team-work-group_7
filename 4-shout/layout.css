@@ -49,7 +49,7 @@ body {
   font-family: "Trispace", sans-serif;
   text-transform: uppercase;
   padding: 0px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   stroke: none;
   background: none;
@@ -69,7 +69,7 @@ body {
   font-family: "Trispace", sans-serif;
   text-transform: uppercase;
   padding: 0px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   stroke: none;
   background: none;
@@ -198,7 +198,7 @@ body {
 }
 .marqueeFondo {
   position: fixed;
-  font-size: 14px;
+  font-size: 16px;
   color: #02f886;
   top: 95%;
   left: 50%;

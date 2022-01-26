@@ -35,7 +35,7 @@ body {
   z-index: 1;
   color: azure;
   font-family: trispace;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
 }
 
@@ -46,10 +46,10 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
   font-family: trispace;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 25px;
   color: white;
-  width: 600px;
+  width: 40%;
   text-align: center;
 }
 
@@ -68,21 +68,22 @@ body {
   position: absolute;
   font-size: 18px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  padding: 5px 10px;
+  padding: 4px 8px;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-style: none;
-  border: 1px solid currentColor;
+  border: 1.5px solid currentColor;
   border-color: white;
-  border-radius: 30px;
+  border-radius: 80px;
   margin: 4px 2px;
   background-color: rgb(81, 38, 194);
   text-decoration: none;
   transition: background-color 0.3s;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #button-start-exp:hover {
@@ -95,14 +96,15 @@ body {
 .scroll-down {
   position: fixed;
   left: 50%;
-  bottom: 8%;
+  bottom: 10%;
   z-index: 4;
-  font-size: 20px;
-  font-weight: 300;
-  font-family: "trispace";
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Trispace", sans-serif;
   color: #02f886;
   transform: translate(-50%, -50%);
   animation: blinker 2s linear infinite;
+  text-transform: uppercase;
 }
 
 @keyframes blinker {

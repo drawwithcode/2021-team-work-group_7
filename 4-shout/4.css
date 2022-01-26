@@ -23,7 +23,7 @@ canvas {
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   padding: 5px 10px;
 
@@ -50,7 +50,7 @@ canvas {
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   /* padding: 5px 10px; */
 
@@ -76,7 +76,7 @@ canvas {
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   /* padding: 5px 10px; */
 
@@ -102,7 +102,7 @@ canvas {
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   /* padding: 5px 10px; */
 
@@ -123,15 +123,15 @@ canvas {
 #nextButton {
   position: fixed;
   left: 50%;
-  bottom: 29%;
+  bottom: 30%;
   /* width: 100px; */
 
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-
+  padding: 5px 10px;
   transform: translate(-50%, -50%);
   border-style: none;
   border: 1px solid currentColor;
@@ -148,15 +148,15 @@ canvas {
 #nextButton2 {
   position: fixed;
   left: 50%;
-  bottom: 29%;
+  bottom: 30%;
   /* width: 100px; */
 
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-
+  padding: 5px 10px;
   transform: translate(-50%, -50%);
   border-style: none;
   border: 1px solid currentColor;
@@ -173,15 +173,15 @@ canvas {
 #fixButton2Button {
   position: fixed;
   left: 50%;
-  bottom: 29%;
+  bottom: 30%;
   /* width: 100px; */
 
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-
+  padding: 5px 10px;
   transform: translate(-50%, -50%);
   border-style: none;
   border: 1px solid currentColor;
@@ -200,7 +200,7 @@ canvas {
 
   margin: 0px;
   left: 50%;
-  top: 57%;
+  top: 55%;
   z-index: 4;
   font-size: 110px;
   font-family: "Syne", sans-serif;
@@ -213,7 +213,7 @@ canvas {
 
   margin: 0px;
   left: 50%;
-  top: 57%;
+  top: 55%;
   z-index: 4;
   font-size: 110px;
   font-family: "Syne", sans-serif;
@@ -226,7 +226,7 @@ canvas {
 
   margin: 0px;
   left: 50%;
-  top: 57%;
+  top: 55%;
   z-index: 4;
   font-size: 110px;
   font-family: "Syne", sans-serif;
@@ -258,10 +258,10 @@ canvas {
   position: fixed;
   margin: 0px;
   left: 50%;
-  top: 45%;
+  top: 53%;
   z-index: 4;
   white-space: nowrap;
-  font-size: 150px;
+  font-size: 110px;
   font-family: "Syne", sans-serif;
   color: #02f886;
   transform: translate(-50%, -50%);
@@ -286,15 +286,15 @@ canvas {
   position: fixed;
   margin: 0px;
   left: 50%;
-  top: 20%;
+  top: 15%;
   z-index: 4;
   white-space: nowrap;
-  font-size: 40px;
+  font-size: 60px;
   font-family: "Syne", sans-serif;
   color: #02f886;
   transform: translate(-50%, -50%);
   transform-origin: center;
-  animation: blinker 1s linear infinite;
+  /* animation: blinker 1s linear infinite; */
 }
 #subtitle2 {
   position: absolute;
@@ -338,4 +338,21 @@ canvas {
   color: white;
   transform: translate(-50%, -50%);
   transform-origin: center;
+}
+
+.dragMouse {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  font-size: 16px;
+  color: #02f886;
+  text-align: center;
+  top: 47%;
+  padding: 0px;
+  margin: 0px;
+  right: -5.5%;
+  transform-origin: center;
+  font-family: "Trispace", sans-serif;
+  z-index: 10;
 }

@@ -35,7 +35,7 @@ let logo;
 let nextButton;
 let analysingSpace;
 let loadingImage;
-let title;
+// let title;
 
 var self = [0, 0, 0],
   cam,
@@ -215,8 +215,8 @@ function setup() {
   // let hider8 = createElement("p", "\xa0");
   // hiders.child(hider8);
 
-  title = createElement("h1", "REVEAL YOURSELF");
-  title.id("title");
+  // title = createElement("h1", "REVEAL YOURSELF");
+  // title.id("title");
 
   setTimeout(voice, 100);
 
@@ -773,7 +773,7 @@ function openGarden() {}
 
 function moveSpace() {
   camera.start();
-  document.getElementById("title").style.display = "none";
+  // document.getElementById("title").style.display = "none";
   document.getElementById("enterButton").style.display = "none";
 
   canvas.style.left = "23%";

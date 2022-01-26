@@ -17,18 +17,18 @@ canvas {
 #enterButton {
   position: fixed;
   left: 50%;
-  bottom: 30%;
+  bottom: 35%;
 
   z-index: 4;
-  font-size: 40px;
+  font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   padding: 5px 10px;
 
   transform: translate(-50%, -50%);
   border-style: none;
-  border: 1px solid currentColor;
+  border: 1.5px solid currentColor;
   border-color: white;
   border-radius: 30px;
   margin: 4px 2px;
@@ -36,45 +36,49 @@ canvas {
 }
 #enterButton:hover {
   color: rgb(81, 38, 194);
-  font-weight: 400;
   background-color: white;
   text-decoration: none;
 }
 #nextButton {
   position: fixed;
-  left: 2.5%;
-  bottom: 29%;
+  left: 25%;
+  bottom: 28%;
   width: 100px;
 
   z-index: 4;
   font-size: 24px;
   font-family: "Trispace", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-
-  transform: translate(0%, -50%);
+  padding: 2px 4px;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
   border-style: none;
-  border: 1px solid currentColor;
+  border: 1.5px solid currentColor;
   border-color: white;
   border-radius: 30px;
-  margin: 4px 2px;
+  /* margin: 4px 2px; */
   background-color: rgb(81, 38, 194);
 }
 #nextButton:hover {
   color: rgb(81, 38, 194);
-  font-weight: 400;
   background-color: white;
 }
 #analyser {
   position: fixed;
-  left: 2.5%;
-  bottom: 30%;
+  left: 25%;
+  bottom: 27%;
   z-index: 4;
   font-size: 40px;
+  width: 20%;
+  text-align: center;
   font-family: "Syne", sans-serif;
   color: #02f886;
-  transform: translate(0%, -50%);
+  transform: translate(-50%, -50%);
   animation: blinker 1s linear infinite;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  line-height: 1;
 }
 @keyframes blinker {
   50% {
@@ -83,13 +87,16 @@ canvas {
 }
 #scan {
   position: fixed;
-  left: 2.5%;
-  bottom: 30%;
+  left: 25%;
+  width: 20%;
+  bottom: 27%;
+  text-align: center;
   z-index: 4;
   font-size: 40px;
   font-family: "Syne", sans-serif;
   color: #02f886;
-  transform: translate(0%, -50%);
+  transform: translate(-50%, -50%);
+  line-height: 1;
 }
 
 #title {
@@ -105,4 +112,21 @@ canvas {
   transform: translate(-50%, 50%);
   transform-origin: center;
   /* animation: blinker 1s linear infinite; */
+}
+
+.dragMouse {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  font-size: 16px;
+  color: #02f886;
+  text-align: center;
+  top: 47%;
+  padding: 0px;
+  margin: 0px;
+  right: -5.5%;
+  transform-origin: center;
+  font-family: "Trispace", sans-serif;
+  z-index: 10;
 }
