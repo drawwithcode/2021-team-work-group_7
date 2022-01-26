@@ -2,10 +2,11 @@ const urlStringOrigin = window.location.origin;
 const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
+
+// Estrapolate plant family from the url
 let parameter = urlArrive.searchParams.get("family");
+
 let family = parameter;
-// console.log(urlArrive);
-// console.log(parameter);
 
 let part1;
 let part2;
@@ -35,7 +36,6 @@ let logo;
 let nextButton;
 let analysingSpace;
 let loadingImage;
-// let title;
 
 var self = [0, 0, 0],
   cam,
@@ -44,6 +44,7 @@ var self = [0, 0, 0],
     center: [0, 0, 0],
     rotation: [1, 0, 0, 0],
   };
+
 let video;
 let iterator1 = 0;
 let iterator2 = 0;
@@ -123,37 +124,42 @@ function preload() {
 }
 
 function setup() {
-  // CURSOR FUNCTIONS
+  // Cursor functions
   var cursor = document.getElementById("cursor");
   document.body.addEventListener("mousemove", function (e) {
     (cursor.style.left = e.clientX + "px"),
       (cursor.style.top = e.clientY + "px");
   });
-  // END CURSOR
 
+  // Loading
   loadingImage = document.getElementById("loadingImage");
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
 
   let background = createElement("div");
-  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  background.class("background");
 
+  // Speech
   speech = new p5.Speech();
 
+  // Webcam detection
   enterButton = createElement("button", "START WEBCAM");
   enterButton.id("enterButton");
   enterButton.mouseClicked(moveSpace);
 
+  // Go to about
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
   aboutButton.class("menuButton");
   aboutButton.mouseClicked(openAbout);
 
+  // Go to about
   gardenButton = createElement("button", "garden");
   gardenButton.id("gardenButton");
   gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
 
+  // Text and hiders to create typing effect
   typingBox = createElement("div");
   typingBox.class("typingBox");
   let container = createElement("div");
@@ -175,26 +181,49 @@ function setup() {
   hiders.child(hider4);
   let hider5 = createElement("p", "\xa0");
   hiders.child(hider5);
-  // let hider6 = createElement("p", "\xa0");
-  // hiders.child(hider6);
-  // let hider7 = createElement("p", "\xa0");
-  // hiders.child(hider7);
-  // let hider8 = createElement("p", "\xa0");
-  // hiders.child(hider8);
-
-  // title = createElement("h1", "REVEAL YOURSELF");
-  // title.id("title");
 
   setTimeout(voice, 100);
 
+  // Moving Footer
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
+  let nPiante;
+  let piante1;
+
+  piante1 = Object.values(piante);
+  nPiante = piante1.length;
+  console.log(nPiante);
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○    PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -202,7 +231,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -210,7 +255,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -218,7 +279,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -226,7 +303,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -238,12 +331,14 @@ function setup() {
 
   pixelDensity(1);
 
+  // Camera
   setAttributes("antialias", true);
   document.oncontextmenu = () => false;
   cam = createEasyCam();
   resetMatrix();
   cam.setState(state, 1000);
   cam.state_reset = state; // state to use on reset
+
   // Set one of these three parameters to 'true' to
   // constrain yaw, pitch, roll rotation.
   // (This can still be over-ridden with the 'shift' key)
@@ -253,6 +348,7 @@ function setup() {
   video = logo;
 }
 
+// Voice
 function voice() {
   speech.listVoices();
   speech.setVoice("Fred");
@@ -264,12 +360,14 @@ function voice() {
 function draw() {
   background(81, 38, 194);
 
+  // Lights
   pointLight(40, 20, 70, 300, 600, 300);
   pointLight(1, 80, 20, 30, -500, 300);
   pointLight(60, 5, 80, -300, -600, -300);
 
   iterator1 += a1;
   iterator2 += a2;
+
   if (iterator1 > 1) {
     a1 = 0;
   }
@@ -279,6 +377,8 @@ function draw() {
   if (iterator2 > 1) {
     a2 = 0;
   }
+
+  // Webcam video analyzing
   noStroke();
   video.loadPixels();
   for (let y = 0; y < video.height; y++) {
@@ -291,12 +391,11 @@ function draw() {
 
       bright = (r + g + b) / 3;
 
-      // let averageB = 0;
-      // averageB += bright;
       cacca = map(bright, 0, 255, 0, 5);
     }
   }
-  // console.log(cacca);
+
+  // Connect families' numbers
   if (family == 1) {
     buildAlbero();
   }
@@ -720,15 +819,17 @@ function buildGrassa() {
 
 function openGarden() {}
 
+// Activate webcam and consequently resize layout
 function moveSpace() {
   camera.start();
-  // document.getElementById("title").style.display = "none";
   document.getElementById("enterButton").style.display = "none";
 
   canvas.style.left = "23%";
   canvas.style.transition = "0.5s";
   setTimeout(moveWebcam, 2000);
 }
+
+// Things that happen when we analyze camera
 function moveWebcam() {
   document.getElementsByClassName("input_video")[0].style.right = "50%";
   document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
@@ -740,10 +841,13 @@ function moveWebcam() {
   analyzingSpace.id("analyser");
   setTimeout(goNext, 10000);
 }
+
+// Things to go to the next page and save family icon
 function goNext() {
   video = video.get();
   document.getElementById("analyser").style.display = "none";
 
+  // Sophisticated system to.... (next comment)
   if (
     variabile1 == fioreFoglia1 ||
     variabile1 == alberoRadici1 ||
@@ -786,8 +890,12 @@ function goNext() {
   ) {
     part2 = 3;
   }
+
+  // ...translate variables in a compact parameter
+  // which will be translated again in the variables in the next pages
   chosenParts = family + "" + part1 + "" + part2;
 
+  // Go to next page
   scanCompleted = createElement("h1", "SCAN COMPLETED");
   scanCompleted.id("scan");
   nextButton = createElement("button", "NEXT");
@@ -795,8 +903,12 @@ function goNext() {
   nextButton.mouseClicked(nextPage);
   console.log(chosenParts);
 }
+
 function nextPage() {
-  window.open(urlOrigin + "4-shout.html?case=" + chosenParts, "_self");
+  window.open(urlOrigin + "personalize.html?case=" + chosenParts, "_self");
+}
+function openGarden() {
+  window.open(url + "archive.html", "_self");
 }
 
 function openAbout() {

@@ -119,7 +119,6 @@ function preload() {
 }
 
 function setup() {
-  // CURSOR FUNCTIONS
   var cursor = document.getElementById("cursor");
   document.body.addEventListener("mousemove", function (e) {
     (cursor.style.left = e.clientX + "px"),
@@ -131,9 +130,10 @@ function setup() {
   loadingImage.style.transition = "1.5s";
 
   let background = createElement("div");
-  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  background.class("background");
   speech = new p5.Speech();
 
+  // Button to start mic
   enterButton = createElement("button", "START MIC");
   enterButton.id("enterButton");
   enterButton.mouseClicked(firstInteraction);
@@ -169,7 +169,7 @@ function setup() {
   }
 
   titleText = "SHOUT";
-  // subtitleText = "to modify " + partText1;
+
   title1 = createElement("h1", titleText);
   title1.id("title");
 
@@ -196,27 +196,48 @@ function setup() {
   hiders.child(hider3);
   let hider4 = createElement("p", "\xa0");
   hiders.child(hider4);
-  // let hider5 = createElement("p", "\xa0");
-  // hiders.child(hider5);
-  // let hider6 = createElement("p", "\xa0");
-  // hiders.child(hider6);
-  // let hider7 = createElement("p", "\xa0");
-  // hiders.child(hider7);
-  // let hider8 = createElement("p", "\xa0");
-  // hiders.child(hider8);
-  // let hider9 = createElement("p", "\xa0");
-  // hiders.child(hider9);
 
   setTimeout(voice, 100);
 
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
+  let nPiante;
+  let piante1;
+
+  piante1 = Object.values(piante);
+  nPiante = piante1.length;
+  console.log(nPiante);
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○    PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -224,7 +245,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -232,7 +269,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -240,7 +293,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -248,7 +317,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -264,10 +349,7 @@ function setup() {
   cam = createEasyCam();
   resetMatrix();
   cam.setState(state, 1000);
-  cam.state_reset = state; // state to use on reset
-  // Set one of these three parameters to 'true' to
-  // constrain yaw, pitch, roll rotation.
-  // (This can still be over-ridden with the 'shift' key)
+  cam.state_reset = state;
   cam.setZoomScale(0);
   cam.setRotationConstraint(true, false, false);
 
@@ -282,6 +364,7 @@ function voice() {
   speech.setPitch(2);
   speech.speak(text);
 }
+
 function selectCase() {
   if (parameter == 111) {
     family = 1;
@@ -433,6 +516,7 @@ function selectCase() {
 }
 
 function draw() {
+  // Mic analyzing
   if (a == 0) {
     micLevel1 = mic.getLevel();
     scale3 = 1;
@@ -444,8 +528,6 @@ function draw() {
     scale3 = nf(map(micLevel2, 0, 1, 1, 4), 1, 2);
   }
 
-  // console.log(micLevel1);
-  // console.log(a);
   background(81, 38, 194);
 
   pointLight(40, 20, 70, 300, 600, 300);
@@ -487,6 +569,7 @@ function draw() {
     partText3 = "flower";
   }
 
+  // Detect fingers position
   if (detections != undefined) {
     if (detections.multiHandLandmarks != undefined) {
       drawHands();
@@ -843,6 +926,7 @@ function buildGrassa() {
 
 function openGarden() {}
 
+// Following functions make layout move during interactions
 function firstInteraction() {
   mic.start();
   a = 0;
@@ -860,6 +944,7 @@ function firstInteraction() {
   fixButton1.id("fixButton1");
   fixButton1.mouseClicked(fixScale1);
 }
+
 function fixScale1() {
   storeItem("micLevel1", micLevel1);
   mic.stop();
@@ -888,6 +973,7 @@ function secondInteraction() {
   canvas.style.transition = "0.5s";
   setTimeout(moveWebcam, 1000);
 }
+
 function moveWebcam() {
   document.getElementById("title2").style.top = "87%";
   document.getElementById("title2").style.fontSize = "60px";
@@ -904,6 +990,7 @@ function moveWebcam() {
   fixButton2.id("fixButton2");
   fixButton2.mouseClicked(fixScale2);
 }
+
 function fixScale2() {
   camera.stop();
   document.getElementById("fixButton2").style.display = "none";
@@ -960,7 +1047,7 @@ function fixScale3() {
 function nextPage() {
   window.open(
     urlOrigin +
-      "5-share.html?case=" +
+      "share.html?case=" +
       parameter +
       "&scale1=" +
       scale1 +
@@ -976,7 +1063,11 @@ function openAbout() {
   document.getElementById("about-section").style.left = "0%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
+
 function closeAbout() {
   document.getElementById("about-section").style.left = "100%";
   document.getElementById("about-section").style.transition = "0.5s";
+}
+function openGarden() {
+  window.open(url + "archive.html", "_self");
 }

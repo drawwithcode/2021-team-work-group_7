@@ -31,14 +31,9 @@ let x = 0;
 let y = 0;
 let z = 0;
 
-// let tX = 0;
 let inkrement1 = 0.01;
 let inkrement2 = 0.01;
 let inkrement3 = 0.01;
-
-// let logo;
-
-// let marqueeFondo;
 
 let family1;
 let family2;
@@ -59,31 +54,30 @@ function preload() {
   tree = loadModel("./2-familyChoice/addons/albero.obj");
   flower = loadModel("./2-familyChoice/addons/Fiore1.obj");
   succulent = loadModel("./2-familyChoice/addons/Grassa.obj");
-  // logo = loadImage("./addons/luppio.png");
 }
 
 function setup() {
-  // CURSOR FUNCTIONS
+  // Cursor functions
   var cursor = document.getElementById("cursor");
   document.body.addEventListener("mousemove", function (e) {
     (cursor.style.left = e.clientX + "px"),
       (cursor.style.top = e.clientY + "px");
   });
-  // END CURSOR
 
   noCanvas();
 
+  // Loading
   loadingImage = document.getElementById("loadingImage");
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
 
   let background = createElement("div");
-  background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
+  background.class("background");
+
+
   speech = new p5.Speech();
 
-  // title = createElement("h1", "CHOOSE YOUR FAMILY");
-  // title.id("title");
-  // setTimeout(fadingH1, 5000);
+  // Plant families' names
 
   family1 = createElement("button", "FRILLYU");
   family1.class("familyButton");
@@ -106,16 +100,19 @@ function setup() {
   family3.mouseOut(normalSpeed);
   family3.mousePressed(openFamily1);
 
+  // Go to about
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
   aboutButton.class("menuButton");
   aboutButton.mouseClicked(openAbout);
 
+  // Go to garden
   gardenButton = createElement("button", "garden");
   gardenButton.id("gardenButton");
   gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
 
+  // Text and hiders to create typing effect
   typingBox = createElement("div");
   typingBox.class("typingBox");
   let container = createElement("div");
@@ -148,14 +145,46 @@ function setup() {
 
   setTimeout(voice, 100);
 
+  // Moving Footer
   let north = nf(random(0, 90), 2, 4);
   let west = nf(random(0, 90), 2, 4);
+  let temperature = nf(random(-21, 56), 2, 1);
+  let humidity = nf(random(10, 98), 2, 1);
+  let y = year() + 30;
+  let m = month();
+  let d = day();
+  let hour = floor(random(0, 36));
+  let minute = floor(random(0, 30));
+
+  let nPiante;
+  let piante1;
+
+  piante1 = Object.values(piante);
+  nPiante = piante1.length;
+  console.log(nPiante);
+
   marqueeFondo = createElement(
     "marquee",
     north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○    PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -163,7 +192,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      " ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -171,7 +216,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -179,7 +240,23 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
@@ -187,16 +264,32 @@ function setup() {
       north +
       "° N  ○  " +
       west +
-      "  ° W  ○  AVERAGE TEMPERATURE 123F  ○  HUMIDITY 34JK  ○  OXYGEN 13AA ○  PLANTS PLANTED 23617 ○  31.12.21 ○  35:68  ○  " +
+      "  ° W  ○  TEMPERATURE " +
+      temperature +
+      "°C  ○  HUMIDITY " +
+      humidity +
+      "%  ○  PLANTS PLANTED " +
+      nPiante +
+      "  ○  " +
+      y +
+      "." +
+      m +
+      "." +
+      d +
+      "  ○  " +
+      hour +
+      ":" +
+      minute +
+      "  ○  " +
       north +
       "  ° N  ○  " +
       west +
       "  ° W"
   );
   marqueeFondo.class("marqueeFondo");
-
   createCanvas(windowWidth, windowHeight, WEBGL);
 
+  // Camera
   setAttributes("antialias", true);
   document.oncontextmenu = () => false;
   cam = createEasyCam();
@@ -212,6 +305,7 @@ function setup() {
 }
 
 function draw() {
+  // Variables to make model grow animation
   iterator += 0.01;
   scaling1 = noise(iterator + 400);
   scaling2 = noise(iterator + 30);
@@ -223,6 +317,7 @@ function draw() {
 
   noStroke();
 
+  // Lights
   pointLight(40, 20, 70, 300, 600, 300);
   pointLight(1, 80, 20, 30, -500, 300);
   pointLight(60, 5, 80, -300, -600, -300);
@@ -232,6 +327,7 @@ function draw() {
 
   rotateZ(PI);
 
+  // Models
   push();
   specularMaterial(220);
   translate(x, y, z);
@@ -264,6 +360,7 @@ function draw() {
   angle3 += inkrement3;
 }
 
+// Three functions to select plant type
 function selectFlorij() {
   inkrement1 = inkrement1 * 3;
   size1 = 1.2;
@@ -279,6 +376,7 @@ function selectTriximos() {
   size3 = 1.8;
 }
 
+// Incremet plant rotation when mouse is over them
 function normalSpeed() {
   inkrement1 = 0.01;
   inkrement2 = 0.01;
@@ -288,21 +386,23 @@ function normalSpeed() {
   size3 = 1.7;
 }
 
+// Next page
 function openFamily1() {
   chosenFamily = 1;
-  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
+  window.open(url + "scan.html?family=" + chosenFamily, "_self");
 }
 
 function openFamily2() {
   chosenFamily = 2;
-  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
+  window.open(url + "scan.html?family=" + chosenFamily, "_self");
 }
 
 function openFamily3() {
   chosenFamily = 3;
-  window.open(url + "3-camera_scanning.html?family=" + chosenFamily, "_self");
+  window.open(url + "scan.html?family=" + chosenFamily, "_self");
 }
 
+// Mickey Mouse voice
 function voice() {
   speech.listVoices();
   speech.setVoice("Fred");
@@ -311,18 +411,22 @@ function voice() {
   speech.speak(text);
 }
 
+// Open the About popup
 function openAbout() {
   document.getElementById("about-section").style.left = "0%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
+
+// Close the About popup
 function closeAbout() {
   document.getElementById("about-section").style.left = "100%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
 
+<<<<<<< Updated upstream
 function openGarden() {}
-
-function fadingH1() {
-  document.getElementById("title").style.fontSize = "0px";
-  document.getElementById("title").style.transition = "0.9s";
+=======
+function openGarden() {
+  window.open(url + "archive.html", "_self");
 }
+>>>>>>> Stashed changes
