@@ -894,7 +894,7 @@ function buildGrassa() {
 function openGarden() {}
 
 function changeBackground1() {
-  bgcolor = "#ffaa88";
+  bgcolor = "magenta";
   txcolor = "#5126c2";
   button.mousePressed(changeBackground2);
 }
@@ -917,7 +917,7 @@ function changeBackground3() {
 }
 function changeBackground() {
   if (b == 0) {
-    bgcolor = "#ffaa88";
+    bgcolor = "magenta";
     txcolor = "#5126c2";
     b = 1;
   }

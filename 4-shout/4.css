@@ -202,9 +202,10 @@ canvas {
   left: 50%;
   top: 55%;
   z-index: 4;
-  font-size: 60px;
+  font-size: 100px;
+  font-weight: 800;
   font-family: "Syne", sans-serif;
-  color: #02f886;
+  color: magenta;
   transform: translate(-50%, -50%);
   transform-origin: center;
 }
@@ -215,9 +216,10 @@ canvas {
   left: 50%;
   top: 55%;
   z-index: 4;
-  font-size: 60px;
+  font-size: 100px;
+  font-weight: 800;
   font-family: "Syne", sans-serif;
-  color: #02f886;
+  color: magenta;
   transform: translate(-50%, -50%);
   transform-origin: center;
 }
@@ -228,9 +230,10 @@ canvas {
   left: 50%;
   top: 55%;
   z-index: 4;
-  font-size: 60px;
+  font-size: 100px;
+  font-weight: 800;
   font-family: "Syne", sans-serif;
-  color: #02f886;
+  color: magenta;
   transform: translate(-50%, -50%);
   transform-origin: center;
 }
@@ -286,7 +289,7 @@ canvas {
   position: fixed;
   margin: 0px;
   left: 50%;
-  top: 15%;
+  top: 53%;
   z-index: 4;
   white-space: nowrap;
   font-size: 60px;
@@ -323,7 +326,7 @@ canvas {
   color: #02f886;
   transform: translate(-50%, -50%);
   transform-origin: center;
-  animation: blinker 1s linear infinite;
+  /* animation: blinker 1s linear infinite; */
 }
 #subtitle3 {
   position: absolute;

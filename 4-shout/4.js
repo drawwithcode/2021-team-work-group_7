@@ -498,7 +498,7 @@ function drawHands() {
 
 function buildFiore() {
   rotateZ(PI);
-  translate(0, -35, 0);
+  translate(0, -30, 0);
   rotateY((-PI / 5) * 2);
   scale(30);
   specularMaterial(220);
@@ -841,11 +841,11 @@ function firstInteraction() {
   a = 0;
   document.getElementById("enterButton").style.display = "none";
 
-  document.getElementById("title").style.top = "15%";
+  document.getElementById("title").style.top = "87%";
   document.getElementById("title").style.fontSize = "60px";
   document.getElementById("subtitle").style.fontSize = "16px";
-  // document.getElementById("title").style.animation =
-  //   "blinker 1s linear infinite";
+  document.getElementById("title").style.animation =
+    "blinker 1s linear infinite";
   document.getElementById("title").style.transition = "0.5s";
   document.getElementById("subtitle").style.transition = "0.5s";
 
@@ -882,6 +882,14 @@ function secondInteraction() {
   setTimeout(moveWebcam, 1000);
 }
 function moveWebcam() {
+  document.getElementById("title2").style.top = "87%";
+  document.getElementById("title2").style.fontSize = "60px";
+  document.getElementById("subtitle2").style.fontSize = "16px";
+  document.getElementById("title2").style.animation =
+    "blinker 1s linear infinite";
+    document.getElementById("title2").style.transition = "0.5s";
+    document.getElementById("subtitle2").style.transition = "0.5s";
+
   document.getElementsByClassName("input_video")[0].style.right = "50%";
   document.getElementsByClassName("input_video")[0].style.transition = "0.5s";
 
@@ -893,7 +901,6 @@ function fixScale2() {
   camera.stop();
   document.getElementById("fixButton2").style.display = "none";
   document.getElementById("title2").style.display = "none";
-  document.getElementById("title").style.display = "none";
   canvas.style.left = "0%";
   canvas.style.transition = "0.5s";
   document.getElementsByClassName("input_video")[0].style.right = "100%";
@@ -918,11 +925,11 @@ function thirdInteraction() {
   subtitle3 = createElement("p", subtitleText);
   subtitle3.id("subtitle3");
   title3.child(subtitle3);
-  document.getElementById("title3").style.top = "15%";
+  document.getElementById("title3").style.top = "87%";
   document.getElementById("title3").style.fontSize = "60px";
   document.getElementById("subtitle3").style.fontSize = "16px";
-  // document.getElementById("title3").style.animation =
-  //   "blinker 1s linear infinite";
+  document.getElementById("title3").style.animation =
+    "blinker 1s linear infinite";
   document.getElementById("title3").style.transition = "1s";
   document.getElementById("subtitle3").style.transition = "1s";
 
