@@ -75,6 +75,9 @@ let myFont;
 let myFont2;
 let myFont3;
 let myFont4;
+let loghino;
+let loghino1;
+let loghino2;
 
 let bgcolor = "#02f886";
 let txcolor = "#5126c2";
@@ -111,11 +114,12 @@ function preload() {
   grassaFoglie2 = loadModel("./addons/grassaFoglie2.obj");
   grassaFoglie3 = loadModel("./addons/grassaFoglie3.obj");
 
-  myFont = loadFont("./5-handsup/addons/Syne-ExtraBold.ttf");
-  myFont2 = loadFont("./5-handsup/addons/Syne-Bold.ttf");
-  myFont3 = loadFont("./5-handsup/addons/Trispace_Condensed-Bold.ttf");
-  myFont4 = loadFont("./5-handsup/addons/Trispace-Regular.ttf");
-  loghino = loadImage("./5-handsup/addons/loghino.png");
+  myFont = loadFont("./addons/Syne-ExtraBold.ttf");
+  myFont2 = loadFont("./addons/Syne-Bold.ttf");
+  myFont3 = loadFont("./addons/Trispace_Condensed-Bold.ttf");
+  myFont4 = loadFont("./addons/Trispace-Regular.ttf");
+  loghino1 = loadImage("./addons/LogoOvaleViola.png");
+  loghino2 = loadImage("./addons/LogoOvaleVerde.png");
 }
 
 function setup() {
@@ -286,13 +290,14 @@ function setup() {
   button3.id("salva");
   button3.mousePressed(snapshot);
 
-  // button4 = createButton("ASSEGNA")
-  // button4.position(0, 150)
-  // button4.mousePressed(scrivi)
+  button4 = createButton("PLANT IT!");
+  button4.id("plant");
+  button4.mousePressed(plantIt);
 
   scrivinome = createInput("type name here");
   scrivinome.id("scrivinome");
   nameTitle = scrivinome.value().toUpperCase();
+  loghino = loghino1;
 }
 
 function voice() {
@@ -569,7 +574,7 @@ function draw() {
   sub = sub1 + " " + sub2 + " " + sub3;
   text(sub.toUpperCase(), 0, 0.4);
   imageMode(CENTER);
-  image(loghino, 0, -h, 1.8, 1.8);
+  image(loghino, 0, -h, 1.8, 0.744);
   pop();
 }
 function buildFiore() {
@@ -886,18 +891,25 @@ function openGarden() {}
 
 function changeBackground1() {
   bgcolor = "#ffaa88";
-  txcolor = "#02f886";
-  document.getElementById("planted").style.width = "100%";
-  document.getElementById("planted").style.transition = "0.5s";
+  txcolor = "#5126c2";
+  button.mousePressed(changeBackground2);
 }
 function changeBackground2() {
   bgcolor = "#5126c2";
   txcolor = "#02f886";
+  button.mousePressed(changeBackground3);
+  canvas.style.borderColor = "#02f886";
+  loghino = loghino2;
+  // document.getElementById("aboutButton").style.backgroundColor = "#5126c2";
+  // document.getElementById("gardenButton").style.backgroundColor = "#5126c2";
 }
 
 function changeBackground3() {
   bgcolor = "#02f886";
   txcolor = "#5126c2";
+  loghino = loghino1;
+  canvas.style.borderColor = "#5126c2";
+  button.mousePressed(changeBackground1);
 }
 function changeBackground() {
   if (b == 0) {
@@ -921,8 +933,12 @@ function snapshot() {
   save(nameTitle + ".jpg");
 }
 
-// function scrivi(){
-//   nomeDato = scrivinome.value();
-//   scrivinome.value("");
-//   nome = nomeDato;
-// }
+function plantIt() {
+  document.getElementById("planted").style.width = "100%";
+  document.getElementById("planted").style.transition = "0.5s";
+  setTimeout(goNext, 5000);
+}
+
+function goNext() {
+  window.open(urlOrigin + "6-archive.html", "_self");
+}
