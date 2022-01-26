@@ -218,9 +218,7 @@ function setup() {
       temperature +
       "°C  ○  HUMIDITY " +
       humidity +
-      "%  ○    PLANTS PLANTED " +
-      nPiante +
-      " ○  " +
+      "%  ○  " +
       y +
       "." +
       m +
