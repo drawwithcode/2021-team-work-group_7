@@ -143,7 +143,7 @@ function setup() {
   loadingImage.style.left = "-100%";
   loadingImage.style.transition = "1.5s";
 
-  // 
+  //
 
   let background = createElement("div");
   background.class("background"); // SPOSTARE IN HTML E METTERE IN TUTTE LE PAGINE
@@ -264,7 +264,7 @@ function setup() {
   // button4.id("plant");
   // button4.mousePressed(plantIt);
 
-  scrivinome = createInput("type name here");
+  scrivinome = createInput().attribute("placeholder", "type name here");
   scrivinome.id("scrivinome");
   nameTitle = scrivinome.value().toUpperCase();
   loghino = loghino1;
@@ -905,12 +905,9 @@ function snapshot() {
   save(nameTitle + ".jpg");
   document.getElementById("planted").style.width = "100%";
   document.getElementById("planted").style.transition = "0.5s";
+  salvaParametri();
   setTimeout(goNext, 5000);
 }
-
-// function plantIt() {
-//   // save(nameTitle + ".jpg");
-// }
 
 function goNext() {
   window.open(urlOrigin + "6-archive.html", "_self");
@@ -923,4 +920,19 @@ function openAbout() {
 function closeAbout() {
   document.getElementById("about-section").style.left = "100%";
   document.getElementById("about-section").style.transition = "0.5s";
+}
+function salvaParametri() {
+  let thisPianta = null;
+
+  thisPianta = {
+    case: parameter,
+    scale1: scale1,
+    scale2: scale2,
+    scale3: scale3,
+    title: nameTitle,
+  };
+  addPianta(thisPianta);
+  thisPianta = null;
+  // prevent default
+  return false;
 }

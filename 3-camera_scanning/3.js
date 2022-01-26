@@ -18,7 +18,7 @@ if (family == 2) {
   textFamily = "Forij";
 }
 if (family == 3) {
-  textFamily = "Suculaas";
+  textFamily = "Sukulaas";
 }
 let text =
   "You selected: " +
@@ -323,32 +323,25 @@ function buildFiore() {
     hue = 4 + (r - g) / (max - min);
   }
 
-  hue = hue * 60;
-
-  hue = Math.round(hue);
-
-  pipi = map(hue, 0, 360, 0, 255);
-
-  if (max == r) {
+  if (min < 50) {
     variabile1 = fioreFoglia1;
   }
-  if (max == g) {
+  if (min > 50 && min < 100) {
     variabile1 = fioreFoglia2;
   }
-  if (max == b) {
+  if (min > 100 && min < 160) {
     variabile1 = fioreFoglia3;
   }
   if (cacca < 2) {
     variabile2 = fiorePetali1;
     d = 1.7;
   }
-  if (cacca > 2 && cacca < 3) {
+  if (cacca > 2 && cacca < 4) {
     variabile2 = fiorePetali2;
     d = 1.88;
   }
-  if (cacca > 3 && cacca < 5) {
+  if (cacca > 4 && cacca < 5) {
     variabile2 = fiorePetali3;
-
     d = 1.78;
   }
   rotateZ(PI);
@@ -509,18 +502,13 @@ function buildAlbero() {
     hue = 4 + (r - g) / (max - min);
   }
 
-  hue = hue * 60;
-
-  console.log(cacca);
-  pipi = abs(map(hue, 0, 360, 0, 255));
-
-  if (min < 85) {
+  if (min < 50) {
     variabile1 = alberoRadici1;
   }
-  if (min > 85 && min < 190) {
+  if (min > 50 && min < 100) {
     variabile1 = alberoRadici2;
   }
-  if (min > 190 && min < 255) {
+  if (min > 100 && min < 160) {
     variabile1 = alberoRadici3;
   }
   if (cacca < 2) {
@@ -673,19 +661,13 @@ function buildGrassa() {
     hue = 4 + (r - g) / (max - min);
   }
 
-  hue = hue * 60;
-
-  hue = Math.round(hue);
-
-  pipi = map(hue, 0, 360, 0, 255);
-
-  if (max == r) {
+  if (min < 50) {
     variabile1 = grassaFoglie1;
   }
-  if (max == g) {
+  if (min > 50 && min < 100) {
     variabile1 = grassaFoglie2;
   }
-  if (max == b) {
+  if (min > 100 && min < 160) {
     variabile1 = grassaFoglie3;
   }
   if (cacca < 2) {
