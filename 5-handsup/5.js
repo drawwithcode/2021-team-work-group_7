@@ -8,7 +8,7 @@ let scale2 = urlArrive.searchParams.get("scale2");
 let scale3 = urlArrive.searchParams.get("scale3");
 
 let text1 =
-  "Now it's time to choose a family. There are three types. Triximos, that provides nourishment to grow. Florj, that provides oxygen to breathe. Sukalaas, that provides water to be hydrated. Choose the element you feel most connected to.";
+  "Thank you for creating this plant: you saved not only your life but all the others’.It represents your existence here. Oh! One last thing, choose your favorite color and give your plant a name";
 let speech;
 let enterButton;
 let loadingPage;

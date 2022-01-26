@@ -306,6 +306,7 @@ body {
   padding-left: 10%;
   padding-right: 10%;
   justify-content: space-between;
+  align-content: center;
   position: relative;
   top: 70%;
 }
@@ -317,6 +318,7 @@ body {
   font-size: 15px;
   font-family: trispace;
   text-transform: uppercase;
+
   line-height: 1.1;
   font-weight: 300;
   color: rgb(81, 38, 194);
