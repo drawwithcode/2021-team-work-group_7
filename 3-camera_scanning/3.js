@@ -385,7 +385,7 @@ function buildFiore() {
     d = 1.78;
   }
   rotateZ(PI);
-  translate(0, -35, 0);
+  translate(0, -30, 0);
   rotateY((-PI / 5) * 2);
   scale(30);
   specularMaterial(220);
