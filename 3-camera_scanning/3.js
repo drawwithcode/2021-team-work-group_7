@@ -790,6 +790,7 @@ function moveWebcam() {
   analyzingSpace = createElement("h1", "ANALYSING THE SPACE");
   analyzingSpace.id("analyser");
   setTimeout(goNext, 10000);
+  document.getElementsByClassName("cursor").style.tranform = "-50%";
 }
 function goNext() {
   video = video.get();
