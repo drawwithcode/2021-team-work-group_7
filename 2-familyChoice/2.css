@@ -116,7 +116,7 @@ canvas {
   font-size: 16px;
   font-weight: 400;
   font-family: "trispace";
-  color: #02f886;
+  color: magenta;
   transform: translate(-50%, -50%);
   animation: blinker 2s linear infinite;
 }
