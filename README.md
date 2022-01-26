@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <img width="460" height="300" src="./addons/LuppioLoghino.gif">
+  <img width="400px" src="./addons/LuppioLoghino.gif">
 </p>
 
 
