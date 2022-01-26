@@ -194,6 +194,7 @@ body:hover {
 .hiders p:nth-child(8) {
   animation-delay: 14s;
 }
+
 .marqueeFondo {
   position: fixed;
   font-weight: 400;
@@ -300,10 +301,10 @@ body:hover {
   height: 100%;
   width: 100%;
   background: #02f886;
-  z-index: 20;
+  z-index: 5;
 }
 
-#text-about {
+.text-about {
   overflow: hidden;
   font-family: "Trispace", sans-serif;
   padding: 0;
@@ -317,13 +318,14 @@ body:hover {
   left: 2.5%;
   /* top: 0.5%; */
   width: 60%;
+  z-index: 20;
 }
 
-#text-about a:visited {
+.text-about a:visited {
   color: rgb(81, 38, 194);
 }
 
-#text-about a:hover {
+.text-about a:hover {
   color: white;
 }
 
@@ -336,6 +338,7 @@ body:hover {
   align-content: center;
   position: relative;
   top: 90%;
+  z-index: 20;
 }
 
 .names-about-container > div {
@@ -348,13 +351,14 @@ body:hover {
 
   text-align: center;
   line-height: 1.1;
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(81, 38, 194);
+  z-index: 20;
 }
 
 .names-about-container > div > a:hover {
   color: white;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .names-about-container > div > a {
@@ -371,10 +375,12 @@ body:hover {
   align-content: center;
   position: relative;
   top: 60%;
+  z-index: 20;
 }
 
 .image-about-container > div {
   transform-origin: center;
+  z-index: 20;
 }
 
 .x-button-about {
@@ -383,6 +389,7 @@ body:hover {
   top: 5%;
   left: 95%;
   transition: transform 0.4s ease-in-out;
+  z-index: 20;
 }
 
 .x-button-about:hover {
