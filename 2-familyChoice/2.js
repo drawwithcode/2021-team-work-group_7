@@ -418,5 +418,5 @@ function closeAbout() {
 function openGarden() {}
 
 function openGarden() {
-  window.open(url + "archive.html", "_self");
+  window.open(url + "2021-team-work-group_7/archive.html", "_self");
 }
