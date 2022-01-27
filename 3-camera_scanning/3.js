@@ -1,4 +1,4 @@
-const urlStringOrigin = window.location.origin + "/2021-team-work-group_7";
+const urlStringOrigin = window.location.origin;
 const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
