@@ -2,7 +2,6 @@ const urlStringOrigin = window.location.origin;
 const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
-console.log(urlOrigin);
 
 // Estrapolate plant family from the url
 let parameter = urlArrive.searchParams.get("family");
@@ -125,6 +124,7 @@ function preload() {
 }
 
 function setup() {
+  console.log(urlOrigin);
   // Cursor functions
   var cursor = document.getElementById("cursor");
   document.body.addEventListener("mousemove", function (e) {
@@ -889,13 +889,10 @@ function goNext() {
 }
 
 function nextPage() {
-  window.open(
-    urlOrigin + "2021-team-work-group_7/personalize.html?case=" + chosenParts,
-    "_self"
-  );
+  window.open(urlOrigin + "/personalize.html?case=" + chosenParts, "_self");
 }
 function openGarden() {
-  window.open(urlOrigin + "2021-team-work-group_7/archive.html", "_self");
+  window.open(urlOrigin + "/archive.html", "_self");
 }
 
 function openAbout() {
