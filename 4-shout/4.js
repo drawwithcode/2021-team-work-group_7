@@ -1052,5 +1052,5 @@ function closeAbout() {
   document.getElementById("about-section").style.transition = "0.5s";
 }
 function openGarden() {
-  window.open(url + "2021-team-work-group_7/archive.html", "_self");
+  window.open(urlOrigin + "2021-team-work-group_7/archive.html", "_self");
 }
