@@ -12,7 +12,7 @@ let typingBox;
 let aboutButton;
 let gardenButton;
 let logo;
-let nextButton;
+let button;
 let analysingSpace;
 
 var self = [0, 0, 0],
@@ -290,6 +290,10 @@ function setup() {
 
   // cam.setZoomScale(0);
   cam.setRotationConstraint(false, false, false);
+
+  button = createButton("PLANT AGAIN");
+  button.id("plant");
+  button.mousePressed(replay);
 }
 
 function voice() {
@@ -804,4 +808,7 @@ function keyPressed() {
 function mouseWheel(event) {
   print(event.delta);
   distanza -= event.delta / 50;
+}
+function replay() {
+  window.open(urlOrigin + "2021-team-work-group_7/family.html", "_self");
 }
