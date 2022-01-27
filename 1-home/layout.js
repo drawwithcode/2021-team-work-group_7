@@ -237,7 +237,7 @@ function enter() {
 }
 
 function openGarden() {
-  window.open(url + "2021-team-work-group_7/archive.html", "_self");
+  window.open((href = "./archive.html"), "_self");
 }
 
 function openAbout() {

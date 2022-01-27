@@ -372,26 +372,17 @@ function normalSpeed() {
 // Next page
 function openFamily1() {
   chosenFamily = 1;
-  window.open(
-    url + "2021-team-work-group_7/scan.html?family=" + chosenFamily,
-    "_self"
-  );
+  window.open((href = "./scan.html?family=" + chosenFamily), "_self");
 }
 
 function openFamily2() {
   chosenFamily = 2;
-  window.open(
-    url + "2021-team-work-group_7/scan.html?family=" + chosenFamily,
-    "_self"
-  );
+  window.open((href = "./scan.html?family=" + chosenFamily), "_self");
 }
 
 function openFamily3() {
   chosenFamily = 3;
-  window.open(
-    url + "2021-team-work-group_7/scan.html?family=" + chosenFamily,
-    "_self"
-  );
+  window.open((href = "./scan.html?family=" + chosenFamily), "_self");
 }
 
 // Mickey Mouse voice
@@ -418,5 +409,5 @@ function closeAbout() {
 function openGarden() {}
 
 function openGarden() {
-  window.open(url + "2021-team-work-group_7/archive.html", "_self");
+  window.open((href = "./archive.html"), "_self");
 }

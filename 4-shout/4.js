@@ -1029,15 +1029,15 @@ function fixScale3() {
 
 function nextPage() {
   window.open(
-    urlOrigin +
-      "2021-team-work-group_7/share.html?case=" +
+    (href =
+      "./share.html?case=" +
       parameter +
       "&scale1=" +
       scale1 +
       "&scale2=" +
       scale2 +
       "&scale3=" +
-      scale3,
+      scale3),
     "_self"
   );
 }
@@ -1052,5 +1052,5 @@ function closeAbout() {
   document.getElementById("about-section").style.transition = "0.5s";
 }
 function openGarden() {
-  window.open(urlOrigin + "2021-team-work-group_7/archive.html", "_self");
+  window.open((href = "./archive.html"), "_self");
 }

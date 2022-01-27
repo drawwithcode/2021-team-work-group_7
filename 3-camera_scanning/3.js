@@ -889,13 +889,10 @@ function goNext() {
 }
 
 function nextPage() {
-  window.open(
-    urlOrigin + "2021-team-work-group_7/personalize.html?case=" + chosenParts,
-    "_self"
-  );
+  window.open((href = "./personalize.html?case=" + chosenParts), "_self");
 }
 function openGarden() {
-  window.open(urlOrigin + "2021-team-work-group_7/archive.html", "_self");
+  window.open((href = "./archive.html"), "_self");
 }
 
 function openAbout() {

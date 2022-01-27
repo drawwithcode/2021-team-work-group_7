@@ -810,5 +810,5 @@ function mouseWheel(event) {
   distanza -= event.delta / 50;
 }
 function replay() {
-  window.open(urlOrigin + "2021-team-work-group_7/family.html", "_self");
+  window.open((href = "./family.html"), "_self");
 }
