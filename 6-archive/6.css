@@ -44,7 +44,7 @@ canvas {
   border: none;
   transform: translate(-50%, -50%);
   color: rgb(81, 38, 194);
-  z-index: 10;
+  z-index: 1;
 }
 
 #plant:hover {

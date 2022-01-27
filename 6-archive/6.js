@@ -125,6 +125,10 @@ function setup() {
   // gardenButton.class("menuButton");
   // gardenButton.mouseClicked(openGarden);
 
+  button = createButton("PLANT AGAIN");
+  button.id("plant");
+  button.mousePressed(replay);
+
   typingBox = createElement("div");
   typingBox.class("typingBox");
   let container = createElement("div");
@@ -290,10 +294,6 @@ function setup() {
 
   // cam.setZoomScale(0);
   cam.setRotationConstraint(false, false, false);
-
-  button = createButton("PLANT AGAIN");
-  button.id("plant");
-  button.mousePressed(replay);
 }
 
 function voice() {
