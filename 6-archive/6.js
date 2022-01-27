@@ -125,7 +125,7 @@ function setup() {
   // gardenButton.class("menuButton");
   // gardenButton.mouseClicked(openGarden);
 
-  button = createButton("PLANT AGAIN");
+  button = createElement("button", "PLANT AGAIN");
   button.id("plant");
   button.mousePressed(replay);
 
