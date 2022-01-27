@@ -1,4 +1,4 @@
-const urlStringOrigin = window.location.href;
+const urlStringOrigin = window.location.origin + "/2021-team-work-group_7";
 const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
@@ -891,7 +891,7 @@ function nextPage() {
   window.open(urlOrigin + "personalize.html?case=" + chosenParts, "_self");
 }
 function openGarden() {
-  window.open(url + "archive.html", "_self");
+  window.open(urlOrigin + "archive.html", "_self");
 }
 
 function openAbout() {
