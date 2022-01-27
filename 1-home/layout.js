@@ -1,4 +1,4 @@
-const urlString = window.parent.location.origin;
+const urlString = window.parent.location.href;
 let url = new URL(urlString);
 console.log(url);
 
