@@ -1,4 +1,4 @@
-const urlString = window.location.origin + "/2021-team-work-group_7";
+const urlString = window.location.origin;
 let url = new URL(urlString);
 console.log(url);
 let chosenFamily;
