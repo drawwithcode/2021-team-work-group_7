@@ -1030,7 +1030,7 @@ function fixScale3() {
 function nextPage() {
   window.open(
     urlOrigin +
-      "share.html?case=" +
+      "2021-team-work-group_7/share.html?case=" +
       parameter +
       "&scale1=" +
       scale1 +
@@ -1052,5 +1052,5 @@ function closeAbout() {
   document.getElementById("about-section").style.transition = "0.5s";
 }
 function openGarden() {
-  window.open(url + "archive.html", "_self");
+  window.open(url + "2021-team-work-group_7/archive.html", "_self");
 }

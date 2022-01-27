@@ -988,7 +988,7 @@ function snapshot() {
 }
 
 function goNext() {
-  window.open(urlOrigin + "archive.html", "_self");
+  window.open(urlOrigin + "2021-team-work-group_7/archive.html", "_self");
 }
 
 function openAbout() {
@@ -1004,7 +1004,7 @@ function closeAbout() {
 // This function save your selected parameters in the Firebase realtime database
 
 function openGarden() {
-  window.open(url + "archive.html", "_self");
+  window.open(url + "2021-team-work-group_7/archive.html", "_self");
 }
 
 function salvaParametri() {
