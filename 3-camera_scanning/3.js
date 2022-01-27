@@ -1,4 +1,4 @@
-const urlStringOrigin = window.location.origin;
+const urlStringOrigin = window.location.href;
 const urlStringArrive = window.location.href;
 let urlOrigin = new URL(urlStringOrigin);
 let urlArrive = new URL(urlStringArrive);
