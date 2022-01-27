@@ -281,7 +281,7 @@ function setup() {
   cam = createEasyCam();
   resetMatrix();
   cam.setState(state, 1000);
-  // cam.setRotationScale(0);
+  cam.setRotationScale(0);
   cam.setZoomScale(0);
   cam.state_reset = state; // state to use on reset
   // Set one of these three parameters to 'true' to
