@@ -19,15 +19,13 @@ async function firebaseSetup() {
   } = await import(fb_database_url);
 
   const firebaseConfig = {
-    apiKey: "AIzaSyAat-YA5nCUO7s6vv-rTquCpezjEqI5Zdc",
-    authDomain: "luppio-demo.firebaseapp.com",
-    projectId: "luppio-demo",
-    storageBucket: "luppio-demo.appspot.com",
-    messagingSenderId: "798261918187",
-    appId: "1:798261918187:web:6b7a037cd71ef5e80fc1ae",
-    measurementId: "G-RCYRRDPECJ",
-    databaseURL:
-      "https://luppio-demo-default-rtdb.europe-west1.firebasedatabase.app",
+    apiKey: "AIzaSyAgcH48bNeDZxeqOUdZ3vKqw7131oR36_U",
+  authDomain: "luppio-5a8ab.firebaseapp.com",
+  databaseURL: "https://luppio-5a8ab-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "luppio-5a8ab",
+  storageBucket: "luppio-5a8ab.appspot.com",
+  messagingSenderId: "411841638943",
+  appId: "1:411841638943:web:fed919391ea6f3c7b05b2a"
   };
 
   const app = initializeApp(firebaseConfig);
