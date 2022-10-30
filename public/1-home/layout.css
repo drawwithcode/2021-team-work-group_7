@@ -5,6 +5,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   cursor: none;
+  background-color: rgb(83, 53, 193);
 }
 body:hover {
   cursor: none;
@@ -361,3 +362,41 @@ body:hover {
   transform: rotate(90deg);
   cursor: none;
 }
+#phone {
+  display: none;
+  position: fixed;
+  color: #02f886;
+  z-index: 10;
+
+  width: 100vw;
+  height: 100vh;
+
+background-color: #02f886;
+}
+#text-phone{
+  text-align: center ;
+background-color: transparent;
+  font-weight: 400;
+  font-size: 24px;
+margin-top: 43vh;
+  transform: translate(0%, 0%);
+  margin-bottom: 0vh;
+  transform-origin: center;
+  font-family: "Trispace", sans-serif;
+
+color:rgb(81, 38, 194)
+}
+#text-phone2{
+  text-align: center ;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 15px;
+margin-top: 1vh;
+  transform: translate(0%, 0%);
+
+  transform-origin: center;
+  font-family: "Trispace", sans-serif;
+
+color:rgb(81, 38, 194)
+}
+

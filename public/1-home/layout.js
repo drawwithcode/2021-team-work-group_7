@@ -12,7 +12,10 @@ let typingBox;
 let aboutButton;
 let gardenButton;
 
+
+
 function setup() {
+
   loadingImage = document.getElementById("loadingImage");
 
   // CURSOR FUNCTIONS
@@ -27,10 +30,12 @@ function setup() {
 
   let background = createElement("div");
   background.class("background");
+  setTimeout(windowResized, 2400);
+setTimeout(enter, 2500);
 
   speech = new p5.Speech();
 
-  setTimeout(enter, 2500);
+
 
   aboutButton = createElement("button", "about");
   aboutButton.id("aboutButton");
@@ -41,9 +46,26 @@ function setup() {
   gardenButton.id("gardenButton");
   gardenButton.class("menuButton");
   gardenButton.mouseClicked(openGarden);
+
+}
+function enter() {
+  
+  enterButton = createElement("button", "START THE EXPERIENCE");
+  enterButton.id("enterButton");
+  enterButton.mouseClicked(openPage);
 }
 
+function windowResized() {
+  if(windowHeight*1.1 > windowWidth){
+    document.getElementById("phone").style.display = "block";
+  
+  }else{
+    document.getElementById("phone").style.display = "none";
+  }
+}
 function draw() {}
+
+
 
 function voice() {
   speech.listVoices();
@@ -52,6 +74,8 @@ function voice() {
   speech.setPitch(2);
   speech.speak(text);
 }
+
+
 function openPage() {
   setTimeout(voice, 100);
   document.getElementById("enterButton").style.display = "none";
@@ -228,9 +252,12 @@ function openPage() {
       "  ° W"
   );
   marqueeFondo.class("marqueeFondo");
+
+  windowResized()
 }
 
 function enter() {
+
   enterButton = createElement("button", "START THE EXPERIENCE");
   enterButton.id("enterButton");
   enterButton.mouseClicked(openPage);
@@ -248,3 +275,5 @@ function closeAbout() {
   document.getElementById("about-section").style.left = "100%";
   document.getElementById("about-section").style.transition = "0.5s";
 }
+
+
